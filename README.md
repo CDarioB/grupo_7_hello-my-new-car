@@ -35,7 +35,7 @@
 
 * Tatiana Martínez 
     - Edad: 35 años.
-    - Colombiana, vive en Vancouver, Canadá.
+    - Ubicacion: Colombiana, vive en Vancouver, Canadá.
     - Estudiante Full Stack Web Developer.
 
 <br>
@@ -44,3 +44,10 @@
     - Edad: 17 años.
     - Ubicacion: Necochea, Argentina.
     - Estudiante Full Stack Web Developer. 
+
+<br>
+
+* Stiben Sinitave Marin
+    - Edad: 26 años.
+    - Ubicacion: Colombiana, Medellin.
+    - Estudiante Full Stack Web Developer.
