@@ -16,6 +16,8 @@
 
 <br>
 
+----
+
 #### ***Equipo:***
 
 * Andrés Felipe Serrano Barrios 
@@ -50,3 +52,14 @@
     - Edad: 26 años.
     - Ubicacion: Colombiana, Medellin.
     - Estudiante Full Stack Web Developer.
+
+----
+
+## Referentes del mercado.
+* [AutosCosmos.](https://www.autocosmos.com.co/clasificados)
+* [Mercado Libre.](https://carros.mercadolibre.com.co/#!messageGeolocation)
+* [Vende tu nave.](https://www.vendetunave.co/)
+* [Pergamino Automotores.](https://www.pergaminoautomotores.com.ar/) 
+* [Carone.](https://www.carone.com.ar/)
+* [Kavak.](https://www.kavak.com/ar)
+
