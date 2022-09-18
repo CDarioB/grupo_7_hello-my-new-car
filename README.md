@@ -17,7 +17,6 @@
 <br>
 
 #### ***Equipo:***
-<br>
 
 * Andrés Felipe Serrano Barrios 
     - Edad: 25 años. 
