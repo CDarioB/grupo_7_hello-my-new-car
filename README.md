@@ -50,7 +50,7 @@
 
 * Stiben Sinitave Marin
     - Edad: 26 años.
-    - Ubicacion: Colombiana, Medellin.
+    - Ubicacion: Colombia, Medellin.
     - Estudiante Full Stack Web Developer.
 
 <br>
