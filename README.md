@@ -53,6 +53,12 @@
     - Ubicacion: Colombiana, Medellin.
     - Estudiante Full Stack Web Developer.
 
+<br>
+
+* Carlos Dario Barbará
+    - Edad: 37 años.
+    - Ubicacion: Argentina, Córdoba.
+    - Estudiante Full Stack Web Developer.
 ----
 
 ## Referentes del mercado.

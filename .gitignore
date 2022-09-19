@@ -1,0 +1,7 @@
+node_modules
+package-lock.json
+.hubot_history
+.node-version
+.nyc_output/
+npm-debug.log
+coverage/
