@@ -56,7 +56,7 @@
 <br>
 
 * Carlos Dario Barbará
-    - Edad: 37 años.
+    - Edad: 37 años. 
     - Ubicacion: Argentina, Córdoba.
     - Estudiante Full Stack Web Developer.
 ----
