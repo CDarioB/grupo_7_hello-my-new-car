@@ -4,14 +4,14 @@
 
 #### ***¿Qué productos o servicios brindará nuestro sitio?***
 * Compra y Venta de veiculos nuevos y usados.
-* Verificación del estado del veicululo.
+* Verificación del estado del vehiculo.
 
 #### ***¿Quién será nuestra audiencia objetivo?***
 * Todas las personas que quieran comprar o vender su auto (mayores de 18 años).
 
 #### ***¿Cómo ajustaremos nuestra oferta a ese público?***
-* Armado de un sitio de web facil de usar, intuitivo.
-* Brindadar la información necesaria del producto.
+* Armado de un sitio de web fácil de usar, intuitivo.
+* Brindar información completa del producto.
 * Asegurar las transacciones realizadas cuidando a las partes (vendedor/comprador).
 
 <br>
