@@ -69,3 +69,7 @@
 * [Carone.](https://www.carone.com.ar/)
 * [Kavak.](https://www.kavak.com/ar)
 
+
+
+Link Trello:
+https://trello.com/b/EaF6wDCy/hello-my-new-car
