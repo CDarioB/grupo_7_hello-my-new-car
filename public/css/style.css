@@ -1,0 +1,325 @@
+* {
+    font-family: "Roboto", sans-serif;
+    font-weight: 100;
+    margin: 0px;
+    padding: 0px;
+    box-sizing: border-box;
+}
+
+body{
+    font-size: 12px;
+    background-color: #ebebeb;
+}
+
+/* ************************* */
+/* ***** header config ***** */
+header {
+    width: 90vw;
+    background-color: #EAC926; /*Fondo amarillo en todo el Header*/
+}
+
+.header-main {
+    /*padding: 0px;*/
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    padding: 5px;
+}
+
+.header-main .logo img {
+    display: block;
+    width: 45vw;
+}
+
+.search {
+   max-width: 45vw;
+   position: relative;
+   text-align: center;
+}
+
+.buy-outs {
+    margin: auto;
+}
+
+/* nav menu */
+nav {
+    display: none;
+ }
+
+/*.header-menu {
+    display: flex;
+    justify-content: space-around;
+    margin-top: 10px;
+    padding: 0px;
+}*/
+
+ul.main-menu, ul.login-menu {
+    list-style-type: none;
+}
+
+.header-main nav ul a {
+    padding: 30px;
+    text-decoration: none;
+    color: black;
+}
+
+header nav ul a {
+    text-decoration: none;
+    color: black;
+}
+
+.main-menu li, .login-menu li  {
+    list-style: none;
+}
+
+/* burguer-menu */
+button.bars {
+    background-color: #1259c3;
+    color: #ebebeb;
+    border-radius: 5px;
+    margin: 10px auto;
+    width: 25px;
+    height: 25px;
+}
+
+/* banner img */
+.banner{
+    width: 90vw;
+    display: block; /* ocupa el ancho, trata al elemento como de bloque, toma la configuracion de ancho y alto del padre */
+}
+
+/* *** end header config *** */
+/* ************************* */
+
+/* ****** main config ****** */
+main{
+    width: 90vw;
+    margin: auto;
+}
+
+h3.body-titles{
+    font-size: 24px;
+    font-weight: 800;
+    color: #666;
+    padding-top: 15px;
+}
+
+section .ultima-visita, section .ofertas {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+ }
+
+article {
+    width: 90%;
+    margin-top: 10px;
+}
+
+/*
+article.img-procucto {
+    display: flex;
+    width: 140px;
+    height: 314px;
+}
+*/
+
+article img {
+    width: 90%;
+}
+
+.product-detail {
+    /*display: flex;
+    flex-wrap: wrap;*/
+    /*position: relative;*/
+    width: 90%;
+    border-top: 1px solid #ebebeb;
+    background-color: white;
+    padding: 15px;
+    margin: 0px;
+}
+
+.img-truck{
+    position: relative;
+}
+
+.fa-truck {
+    color: #39b54a;
+    margin-top: 5px;
+    font-size: 16px;
+    display: block;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 50%;
+    position: absolute;
+    right: 0.2px;
+    top: -35px;
+}
+
+.price-discount {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: flex-end;
+}
+
+p.price{
+    font-size: 18px;
+    margin: 10px 0px 0px 0px;
+    flex: 30 0 0;
+}
+
+p.discount, p.description{
+    font-size: 16px;
+}
+
+p.discount{
+    color: #39b54a;
+    font-weight: 800;
+    margin: 0px 0px;
+    flex: 70 0 0;
+}
+
+p.description{
+    margin: 10px 0px 0px 0px;
+}
+
+main article:hover  .description {
+    display: block;
+}
+
+/* **** end main config **** */
+/* ************************* */
+
+/* ***** footer config ***** */
+footer {
+    width: 90vw;
+    background-color: white;
+    color: #666;
+    text-align: center;
+    padding: 0px;
+    padding: 0 50px 50px 50px;
+    /*padding-top: 50px;
+    padding-bottom: 20px;
+    padding-left: 50px;
+    padding-right: 50px;*/
+    margin: 0px;
+}
+
+h4.footer-titles{
+    font-size: 16px;
+    font-weight: 900;
+    color: #666;
+    padding: 0%;
+    margin: 0%;
+}
+
+.footer-icon{
+    color: #1259c3;
+    font-size: 2em;
+    margin-bottom: 10px;
+}
+
+p.footer-article-description {
+    font-size: 12px;
+    padding: 0%;
+    margin-top: 0%;
+}
+
+p.copyrigth{
+    font-size: 12px;
+    text-align: left;
+    padding-top: 20px;
+    padding-bottom: 0px;
+    margin: 0px;
+}
+/* *** end footer config *** */
+/* ************************* */
+
+
+.imgCenter{
+    text-align: center
+}
+
+/* 0-480: smaller smartphones */
+@media (min-width: 361px) {
+    main article:hover {
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .description {
+        display: none;
+    }
+
+    /*.burger-menu {
+        display: none;
+     } */
+}
+
+/* 481-768: tablets & lager smartphones */
+@media (min-width:481px) {
+    main section article {
+       display: inline-block;
+       margin: auto;
+       margin-bottom: 25px;
+       width: 46%;
+    }
+}
+
+ /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
+@media (min-width:769px) {
+    
+    nav {
+       display: flex;
+       flex-direction: row;
+       justify-content: space-between;
+       flex-wrap: wrap;
+       margin-bottom: 10px;
+       padding: 5px;
+    }
+
+    .main-menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+        margin-left: 2rem;
+     }
+     
+     .login-menu {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        gap: 1rem;
+        margin-right: 2rem;
+     }
+
+    .burger-menu {
+       display: none;
+    }
+}
+
+ /* 1280 + ...: Larger desktops and monitors */
+ @media (min-width:1280px) {
+    .header-logo, nav {
+       max-width: 1200px;
+       margin: auto
+    }
+    main section article {
+       width: 24.2%;
+    }
+
+    .footer-icon:hover{
+        color: rebeccapurple;
+    }
+
+    .footer-payment-options {
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+    }
+} 
+ 

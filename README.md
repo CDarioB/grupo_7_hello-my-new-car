@@ -1,8 +1,7 @@
 # grupo_7_hello-my-new-car
 
-
-Link Trello:
-https://trello.com/b/EaF6wDCy/hello-my-new-car
+## Repositorios:
+* [Tablero - Trello](https://trello.com/b/EaF6wDCy/hello-my-new-car)
 
 ## Definición de la temática del Market Place
 

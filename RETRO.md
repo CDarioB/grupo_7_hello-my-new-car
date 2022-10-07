@@ -1,20 +1,18 @@
-retro spring 1: 
+## Restropectiva - Spring 1: 
 
-start doing:
-Probar comunicación via Wp para mejorar la comunicación del equipo 
+#### ***Start Doing:***
+* Probar comunicación via Wp para mejorar la comunicación del equipo.
 
-Stop Doing:
-Dejar todo a último momento 
+#### ***Stop Doing:***
+* Dejar todo a último momento 
 
+#### ***More of:*** 
+* Mayor compromiso.
 
-more of: 
-maayor compromiso 
+#### ***keep Doing:***
+* Entregas a tiempo.
 
-
-keep doing: 
-Entregas a tiempo 
-
-less of:
-Procrastinar 
+#### ***Less Of:***
+* Procrastinar.
 
 
