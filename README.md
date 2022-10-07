@@ -1,5 +1,9 @@
 # grupo_7_hello-my-new-car
 
+
+Link Trello:
+https://trello.com/b/EaF6wDCy/hello-my-new-car
+
 ## Definición de la temática del Market Place
 
 #### ***¿Qué productos o servicios brindará nuestro sitio?***
@@ -71,5 +75,4 @@
 
 
 
-Link Trello:
-https://trello.com/b/EaF6wDCy/hello-my-new-car
+
