@@ -1,24 +1,126 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/css/normalize.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
-    <title>Home - Proyecto Integrador</title>
-  </head>
-  <body>
-    <header>
-      <h4>Hola Mundo - header body</h4>
-    </header>
 
-    <main>
-      <h4>Hola Mundo - main body</h4>
-    </main>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <link href="/css/normalize.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title>Home - Proyecto Integrador</title>
+</head>
 
-    <footer>
-      <h4>Hola Mundo - footer body</h4>
-    </footer>
-  </body>
+<body>
+  <header>
+    <div class="logo-main" alt="Hello My New Car">
+      <img src="img/Logo.png" />
+    </div>
+
+    <div class="buscador">
+      <input type="text" value="Buscar modelos, marcas" size="30">
+      <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+    </div>
+
+    <div class="header-menu">
+      <div class="lista-1">
+        <nav>
+          <ul>
+            <li><a href='#' class="lista">Ofertas</a></li>
+            <li><a href='#' class="lista">Comprá tu auto</a></li>
+            <li><a href='#' class="lista">Vendé tu auto</a></li>
+            <li><a href='#' class="lista">Ayuda</a></li>
+          </ul>
+        </nav>
+      </div>
+
+      <div class="lista-2">
+        <nav>
+          <ul>
+            <li><a href='/register' class="lista">Creá tu cuenta </a></li>
+            <li><a href='/login' class="lista">Ingresá</a></li>
+            <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+
+
+  </header>
+
+  <main>
+    <div class="home-top-banner"><img src="img/HomeTopBanner.jpg" alt=""></div>
+    <section class="main-ofert">
+      <h2>Imperdibles</h2>
+      <article class="main-ofert-article">
+        <img src="img/MINI-1.jpg">
+        <p class="main-article-title">Mini Cooper S 1.6 Jcw Coupe 211cv</p>
+        <p class="main-article-description">2016 - 70.000km - Buenos Aires</p>
+        <div>
+          <p class="main-price">$37.500</p>
+          <p class="main-discount">15%</p>
+          <p class="main-discountprice">$31.875</p>
+        </div>
+      </article>
+      <article class="main-ofert-article">
+        <img src="img/MUSTANG-1.jpg">
+        <p class="main-article-title">Ford Mustang 5.0 GT 421cv</p>
+        <p class="main-article-description">2017 - 14.000km - Rosario</p>
+        <div>
+          <p class="main-price">$95.000</p>
+          <p class="main-discount">10%</p>
+          <p class="main-discountprice">$85.500</p>
+        </div>
+      </article>
+      <article class="main-ofert-article">
+        <img src="img/ETIOS-1.jpg">
+        <p class="main-article-title">Toyota Etios 1.5 X</p>
+        <p class="main-article-description">2017 - 67.526km - Buenos Aires</p>
+        <div>
+          <p class="main-price">$10.000</p>
+          <p class="main-discount">5%</p>
+          <p class="main-discountprice">$9.500</p>
+        </div>
+      </article>
+      <article class="main-ofert-article">
+        <img src="img/RANGER-1.jpg" alt="">
+        <p class="main-article-title">Ford Ranger Limited 3.2 4x4</p>
+        <p class="main-article-description">2018 - 102.384km - Córdoba</p>
+        <div>
+          <p class="main-price">$25.000</p>
+          <p class="main-discount">7%</p>
+          <p class="main-discountprice">$23.250</p>
+        </div>
+      </article>
+    </section>
+  </main>
+
+  <footer>
+    <div class="first-footer-list">
+      <nav>
+        <ul>
+          <li><a href='#' class="lista">Comprá tu auto</a></li>
+          <li><a href='#' class="lista">Vendé tu auto</a></li>
+          <li><a href='#' class="lista">Financiamiento</a></li>
+        </ul>
+      </nav>
+    </div>
+    <div class="second-footer-list">
+      <nav>
+        <ul>
+          <li><a href='#' class="list">Preguntas Frecuentes</a></li>
+          <li><a href='#' class="list">Contacto</a></li>
+          <li><a href='#' class="list">Trabajá con nosotros</a></li>
+        </ul>
+      </nav>
+    </div>
+
+    <div class="last-comment">
+      <p>Copyright ©2022 HelloCar S.R.L.</p>
+    </div>
+    </div>
+  </footer>
+  </footer>
+</body>
+
 </html>
