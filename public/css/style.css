@@ -19,17 +19,15 @@ PaletaColores{
 
 body {
     font-size: 12px;
-    background-color: #ebebeb;
+    background-color: #25275910;
 }
 
 /* ***** header config ***** */
 header {
-    width: 90vw;
-    background-color: #EAC926;
+    width: 100vw;
+    background-color: #FFF;
     /*Fondo amarillo en todo el Header*/
 }
-
-
 
 .search {
     max-width: 45vw;
@@ -55,6 +53,10 @@ header {
 main {
     width: 90vw;
     margin: auto;
+}
+
+.Logo{
+    width: 30%;
 }
 
 section .main-ofert {
@@ -200,6 +202,86 @@ footer {
 }
 
 /* *** end footer config *** */
+/* ************************* */
+
+
+/* ****** form config ****** */
+
+.CreateAccount{
+    padding: 15px;
+}
+
+.LoginForm{
+    padding: 15px;
+}
+
+.TopContainer{
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.TopContainer h3{
+    text-align: center;
+    color: #252759;
+    font-size: 20px;
+}
+
+.FormItem{
+    margin-bottom: 15px;
+}
+
+.FormItem label{
+    margin-bottom: 5px;
+    font-weight: 800;
+    display: block;
+    color: #1E2040;
+}
+
+.InputControl{
+    width: 100%;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.SubmitBotton{
+    width: 100%;
+    background-color: #252759;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.SubmitBotton:hover{
+    background-color: #25275910;
+}
+
+.FormItemLink{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    row-gap: 15px;
+}
+
+.CheckboxContainer{
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CheckControl{
+    width: 15px;
+}
+
+/* *** end form config *** */
 /* ************************* */
 
 
