@@ -22,6 +22,9 @@ APP.get("/login", (req, res) => {
     res.sendFile(PATH.resolve(__dirname, "./views/login.html"))
 });
 
+APP.get("/recuperar-cuenta", (req, res) => {
+    res.sendFile(PATH.resolve(__dirname, "./views/account-recover.html"))
+});
 
 APP.listen (3030, () => console.log ("Server started: http://localhost:3030/") ); 
 
