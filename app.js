@@ -5,7 +5,7 @@ const PATH = require ('path');
 const APP = EXPRESS();
 const PUBLIC_PATH = PATH.resolve(__dirname,'./public');
 
-//const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 
 APP.use(EXPRESS.static(PUBLIC_PATH));
 
@@ -26,6 +26,6 @@ APP.get("/recuperar-cuenta", (req, res) => {
     res.sendFile(PATH.resolve(__dirname, "./views/account-recover.html"))
 });
 
-APP.listen (3030, () => console.log ("Server started: http://localhost:3030/") ); 
+APP.listen(PORT, () =>{console.log("Corriendo servidor en el puerto" + " " + PORT + " " + "http://localhost:" + PORT) } )
 
 // app.listen (PORT, () => console.log (`Server started: port ${PORT}`) ); 

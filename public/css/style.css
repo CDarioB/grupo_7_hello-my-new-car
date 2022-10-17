@@ -19,34 +19,17 @@ PaletaColores{
 
 body {
     font-size: 12px;
-    background-color: #FFF;
+    background-color: #ebebeb;
 }
 
 /* ***** header config ***** */
 header {
-    width: 100vw;
-    background-color: #fff;
-    color: #252759;
-    border-bottom: solid 1px #BF0404;
+    width: 90vw;
+    background-color: #EAC926;
+    /*Fondo amarillo en todo el Header*/
 }
 
-.Logo{
-    width: 30%;
-}
 
-.header-main {
-    /*padding: 0px;*/
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: space-between;
-    align-items: center;
-    padding: 5px;
-}
-
-.header-main .logo img {
-    display: block;
-    width: 45vw;
-}
 
 .search {
     max-width: 45vw;
@@ -54,54 +37,7 @@ header {
     text-align: center;
 }
 
-.buy-outs {
-    margin: auto;
-}
 
-/* nav menu */
-nav {
-    display: none;
-}
-
-/*.header-menu {
-    display: flex;
-    justify-content: space-around;
-    margin-top: 10px;
-    padding: 0px;
-}*/
-
-ul.main-menu,
-ul.login-menu {
-    list-style-type: none;
-}
-
-.header-main nav ul a {
-    padding: 30px;
-    text-decoration: none;
-    color: black;
-}
-
-header nav ul a {
-    text-decoration: none;
-    color: black;
-}
-
-.main-menu li,
-.login-menu li {
-    list-style: none;
-}
-
-/* burguer-menu */
-button.bars {
-    background-color: #1259c3;
-    color: #ebebeb;
-    border-radius: 5px;
-    margin: 10px auto;
-    width: 25px;
-    height: 25px;
-}
-
-/* banner img */
 .home-top-banner {
     width: 90vw;
     display: block;
@@ -121,18 +57,12 @@ main {
     margin: auto;
 }
 
-h3.body-titles {
-    font-size: 24px;
-    font-weight: 800;
-    color: #666;
-    padding-top: 15px;
-}
-
 section .main-ofert {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
+    background-color: white;
 }
 
 article {
@@ -153,99 +83,7 @@ article {
     border-top: 1px solid #ebebeb;
     background-color: white;
     padding: 15px;
-}
-
-.LogoContainer{
-    display: flex;
-}
-
-main{
-    color: #0D0D0D;
-}
-
-footer {
-    width: 100vw;
-    background-color: #252759;
-    color: #FFF;
-}
-
-/***********************************************************FORMULARIOS**************************************************/
-
-.CreateAccount{
-    padding: 15px;
-}
-
-.LoginForm{
-    padding: 15px;
-}
-
-h3{
-    color: #252759;
-    display: flex;
-    justify-content: center;
-    font-size: 20px;
-}
-
-.TopContainer{
-    color: #252759;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    row-gap: 5px;
-    padding: 20px;
-    text-align: center;
-}
-
-.CreateAccount h4{
-    color: #252759;
-    font-size: 14px;
-}
-
-.FormItem{
-    margin: 15px;
-}
-
-.FormItemLink{
-    display: flex;
-    justify-content: center;
-    padding: 10px;
-
-}
-
-.FormItem label{
-    margin-bottom: 5px;
-    font-weight: 800;
-    display: block;
-}
-
-.InputControl{
-    width: 100%;
-    padding: 8px 8px;
-    border: none;
-    border-radius: 5px;
-    background-color: #25275910;
-}
-
-.SubmitBotton{
-    width: 100%;
-    background-color: #252759;
-    border: none;
-    font-size: 16px;
-    color: #fff;
-    padding: 5px 10px;
-    border-radius: 5px;
-    margin: 3px;
-}
-
-.SubmitBotton:hover{
-    background-color: #25275930;
-}
-
-
-.FormItem label{
-    font-weight: 400;
-    font-size: 14px;
-    color: #0D0D0D;
+    margin: 0px;
 }
 
 .CheckboxContainer{
@@ -273,26 +111,43 @@ p.main-discountprice {
     flex: 30 0 0;
 }
 
-p.discount,
-p.description {
-    font-size: 16px;
-}
-
 p.main-discount {
-    color: #cb3234;
+    color: rgb(255, 51, 51);
     font-weight: 800;
     margin: 0px 0px;
     flex: 70 0 0;
 }
 
-p.description {
-    margin: 10px 0px 0px 0px;
+.main-brands{
+    background-color: rgb(242, 244, 246);
 }
 
-main article:hover .description {
+.main-carlogo-brands {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+
+.main-carlogo-brands{
     display: block;
+    box-sizing: border-box;
+    margin: 0 10px 0 10px;
 }
 
+.main-carlogo-name{
+    font-weight: 700;
+    color:rgb(71, 117, 252);
+    text-decoration: none;
+}
+
+.each-brand-logo{
+    display: block;
+    text-align: center;
+    position: relative;
+    
+    
+
+}
 /* **** end main config **** */
 /* ************************* */
 
@@ -303,40 +158,45 @@ footer {
     color: #666;
     text-align: center;
     padding: 0px;
-    padding: 0 50px 50px 50px;
-    /*padding-top: 50px;
-    padding-bottom: 20px;
-    padding-left: 50px;
-    padding-right: 50px;*/
+    padding: 50px 50px 10px 50px;
     margin: 0px;
 }
 
-h4.footer-titles {
-    font-size: 16px;
-    font-weight: 900;
-    color: #666;
-    padding: 0%;
-    margin: 0%;
+.footer-menu{
+   
+    display: flex;
+        justify-content: space-between;
+        max-width: 80%;
+        align-items: center;
+        text-align: right;
+        margin: start;
 }
 
-.footer-icon {
-    color: #1259c3;
-    font-size: 2em;
-    margin-bottom: 10px;
-}
-
-p.footer-article-description {
-    font-size: 12px;
-    padding: 0%;
-    margin-top: 0%;
-}
-
-p.copyrigth {
-    font-size: 12px;
+.first-footer-list a{
+    text-decoration: none;
     text-align: left;
+}
+
+.first-footer-list li{
+    text-decoration: none;
+    text-align: left;
+}
+
+.second-footer-list a{
+    text-decoration: none;
+    text-align: right;
+}
+
+.second-footer-list li{
+    text-decoration: none;
+    text-align: right;
+}
+
+.copyrigth {
+    font-size: 12px;
     padding-top: 20px;
     padding-bottom: 0px;
-    margin: 0px;
+    margin: 10px;
 }
 
 /* *** end footer config *** */
@@ -349,82 +209,20 @@ p.copyrigth {
 
 /* 0-480: smaller smartphones */
 @media (min-width: 361px) {
-    main article:hover {
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
 
-    .description {
-        display: none;
-    }
-
-    /*.burger-menu {
-        display: none;
-     } */
 }
 
 /* 481-768: tablets & lager smartphones */
 @media (min-width:481px) {
-    main section article {
-        display: inline-block;
-        margin: auto;
-        margin-bottom: 25px;
-        width: 46%;
-    }
+ 
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
 @media (min-width:769px) {
 
-    nav {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        margin-bottom: 10px;
-        padding: 5px;
-    }
-
-    .main-menu {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 1rem;
-        margin-left: 2rem;
-    }
-
-    .login-menu {
-        display: flex;
-        justify-content: space-around;
-        align-items: center;
-        gap: 1rem;
-        margin-right: 2rem;
-    }
-
-    .burger-menu {
-        display: none;
-    }
 }
-
 /* 1280 + ...: Larger desktops and monitors */
 @media (min-width:1280px) {
 
-    .header-logo,
-    nav {
-        max-width: 1200px;
-        margin: auto
-    }
-
-    main section article {
-        width: 24.2%;
-    }
-
-    .footer-icon:hover {
-        color: rebeccapurple;
-    }
-
-    .footer-payment-options {
-        display: flex;
-        flex-direction: row;
-        justify-content: space-between;
-    }
+ 
 }
