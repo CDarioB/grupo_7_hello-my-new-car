@@ -6,7 +6,7 @@
 ## Definición de la temática del Market Place
 
 #### ***¿Qué productos o servicios brindará nuestro sitio?***
-* Compra y Venta de veiculos nuevos y usados.
+* Compra y Venta de vehiculos nuevos y usados.
 * Verificación del estado del vehiculo.
 
 #### ***¿Quién será nuestra audiencia objetivo?***

@@ -1,6 +1,10 @@
+PaletaColores {
+    color:
+        #252759 #25275910 #1E2040 #D90404 #BF0404 #0D0D0D #FFF;
+}
+
 * {
-    font-family: "Roboto", sans-serif;
-    font-weight: 100;
+    font-family: 'Lato', sans-serif;
     margin: 0px;
     padding: 0px;
     box-sizing: border-box;
@@ -8,22 +12,17 @@
 
 body {
     font-size: 12px;
+    background-color: #25275910;
 }
 
-/* ************************* */
 /* ***** header config ***** */
 header {
     width: 100vw;
-    background-color: rgb(242, 244, 246);
+    background-color: #FFF;
+
 }
 
 
-
-.search {
-    max-width: 45vw;
-    position: relative;
-    text-align: center;
-}
 
 
 .home-top-banner {
@@ -33,7 +32,75 @@ header {
 }
 
 .home-top-banner img {
-    width: 90vw;
+    width: 95vw;
+}
+
+.search-bar {
+    max-width: 45vw;
+    position: relative;
+    margin-top: 15px
+}
+
+.search-bar input {
+    max-width: 85%;
+}
+
+.header-top-section {
+    display: flex;
+}
+
+.Logo {
+    width: 30%;
+    max-width: 160px;
+    margin: 10px;
+    box-sizing: content-box;
+}
+
+.shopping-cart {
+    padding: 15px;
+    color: #1E2040;
+}
+
+.title {
+    display: block;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0 5px 0;
+    background-color: #1E2040;
+}
+
+.first-menu {
+    display: none;
+}
+
+.second-menu {
+    display: none;
+}
+
+.header-menu a {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+
+.header-menu ul {
+    list-style: none;
+
+}
+
+.header-menu li {
+    display: inline;
+    margin: 5px 5px 0 5px;
+}
+
+.burger-menu {
+    color: #fff;
+    padding: 5px;
 }
 
 /* *** end header config *** */
@@ -45,12 +112,23 @@ main {
     margin: auto;
 }
 
-section .main-ofert {
+
+
+.main-ofert {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: #FFF;
+    margin: 30px 0 10px 0;
+}
+
+.main-article-content{
+    padding: 5px 0 5px 5px;
+}
+
+.main-article-title{
+    font-weight: bold;
 }
 
 article {
@@ -63,11 +141,27 @@ article {
     max-width: 300px;
 }
 
+.product-detail {
+    /*display: flex;
+    flex-wrap: wrap;*/
+    /*position: relative;*/
+    width: 90%;
+    border-top: 1px solid #ebebeb;
+    background-color: white;
+    padding: 15px;
+    margin: 0px;
+}
 
-.price-discount {
+.CheckboxContainer {
     display: flex;
     flex-wrap: wrap;
-    align-items: flex-end;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.CheckControl {
+    width: 15px;
+    margin-right: 3px;
 }
 
 p.main-price {
@@ -90,78 +184,96 @@ p.main-discount {
     flex: 70 0 0;
 }
 
-.main-brands{
+.main-brands {
     background-color: rgb(242, 244, 246);
+    margin: 30px 0px 15px 0;
 }
 
 .main-carlogo-brands {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
-}
-
-.main-carlogo-brands{
-    display: block;
     box-sizing: border-box;
-    margin: 0 10px 0 10px;
+    margin: 10px 0 0 0;
+    width: 95vw;
 }
 
-.main-carlogo-name{
+.main-carlogo-name {
     font-weight: 700;
-    color:rgb(71, 117, 252);
+    color: rgb(71, 117, 252);
     text-decoration: none;
+    position: relative;
 }
 
-.each-brand-logo{
+.each-brand-logo {
     display: block;
     text-align: center;
     position: relative;
-    
-    
+
+
 
 }
+
 /* **** end main config **** */
 /* ************************* */
 
 /* ***** footer config ***** */
 footer {
-    width: 90vw;
     background-color: white;
     color: #666;
     text-align: center;
     padding: 0px;
-    padding: 50px 50px 10px 50px;
+    padding: 20px 20px 20px 20px;
     margin: 0px;
+    background-color: #1E2040;
 }
 
-.footer-menu{
-   
+footer.footer-lists ul {
+    list-style: none;
+}
+
+footer.footer-lists a {
+    text-decoration: none;
+    color: #fff
+}
+
+.footer-menu {
     display: flex;
-        justify-content: space-between;
-        max-width: 80%;
-        align-items: center;
-        text-align: right;
-        margin: start;
+    justify-content: space-between;
+    max-width: 80%;
+    align-items: center;
+    text-align: right;
+    margin: start;
 }
 
-.first-footer-list a{
+.footer-lists {
+    display: flex;
+}
+
+.footer-lists ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-lists a {
     text-decoration: none;
     text-align: left;
+    color: #fff;
 }
 
-.first-footer-list li{
-    text-decoration: none;
-    text-align: left;
+.first-footer-list {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+
 }
 
-.second-footer-list a{
-    text-decoration: none;
-    text-align: right;
-}
-
-.second-footer-list li{
-    text-decoration: none;
-    text-align: right;
+.second-footer-list {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
 }
 
 .copyrigth {
@@ -175,26 +287,151 @@ footer {
 /* ************************* */
 
 
+/* ****** form config ****** */
+
+.CreateAccount {
+    padding: 15px;
+}
+
+.LoginForm {
+    padding: 15px;
+}
+
+.TopContainer {
+    text-align: center;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    row-gap: 10px;
+}
+
+.TopContainer h3 {
+    text-align: center;
+    color: #252759;
+    font-size: 20px;
+}
+
+.FormItem {
+    margin-bottom: 15px;
+}
+
+.FormItem label {
+    margin-bottom: 5px;
+    font-weight: 800;
+    display: block;
+    color: #1E2040;
+}
+
+.InputControl {
+    width: 100%;
+    padding: 8px 8px;
+    border: none;
+    border-radius: 5px;
+}
+
+.SubmitBotton {
+    width: 100%;
+    background-color: #252759;
+    border: none;
+    font-size: 16px;
+    color: #fff;
+    padding: 5px 10px;
+    border-radius: 5px;
+    margin: 3px;
+}
+
+.SubmitBotton:hover {
+    background-color: #25275910;
+}
+
+.FormItemLink {
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    row-gap: 15px;
+}
+
+.CheckboxContainer {
+    padding: 15px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.CheckControl {
+    width: 15px;
+}
+
+/* *** end form config *** */
+/* ************************* */
+
+
 .imgCenter {
     text-align: center
 }
 
 /* 0-480: smaller smartphones */
-@media (min-width: 361px) {
-
-}
+@media (min-width: 361px) {}
 
 /* 481-768: tablets & lager smartphones */
 @media (min-width:481px) {
- 
+    .main-ofert-article {
+        max-width: 300px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .main-ofert h2 {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .header-top-section {
+        justify-content: space-around;
+    }
+
+    .logo-main {
+        width: 30vw;
+    }
+
+    .search-bar {
+        width: 60vw;
+        box-sizing: border-box;
+    }
+
+    .search-bar input {
+        width: 400px;
+        max-width: 85%;
+    }
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
 @media (min-width:769px) {
+    
+    
+    .first-menu {
+        display: flex;
+    }
 
+    .second-menu {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .shopping-cart {
+        position: relative;
+        align-items: center;
+        margin-top: 20px;
+    }
 }
+
 /* 1280 + ...: Larger desktops and monitors */
 @media (min-width:1280px) {
 
- 
+    .search-bar{
+        margin-top: 34px;
+    }
 }
