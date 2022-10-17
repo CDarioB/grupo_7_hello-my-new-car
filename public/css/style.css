@@ -43,23 +43,29 @@ header {
 
 .search-bar input {
     max-width: 85%;
+    height: 30px;
+    box-shadow: 0px 0px 1px rgb(100, 100, 100);
+    border-color: #25275910
 }
 
 .header-top-section {
     display: flex;
 }
 
-.Logo {
-    width: 30%;
+.logo {
+    width: 60%;
     max-width: 160px;
     margin: 10px;
     box-sizing: content-box;
 }
 
-.shopping-cart {
-    padding: 15px;
+.shopping-cart a {
+    padding: 20px;
     color: #1E2040;
+    display: flex;
 }
+
+
 
 .title {
     display: block;
@@ -123,11 +129,11 @@ main {
     margin: 30px 0 10px 0;
 }
 
-.main-article-content{
+.main-article-content {
     padding: 5px 0 5px 5px;
 }
 
-.main-article-title{
+.main-article-title {
     font-weight: bold;
 }
 
@@ -175,6 +181,7 @@ p.main-discountprice {
     font-size: 16px;
     margin: 0;
     flex: 30 0 0;
+    font-weight: bold   ;
 }
 
 p.main-discount {
@@ -186,7 +193,7 @@ p.main-discount {
 
 .main-brands {
     background-color: rgb(242, 244, 246);
-    margin: 30px 0px 15px 0;
+    margin: 30px 0px 30px 0;
 }
 
 .main-carlogo-brands {
@@ -408,13 +415,15 @@ footer.footer-lists a {
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
 @media (min-width:769px) {
     
-    
+
     .first-menu {
         display: flex;
+
     }
 
     .second-menu {
         display: flex;
+
     }
 
     .burger-menu {
@@ -431,7 +440,7 @@ footer.footer-lists a {
 /* 1280 + ...: Larger desktops and monitors */
 @media (min-width:1280px) {
 
-    .search-bar{
+    .search-bar {
         margin-top: 34px;
     }
 }
