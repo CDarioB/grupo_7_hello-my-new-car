@@ -1,57 +1,71 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/css/normalize.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
-    <title>Home - Proyecto Integrador</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="LogoContainer">
-        <img class="Logo" src="img/logo2.png" alt="Imagen Logo" />
-      </div>
-      <h4>Hola Mundo - header body</h4>
-    </header>
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="/css/normalize.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title>Home - Proyecto Integrador</title>
+</head>
 
-    <main>
-      <form action="/" method="GET" class="LoginForm">
-        <div class="TopContainer">
+<body>
+  <header>
+    <div class="LogoContainer">
+      <img class="Logo" src="img/logo2.png" alt="Imagen Logo" />
+    </div>
+    <h4>Hola Mundo - header body</h4>
+  </header>
+
+  <main>
+    <form action="/" method="GET" class="LoginForm">
+      <div class="TopContainer">
         <h3>¡Bienvenido!</h3>
       </div>
-        <div class="FormItem">
-          <label for="nombre-usuario">Usuario / E-mail:</label>
-          <input
-            type="text"
-            name="nombre-usuario"
-            placeholder="Nombre de usuario"
-            class="InputControl"
-          />
-        </div>
-        <div class="FormItem">
-          <label for="password">Contraseña:</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Contraseña"
-            class="InputControl"
-          />
-        </div>
-        <div>
-          <button type="submit" class="SubmitBotton">Login</button>
-        </div>
-        <div class="FormItemLink">
-          <a href="#">¿Olvidaste tu contraseña?</a>
-          <a href="/views/register.html">Crea tu cuenta</a>
-        </div>
-      </form>
-    </main>
+      <div class="FormItem">
+        <label for="nombre-usuario">Usuario / E-mail:</label>
+        <input type="text" name="nombre-usuario" placeholder="Nombre de usuario" class="InputControl" />
+      </div>
+      <div class="FormItem">
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" placeholder="Contraseña" class="InputControl" />
+      </div>
+      <div>
+        <button type="submit" class="SubmitBotton">Login</button>
+      </div>
+      <div class="FormItemLink">
+        <a href="#">¿Olvidaste tu contraseña?</a>
+        <a href="/views/register.html">Crea tu cuenta</a>
+      </div>
+    </form>
+  </main>
 
-    <footer>
-      <h4>Hola Mundo - footer body</h4>
-    </footer>
-  </body>
+  <footer>
+    <div class="footer-lists">
+      <div class="first-footer-list">
+        <nav>
+          <ul>
+            <li><a href='#' class="lista">Comprá tu auto</a></li>
+            <li><a href='#' class="lista">Vendé tu auto</a></li>
+            <li><a href='#' class="lista">Financiamiento</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="second-footer-list">
+        <nav>
+          <ul>
+            <li><a href='#' class="list">Preguntas Frecuentes</a></li>
+            <li><a href='#' class="list">Contacto</a></li>
+            <li><a href='#' class="list">Trabajá con nosotros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="copyrigth">
+      <p>Copyright ©2022 HelloCar S.R.L.</p>
+    </div>
+  </footer>
+</body>
+
 </html>

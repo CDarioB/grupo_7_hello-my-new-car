@@ -14,17 +14,19 @@
 
 <body>
   <header>
+    <div class="header-top-section">
     <div class="logo-main" alt="Hello My New Car">
-      <img src="img/Logo.png" />
+      <img class="Logo" src="img/logo2.png" alt="Hello My New Car" />
     </div>
 
-    <div class="buscador">
+    <div class="search-bar">
       <input type="text" value="Buscar modelos, marcas" size="30">
       <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
     </div>
+  </div>
 
     <div class="header-menu">
-      <div class="lista-1">
+      <div class="first-menu">
         <nav>
           <ul>
             <li><a href='#' class="lista">Ofertas</a></li>
@@ -35,7 +37,7 @@
         </nav>
       </div>
 
-      <div class="lista-2">
+      <div class="second-menu">
         <nav>
           <ul>
             <li><a href='/register' class="lista">Creá tu cuenta </a></li>
@@ -51,10 +53,11 @@
 
   <main>
     <div class="home-top-banner"><img src="img/HomeTopBanner.jpg" alt=""></div>
-    <section class="main-ofert">
-      <h2>Imperdibles</h2>
-      <article class="main-ofert-article" >
-        <img src="img/MINI-1.jpg" >
+    <section>
+      <h2 class="title">Imperdibles</h2>
+      <div class="main-ofert">
+      <article class="main-ofert-article">
+        <img src="img/MINI-1.jpg">
         <p class="main-article-title">Mini Cooper S 1.6 Jcw Coupe 211cv</p>
         <p class="main-article-description">2016 - 70.000km - Buenos Aires</p>
         <div>
@@ -94,10 +97,11 @@
           <p class="main-discountprice">$23.250</p>
         </div>
       </article>
+    </div>
     </section>
     <section>
       <div class="main-brands">
-        <h2>Nuestras marcas destacadas</h2>
+        <h2 class="title">Nuestras marcas destacadas</h2>
         <div class="main-carlogo-brands">
           <div class="each-brand-logo">
             <a href="#" class="">
@@ -135,30 +139,28 @@
   </main>
 
   <footer>
-    <div>
-    <div class="first-footer-list">
-      <nav>
-        <ul>
-          <li><a href='#' class="lista">Comprá tu auto</a></li>
-          <li><a href='#' class="lista">Vendé tu auto</a></li>
-          <li><a href='#' class="lista">Financiamiento</a></li>
-        </ul>
-      </nav>
+    <div class="footer-lists">
+      <div class="first-footer-list">
+        <nav>
+          <ul>
+            <li><a href='#' class="lista">Comprá tu auto</a></li>
+            <li><a href='#' class="lista">Vendé tu auto</a></li>
+            <li><a href='#' class="lista">Financiamiento</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="second-footer-list">
+          <ul>
+            <li><a href='#' class="list">Preguntas Frecuentes</a></li>
+            <li><a href='#' class="list">Contacto</a></li>
+            <li><a href='#' class="list">Trabajá con nosotros</a></li>
+          </ul>
+        </nav>
+      </div>
     </div>
-    <div class="second-footer-list">
-      <nav class="footer-menu">
-        <ul>
-          <li><a href='#' class="list">Preguntas Frecuentes</a></li>
-          <li><a href='#' class="list">Contacto</a></li>
-          <li><a href='#' class="list">Trabajá con nosotros</a></li>
-        </ul>
-      </nav>
-    </div>
-  </div>
     <div class="copyrigth">
       <p>Copyright ©2022 HelloCar S.R.L.</p>
     </div>
-  </footer>
   </footer>
 </body>
 
