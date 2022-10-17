@@ -56,6 +56,11 @@ header {
     box-sizing: content-box;
 }
 
+.shopping-cart {
+    padding: 15px;
+    color: #1E2040;
+}
+
 .title {
     display: block;
     margin: 20px 0 10px 0;
@@ -70,11 +75,11 @@ header {
 }
 
 .first-menu {
-    display: flex;
+    display: none;
 }
 
 .second-menu {
-    display: flex;
+    display: none;
 }
 
 .header-menu a {
@@ -93,6 +98,11 @@ header {
     margin: 5px 5px 0 5px;
 }
 
+.burger-menu {
+    color: #fff;
+    padding: 5px;
+}
+
 /* *** end header config *** */
 /* ************************* */
 
@@ -109,11 +119,17 @@ main {
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: #FFF;
     margin: 30px 0 10px 0;
 }
 
+.main-article-content{
+    padding: 5px 0 5px 5px;
+}
 
+.main-article-title{
+    font-weight: bold;
+}
 
 article {
     width: 90%;
@@ -186,6 +202,7 @@ p.main-discount {
     font-weight: 700;
     color: rgb(71, 117, 252);
     text-decoration: none;
+    position: relative;
 }
 
 .each-brand-logo {
@@ -360,7 +377,8 @@ footer.footer-lists a {
 /* 481-768: tablets & lager smartphones */
 @media (min-width:481px) {
     .main-ofert-article {
-        max-width: 360px;
+        max-width: 300px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
 
     .main-ofert h2 {
@@ -368,17 +386,16 @@ footer.footer-lists a {
         margin-bottom: 10px;
     }
 
-    .header-top-section{
+    .header-top-section {
         justify-content: space-around;
     }
 
-    .logo-main{
+    .logo-main {
         width: 30vw;
     }
 
     .search-bar {
         width: 60vw;
-        padding-top: 20px;
         box-sizing: border-box;
     }
 
@@ -389,7 +406,32 @@ footer.footer-lists a {
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
-@media (min-width:769px) {}
+@media (min-width:769px) {
+    
+    
+    .first-menu {
+        display: flex;
+    }
+
+    .second-menu {
+        display: flex;
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .shopping-cart {
+        position: relative;
+        align-items: center;
+        margin-top: 20px;
+    }
+}
 
 /* 1280 + ...: Larger desktops and monitors */
-@media (min-width:1280px) {}
+@media (min-width:1280px) {
+
+    .search-bar{
+        margin-top: 34px;
+    }
+}
