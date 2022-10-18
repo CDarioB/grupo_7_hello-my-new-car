@@ -131,21 +131,30 @@ main {
 
 .main-article-content {
     padding: 5px 0 5px 5px;
+    box-shadow: 0 0 6px black
 }
 
 .main-article-title {
     font-weight: bold;
+    
 }
 
 article {
     width: 90%;
     margin-top: 10px;
+    box-shadow: 0 0 6px black
 }
 
 .main-ofert-article img {
     width: 60vw;
     max-width: 300px;
+    box-shadow: 0 0 6px black
 }
+.main-ofert-article img:hover{
+    filter: blur(2px);
+    transform: rotate(6deg) scale(1.0);
+}
+
 
 .product-detail {
     /*display: flex;
@@ -410,6 +419,18 @@ footer.footer-lists a {
         width: 400px;
         max-width: 85%;
     }
+    .LoginForm{
+        padding: 0 20% 0 20%;
+    }
+
+    .CreateAccount{
+        padding: 0 20% 0 20%;
+    }
+
+    .AccountRecover{
+        padding: 0 20% 0 20%;
+    }
+
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
@@ -435,6 +456,18 @@ footer.footer-lists a {
         align-items: center;
         margin-top: 20px;
     }
+    .LoginForm{
+        padding: 0 25% 0 25%;
+    }
+
+    .CreateAccount{
+        padding: 0 25% 0 25%;
+    }
+
+    .AccountRecover{
+        padding: 0 25% 0 25%;
+    }
+
 }
 
 /* 1280 + ...: Larger desktops and monitors */
@@ -443,4 +476,16 @@ footer.footer-lists a {
     .search-bar {
         margin-top: 34px;
     }
+    .LoginForm{
+        padding: 0 30% 0 30%;
+    }
+
+    .CreateAccount{
+        padding: 0 30% 0 30%;
+    }
+
+    .AccountRecover{
+        padding: 0 30% 0 30%;
+    }
+
 }
