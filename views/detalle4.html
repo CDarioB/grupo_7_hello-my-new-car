@@ -8,19 +8,52 @@
     <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
     <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
     <link href="/css/detalles.css" rel="stylesheet" />
     <title>Detalle del Producto </title>
 </head>
 <body>
     <header>
-        <div class="logo-main" alt="Hello My New Car">
-          <img src="img/Logo.png" />
-        </div>
-    
-        <div class="buscador">
-          <input type="text" value="Buscar modelos, marcas" size="30">
-          <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-        </div>
+        <div class="header-top-section">
+            <div class="logo-main" alt="Hello My New Car">
+              <img class="Logo" src="img/logo2.png" alt="Hello My New Car" />
+            </div>
+      
+            <div class="search-bar">
+              <input type="text" value="Buscar modelos, marcas" size="30">
+              <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
+            </div>
+            <div class="shopping-cart">
+              <i class="fa-solid fa-cart-shopping fa-xl"></i>
+            </div>
+          </div>
+      
+          <div class="header-menu">
+            <div class="first-menu">
+              <nav>
+                <ul>
+                  <li><a href='#' class="lista">Ofertas</a></li>
+                  <li><a href='#' class="lista">Comprá tu auto</a></li>
+                  <li><a href='#' class="lista">Vendé tu auto</a></li>
+                  <li><a href='#' class="lista">Ayuda</a></li>
+                </ul>
+              </nav>
+            </div>
+      
+            <div class="second-menu">
+              <nav>
+                <ul>
+                  <li><a href='/register' class="lista">Creá tu cuenta </a></li>
+                  <li><a href='/login' class="lista">Ingresá</a></li>
+                  <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
+                </ul>
+              </nav>
+      
+            </div>
+            <div class="burger-menu">
+              <i class="fas fa-bars fa-xl"></i>
+            </div>
+          </div>
     
         <h1> Galeria De imágenes</h1>
         <h2> Ford Mustang 5.0</h2>
@@ -77,21 +110,94 @@
     
         <a href="/" class="boton-inicio">Regresar</a>
       </header>
+      <h2>Caracteristicas</h2>
       <section class="descripcion">
-        <div>
-            <h2>Caracteristicas</h2>
-            
-                <ul class="first">
-                    <li> Modelo</li> 
-                    <li> Año</li> 
-                    <li> Cilindraje</li>
-                    <li> Caballos de Fuerza</li>
-                    <li> Kilometraje</li>
-                    <li> Ubicación</li>
-                </ul>
+        
             
 
-     </div>
+            <ul class="first">
+                <li> Modelo</li> <br> 
+                <li> Año</li> <br> 
+                <li> Cilindraje</li> <br> 
+                <li> Caballos de Fuerza</li> <br> 
+                <li> Kilometraje</li> <br> 
+                <li> Ubicación</li> <br> 
+            </ul>
+
+            <ul class="second">
+                <li>Ford Ranger Limited</li> <br>
+                <li>2018</li> <br>
+                <li>3.200 cc</li> <br>
+                <li>211 hp</li> <br>
+                <li>102.384 Km</li> <br>
+                <li>Córdoba</li> <br>
+            </ul>
+
+     
     </section>
-</body>
-</html>
+    <section>
+        <div class="main-brands">
+          <h2 class="title">Nuestras marcas destacadas</h2>
+          <div class="main-carlogo-brands">
+            <div class="each-brand-logo">
+              <a href="#" class="">
+                <img src="img/Audi.png">
+                <br class="main-carlogo-name">Audi</span>
+              </a>
+            </div>
+            <div class="each-brand-logo">
+              <a href="#" class="">
+                <img src="img/BMW.png">
+                <br class="main-carlogo-name">BMW</span>
+              </a>
+            </div>
+            <div class="each-brand-logo">
+              <a href="#" class="">
+                <img src="img/Ford.png">
+                <br class="main-carlogo-name">Ford</span>
+              </a>
+            </div>
+            <div class="each-brand-logo">
+              <a href="#" class="">
+                <img src="img/Kia.png">
+                <br class="main-carlogo-name">Kia</span>
+              </a>
+            </div>
+            <div class="each-brand-logo">
+              <a href="#" class="">
+                <img src="img/Chevrolet.png">
+                <br class="main-carlogo-name">Chevrolet</span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+  
+    <footer>
+      <div class="footer-lists">
+        <div class="first-footer-list">
+          <nav>
+            <ul>
+              <li><a href='#' class="lista">Comprá tu auto</a></li>
+              <li><a href='#' class="lista">Vendé tu auto</a></li>
+              <li><a href='#' class="lista">Financiamiento</a></li>
+            </ul>
+          </nav>
+        </div>
+        <div class="second-footer-list">
+          <ul>
+            <li><a href='#' class="list">Preguntas Frecuentes</a></li>
+            <li><a href='#' class="list">Contacto</a></li>
+            <li><a href='#' class="list">Trabajá con nosotros</a></li>
+          </ul>
+          </nav>
+        </div>
+      </div>
+      <div class="copyrigth">
+        <p>Copyright ©2022 HelloCar S.R.L.</p>
+      </div>
+    </footer>
+  </body>
+  
+  </html>

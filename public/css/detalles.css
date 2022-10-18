@@ -6,7 +6,7 @@
 
 body{
     font-family: "Roboto", sans-serif;
-    background-color: black;
+    background-color: #25275910;
 }
 
 h1{
@@ -14,14 +14,14 @@ h1{
     text-align: center;
     padding: 20px 0;
     font-size: 40px;
-    color: #fff;
+    color: #0D0D0D;
 }
 h2{
     font-weight: 400;
     text-align: center;
     padding: 20px 0;
     font-size: 40px;
-    color: #fff;
+    color: #0D0D0D;
 }
 .linea{
     background: rgb(59, 173, 255);
@@ -130,20 +130,41 @@ h2{
 }
 .descripcion{
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    flex-direction: row;
+    align-content: center;
+    align-items: center;
+    
 }
+
 .first{
-    color: #fff;
-    flex-wrap: row;
-    height: 48vh;
-    width: 48vw;
+    height: 40%;
+    width: 40%;
+    color: #0D0D0D;
+    align-content: space-around;
+    list-style: none;
+    
 }
 .second{
+    height: 40%;
+    width: 40%;
+    color: #0D0D0D;
+    align-content: space-around;
+    list-style: none;
+    
+}
+.first li{
+    
+    text-align: center;
+    
+}
+.second li{
+    
+    text-align: center;
+}
+footer{
     color: #fff;
-    flex-wrap: row;
-    height: 48vh;
-    width: 48vw;
 }
 
 @media screen and(max-width:400px) {
