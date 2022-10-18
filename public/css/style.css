@@ -155,23 +155,22 @@ p.main-discount {
 
 /* ***** footer config ***** */
 footer {
-    width: 90vw;
-    background-color: white;
-    color: #666;
+    background-color: #1E2040;
+    color: #FFF;
     text-align: center;
     padding: 0px;
-    padding: 50px 50px 10px 50px;
+    padding: 20px;
     margin: 0px;
 }
 
 .footer-menu{
    
     display: flex;
-        justify-content: space-between;
-        max-width: 80%;
-        align-items: center;
-        text-align: right;
-        margin: start;
+    justify-content: space-between;
+    max-width: 80%;
+    align-items: center;
+    text-align: right;
+    margin: start;
 }
 
 .first-footer-list a{
@@ -193,6 +192,7 @@ footer {
     text-decoration: none;
     text-align: right;
 }
+
 
 .copyrigth {
     font-size: 12px;
