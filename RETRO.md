@@ -15,4 +15,36 @@
 #### ***Less Of:***
 * Procrastinar.
 
+## Restropectiva - Spring 2: 
 
+#### ***Start Doing:***
+* 
+
+#### ***Stop Doing:***
+* 
+
+#### ***More of:*** 
+* 
+
+#### ***keep Doing:***
+* 
+
+#### ***Less Of:***
+* 
+
+## Restropectiva - Spring 3: 
+
+#### ***Start Doing:***
+* 
+
+#### ***Stop Doing:***
+* 
+
+#### ***More of:*** 
+* 
+
+#### ***keep Doing:***
+* 
+
+#### ***Less Of:***
+* 
