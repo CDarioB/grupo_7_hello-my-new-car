@@ -14,50 +14,7 @@
 </head>
 
 <body>
-  <header>
-    <div class="header-top-section">
-      <div class="logo-main" alt="Hello My New Car">
-        <img class="logo" src="img/logo.png" alt="Hello My New Car" />
-      </div>
-
-      <div class="search-bar">
-        <input type="text" value="Buscar modelos, marcas" size="30">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
-      <div class="shopping-cart">
-        <a href="/cart"><i class="fa-solid fa-cart-shopping fa-xl"></a></i>
-      </div>
-    </div>
-    <div class="header-menu">
-      <div class="first-menu">
-        <nav>
-          <ul>
-            <li><a href='#' class="lista">Ofertas</a></li>
-            <li><a href='#' class="lista">Comprá tu auto</a></li>
-            <li><a href='#' class="lista">Vendé tu auto</a></li>
-            <li><a href='#' class="lista">Ayuda</a></li>
-          </ul>
-        </nav>
-      </div>
-
-      <div class="second-menu">
-        <nav>
-          <ul>
-            <li><a href='/register' class="lista">Creá tu cuenta </a></li>
-            <li><a href='/login' class="lista">Ingresá</a></li>
-            <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
-          </ul>
-        </nav>
-
-      </div>
-      <div class="burger-menu">
-        <i class="fas fa-bars fa-xl"></i>
-      </div>
-    </div>
-
-
-  </header>
-
+  <%-include('./partials/index/header.ejs') %>
   <main>
     <div class="home-top-banner"><img src="img/HomeTopBanner.jpg" alt=""></div>
     <section>
@@ -72,7 +29,7 @@
               <p class="main-price">$37.500</p>
               <p class="main-discount">15%</p>
               <p class="main-discountprice">$31.875</p>
-              <a href="/detalleDelProducto"> Ver más <br></a>
+              <a href="/productos/detalle/1"> Ver más <br></a>
             </div>
           </div>
         </article>
@@ -86,7 +43,7 @@
               <p class="main-price">$95.000</p>
               <p class="main-discount">10%</p>
               <p class="main-discountprice">$85.500</p>
-              <a href="/detalle2"> Ver más <br></a>
+              <a href="/productos/detalle/2"> Ver más <br></a>
             </div>
           </div>
         </article>
@@ -100,7 +57,7 @@
               <p class="main-price">$10.000</p>
               <p class="main-discount">5%</p>
               <p class="main-discountprice">$9.500</p>
-              <a href="/detalle3"> Ver más <br></a>
+              <a href="/productos/detalle/3"> Ver más <br></a>
             </div>
           </div>
         </article>
@@ -113,7 +70,7 @@
               <p class="main-price">$25.000</p>
               <p class="main-discount">7%</p>
               <p class="main-discountprice">$23.250</p>
-              <a href="/detalle4"> Ver más <br></a>
+              <a href="/productos/detalle/4"> Ver más <br></a>
             </div>
           </div>
         </article>
@@ -158,30 +115,7 @@
     </section>
   </main>
 
-  <footer>
-    <div class="footer-lists">
-      <div class="first-footer-list">
-        <nav>
-          <ul>
-            <li><a href='#' class="lista">Comprá tu auto</a></li>
-            <li><a href='#' class="lista">Vendé tu auto</a></li>
-            <li><a href='#' class="lista">Financiamiento</a></li>
-          </ul>
-        </nav>
-      </div>
-      <div class="second-footer-list">
-        <ul>
-          <li><a href='#' class="list">Preguntas Frecuentes</a></li>
-          <li><a href='#' class="list">Contacto</a></li>
-          <li><a href='#' class="list">Trabajá con nosotros</a></li>
-        </ul>
-        </nav>
-      </div>
-    </div>
-    <div class="copyrigth">
-      <p>Copyright ©2022 HelloCar S.R.L.</p>
-    </div>
-  </footer>
+  <%-include('./partials/index/footer.ejs') %>
 </body>
 
 </html>

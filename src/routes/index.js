@@ -1,17 +1,17 @@
-const EXPRESS = require ("express"); 
-const PATH = require ("path"); 
-const APP = EXPRESS();
-const PUBLIC_PATH = PATH.join(__dirname, "./public");
-APP.use(EXPRESS.static(PUBLIC_PATH));
+var express = require('express');
+var ROUTER = express.Router();
+let indexController = require('../controllers/indexController.js');
 
-APP.get("/", (req, res) => {
-    res.sendFile(PATH.join(__dirname , "./src/views/home.html"))
-});
+ROUTER.get('/', indexController.home);
 
-APP.get("/register", (req, res) => {
-    res.sendFile(PATH.join(__dirname , "./src/views/register.html"))
-});
+ROUTER.get('/login', indexController.login);
 
-APP.get("/login", (req, res) => {
-    res.sendFile(PATH.join(__dirname , "./src/views/login.html"))
-});
+ROUTER.get('/register', indexController.register);
+
+ROUTER.get('/recovery', indexController.recovery);
+
+ROUTER.get('/cart', indexController.cart);
+
+ROUTER.get('/favoritos', indexController.favoritos);
+
+module.exports = ROUTER;

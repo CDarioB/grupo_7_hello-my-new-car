@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <title>Iniciar sesión</title>
+  </head>
+
+<%-include('./partials/index/header.ejs') %>
+<body>
+    <main>
+      <form action="/" method="GET" class="LoginForm">
+        <div class="TopContainer">
+          <h3>¡Bienvenido!</h3>
+        </div>
+        <div class="FormItem">
+          <label for="nombre-usuario">Usuario / E-mail:</label>
+          <input type="text" name="nombre-usuario" placeholder="Nombre de usuario" class="InputControl" />
+        </div>
+        <div class="FormItem">
+          <label for="password">Contraseña:</label>
+          <input type="password" name="password" placeholder="Contraseña" class="InputControl" />
+        </div>
+        <div>
+          <button type="submit" class="SubmitBotton">Login</button>
+        </div>
+        <div class="FormItemLink">
+          <a href="/recuperar-cuenta">¿Olvidaste tu contraseña?</a>
+          <a href="/register">Creá tu cuenta</a>
+        </div>
+      </form>
+    </main>
+    <%-include('./partials/index/footer.ejs') %>
+</body>
+</html>
