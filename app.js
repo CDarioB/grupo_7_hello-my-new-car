@@ -38,3 +38,7 @@ APP.get("/recuperar-cuenta", (req, res) => {
     res.sendFile(PATH.resolve(__dirname, "./src/views/account-recover.html"))
 });
 
+APP.get("/cart", (req, res) => {
+    res.sendFile(PATH.resolve(__dirname, "./src/views/carritoDeCompra.html"))
+});
+
