@@ -6,54 +6,15 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
-    <link href="../../public/css/normalize.css" rel="stylesheet" />
-    <link href="../../public/css/detalles.css" rel="stylesheet" />
-    <link href="../../public/css/style.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/detalles.css" rel="stylesheet" />
     <title>Detalle de compra</title>
   </head>
-  <header>
-    <div class="header-top-section">
-      <a href="/">
-        <div class="logo-main" alt="Hello My New Car">
-          <img class="logo" src="../../public/img/logo.png" alt="Hello My New Car" />
-        </div>
-      </a>
-      <div class="search-bar">
-        <input type="text" value="Buscar modelos, marcas" size="30">
-        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
-      </div>
-      <div class="shopping-cart">
-        <a href="/cart"><i class="fa-solid fa-cart-shopping fa-xl"></a></i>
-      </div>
-    </div>
-    <div class="header-menu">
-      <div class="first-menu">
-        <nav>
-          <ul>
-            <li><a href='#' class="lista">Ofertas</a></li>
-            <li><a href='#' class="lista">Comprá tu auto</a></li>
-            <li><a href='#' class="lista">Vendé tu auto</a></li>
-            <li><a href='#' class="lista">Ayuda</a></li>
-          </ul>
-        </nav>
-      </div>
-  
-      <div class="second-menu">
-        <nav>
-          <ul>
-            <li><a href='/register' class="lista">Creá tu cuenta </a></li>
-            <li><a href='/login' class="lista">Ingresá</a></li>
-            <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
-          </ul>
-        </nav>
-  
-      </div>
-      <div class="burger-menu">
-        <i class="fas fa-bars fa-xl"></i>
-      </div>
-    </div>
-  </header>
   <body>
+    <%-include('./partials/header.ejs') %>
     <% if(id==1){ %>
       <%-include('./partials/detalle/detalle1.ejs'); %>
     <% }else if(id==2){%>
@@ -66,6 +27,6 @@
       <%-include('./partials/detalle/detallenull.ejs'); %>
     <% }%>
 
-    <%-include('./partials/index/footer.ejs'); %>
+    <%-include('./partials/footer.ejs'); %>
   </body>
 </html>

@@ -1,0 +1,51 @@
+.title-index-prod-form{
+    font-size: x-large;
+    text-align: center;
+}
+
+.des-index-prod-form{
+    font-size: large;
+    text-align: center;
+}
+
+.contenedor-botones-index-prod{
+    text-align:center;
+}
+
+.boton-crear{
+    width: 15vh;
+    height: 5vh;
+    margin: 1%; 
+    font-family: 'Roboto', sans-serif;
+    font-size:medium;
+    font-weight:normal;
+    cursor:pointer;
+    transition: .3s ease all;
+    border-radius: 5px;
+    position: relative;
+}
+
+.boton-modificar{
+    width: 15vh;
+    height: 5vh;
+    margin: 1%; 
+    font-family: 'Roboto', sans-serif;
+    font-size:medium;
+    font-weight:normal;
+    cursor:pointer;
+    transition: 1s ease all;
+    border-radius: 5px;
+    position: relative;
+}
+
+.boton-crear:hover {
+    background: greenyellow;
+}
+
+.boton-modificar:hover {
+    background: goldenrod;
+}
+
+.container-crear{
+    text-align:center;
+}

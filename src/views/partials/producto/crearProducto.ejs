@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/productos.css" rel="stylesheet" />
+    <title>Crear producto</title>
+</head>
+<%-include('../header.ejs') %>
+<body>
+<br>
+<div class="container-crear">
+    <p class="title-crear">Crea un producto que desees vender</p>
+    <p class="des-crear">Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
+    <br>
+    <form action="/crear" method="POST">
+        <label class="">¿Cuál es el referencia del vehículo?</label>
+        <input type="text" name="refCar">
+        <br>
+        <label class="">¿Cuál es la marca del vehículo?</label>
+        <input type="text" name="marcaCar">
+        <br>
+        <label class="">¿En qué ciudad de Argentina se encuentra ubicado el vehículo?</label>
+        <input type="text" name="ubicacionCar">
+        <br>
+        <label class ="">Selecciona la categoría del vehículo que quieres vender: </label>
+        <select categoria="auto">
+            <option value="Camioneta">Camioneta</option>
+            <option value="Automovil">Automovil</option>
+            <option value="Deportivo">Deportivo</option>
+        </select>
+        <br>
+        <label class ="">Selecciona la categoría del vehículo que quieres vender: </label>
+        <select categoria="modelo">
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+        <br>
+        <label class="">¿Cuanto kilometraje tiene el vehículo (ingrese únicamente un valor entero en KM)? </label>
+        <input type="text" name="kilometrajeCar">
+        <br>
+        <label class="">¿Por cuanto dinero quiere vender el vehículo en ($ARS)? </label>
+        <input type="text" name="kilometrajeCar">
+        <br>
+        <label>Adjunte las imagenes que quiere colocar del vehículo para su venta: </label>
+        <input type="file" name="imagesCar" accept=".jpg .png .jpeg" multiple>
+        <br>
+        <input type="submit" value="Enviar">
+</div>
+</form>
+
+<%-include('../footer.ejs') %>
+</body>
+</html>

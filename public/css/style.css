@@ -151,7 +151,6 @@ article {
     box-shadow: 0 0 6px black
 }
 .main-ofert-article img:hover{
-    filter: blur(2px);
     transform: rotate(6deg) scale(1.0);
 }
 
@@ -283,6 +282,8 @@ footer.footer-lists a {
     display: flex;
     flex-direction: column;
     width: 50vw;
+    text-align: center;
+    padding-left: 20vh;
 
 }
 
@@ -290,10 +291,17 @@ footer.footer-lists a {
     display: flex;
     flex-direction: column;
     width: 50vw;
+    padding-left: 50vh;
+
 }
 
+.lista {
+    font-size: 15px;
+    text-align:justify;
+    text-justify: justify;
+}
 .copyrigth {
-    font-size: 12px;
+    font-size: 15px;
     padding-top: 20px;
     padding-bottom: 0px;
     margin: 10px;

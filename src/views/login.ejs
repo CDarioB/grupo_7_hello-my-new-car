@@ -10,7 +10,7 @@
     <title>Iniciar sesión</title>
   </head>
 
-<%-include('./partials/index/header.ejs') %>
+<%-include('./partials/header.ejs') %>
 <body>
     <main>
       <form action="/" method="GET" class="LoginForm">
@@ -29,11 +29,11 @@
           <button type="submit" class="SubmitBotton">Login</button>
         </div>
         <div class="FormItemLink">
-          <a href="/recuperar-cuenta">¿Olvidaste tu contraseña?</a>
+          <a href="/recovery">¿Olvidaste tu contraseña?</a>
           <a href="/register">Creá tu cuenta</a>
         </div>
       </form>
     </main>
-    <%-include('./partials/index/footer.ejs') %>
+    <%-include('./partials/footer.ejs') %>
 </body>
 </html>

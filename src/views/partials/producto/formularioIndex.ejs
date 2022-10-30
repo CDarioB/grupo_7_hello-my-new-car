@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/productos.css" rel="stylesheet" />
+    <title>Indice de productos</title>
+</head>
+<%-include('../header.ejs') %>
+<body>
+
+<br>
+
+<p class="title-index-prod-form">Bienvenido Alberto, estás logueado como ADMINISTRADOR <br>
+</p>
+<p class="des-index-prod-form">
+    ¿Qué deseas hacer?
+</p>
+
+<br><br>
+
+
+<div class="contenedor-botones-index-prod">
+    <div>
+    <a href="/productos/crear"><button  class="boton-crear"><span>Crea un producto</span></button></a>
+    </div>
+    <div>
+    <a href="/productos/modificar"><button class="boton-modificar"><span>Modificá un producto</span></button></a>
+    </div>
+</div>
+
+
+<br><br>
+<%-include('../footer.ejs') %>
+</body>
+</html>
