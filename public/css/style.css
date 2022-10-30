@@ -22,9 +22,6 @@ header {
 
 }
 
-
-
-
 .home-top-banner {
     width: 90vw;
     display: block;
@@ -411,6 +408,18 @@ footer.footer-lists a {
         width: 400px;
         max-width: 85%;
     }
+
+    .LoginForm{
+        padding: 0 20% 0 20%;
+    }
+
+    .CreateAccount{
+        padding: 0 20% 0 20%;
+    }
+
+    .AccountRecover{
+        padding: 0 20% 0 20%;
+    }
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
@@ -436,6 +445,18 @@ footer.footer-lists a {
         align-items: center;
         margin-top: 20px;
     }
+
+    .LoginForm{
+        padding: 0 25% 0 25%;
+    }
+
+    .CreateAccount{
+        padding: 0 25% 0 25%;
+    }
+
+    .AccountRecover{
+        padding: 0 25% 0 25%;
+    }
 }
 
 /* 1280 + ...: Larger desktops and monitors */
@@ -443,5 +464,17 @@ footer.footer-lists a {
 
     .search-bar {
         margin-top: 34px;
+    }
+
+    .LoginForm{
+        padding: 0 30% 0 30%;
+    }
+
+    .CreateAccount{
+        padding: 0 30% 0 30%;
+    }
+
+    .AccountRecover{
+        padding: 0 30% 0 30%;
     }
 }
