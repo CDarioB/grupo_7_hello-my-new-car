@@ -1,57 +1,108 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link href="/css/normalize.css" rel="stylesheet" />
-    <link href="/css/style.css" rel="stylesheet" />
-    <title>Home - Proyecto Integrador</title>
-  </head>
 
-  <body>
-    <header>
-      <div class="LogoContainer">
-        <img class="Logo" src="img/logo2.png" alt="Imagen Logo" />
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+  <link href="/css/normalize.css" rel="stylesheet" />
+  <link href="/css/style.css" rel="stylesheet" />
+  <title>Iniciar sesión</title>
+</head>
+
+<body>
+  <header>
+    <div class="header-top-section">
+      <a href="/">
+        <div class="logo-main" alt="Hello My New Car">
+          <img class="logo" src="img/logo2.png" alt="Hello My New Car" />
+        </div>
+      </a>
+      <div class="search-bar">
+        <input type="text" value="Buscar modelos, marcas" size="30">
+        <button type="submit"><i class="fa-solid fa-magnifying-glass"></i></button>
       </div>
-      <h4>Hola Mundo - header body</h4>
-    </header>
+      <div class="shopping-cart">
+        <a href="/cart"><i class="fa-solid fa-cart-shopping fa-xl"></a></i>
+      </div>
+    </div>
+    <div class="header-menu">
+      <div class="first-menu">
+        <nav>
+          <ul>
+            <li><a href='#' class="lista">Ofertas</a></li>
+            <li><a href='#' class="lista">Comprá tu auto</a></li>
+            <li><a href='#' class="lista">Vendé tu auto</a></li>
+            <li><a href='#' class="lista">Ayuda</a></li>
+          </ul>
+        </nav>
+      </div>
 
-    <main>
-      <form action="/" method="GET" class="LoginForm">
-        <div class="TopContainer">
-          <h3>¡Bienvenido!</h3>
-        </div>
-        <div class="FormItem">
-          <label for="nombre-usuario">Usuario / E-mail:</label>
-          <input
-            type="text"
-            name="nombre-usuario"
-            placeholder="Nombre de usuario"
-            class="InputControl"
-          />
-        </div>
-        <div class="FormItem">
-          <label for="password">Contraseña:</label>
-          <input
-            type="password"
-            name="password"
-            placeholder="Contraseña"
-            class="InputControl"
-          />
-        </div>
-        <div>
-          <button type="submit" class="SubmitBotton">Login</button>
-        </div>
-        <div class="FormItemLink">
-          <a href="#">¿Olvidaste tu contraseña?</a>
-          <a href="/views/register.html">Crea tu cuenta</a>
-        </div>
-      </form>
-    </main>
+      <div class="second-menu">
+        <nav>
+          <ul>
+            <li><a href='/register' class="lista">Creá tu cuenta </a></li>
+            <li><a href='/login' class="lista">Ingresá</a></li>
+            <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
+          </ul>
+        </nav>
 
-    <footer>
-      <h4>Hola Mundo - footer body</h4>
-    </footer>
-  </body>
+      </div>
+      <div class="burger-menu">
+        <i class="fas fa-bars fa-xl"></i>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <form action="/" method="GET" class="LoginForm">
+      <div class="TopContainer">
+        <h3>¡Bienvenido!</h3>
+      </div>
+      <div class="FormItem">
+        <label for="nombre-usuario">Usuario / E-mail:</label>
+        <input type="text" name="nombre-usuario" placeholder="Nombre de usuario" class="InputControl" />
+      </div>
+      <div class="FormItem">
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" placeholder="Contraseña" class="InputControl" />
+      </div>
+      <div>
+        <button type="submit" class="SubmitBotton">Login</button>
+      </div>
+      <div class="FormItemLink">
+        <a href="/recuperar-cuenta">¿Olvidaste tu contraseña?</a>
+        <a href="/register">Creá tu cuenta</a>
+      </div>
+    </form>
+  </main>
+
+  <footer>
+    <div class="footer-lists">
+      <div class="first-footer-list">
+        <nav>
+          <ul>
+            <li><a href='#' class="lista">Comprá tu auto</a></li>
+            <li><a href='#' class="lista">Vendé tu auto</a></li>
+            <li><a href='#' class="lista">Financiamiento</a></li>
+          </ul>
+        </nav>
+      </div>
+      <div class="second-footer-list">
+        <nav>
+          <ul>
+            <li><a href='#' class="list">Preguntas Frecuentes</a></li>
+            <li><a href='#' class="list">Contacto</a></li>
+            <li><a href='#' class="list">Trabajá con nosotros</a></li>
+          </ul>
+        </nav>
+      </div>
+    </div>
+    <div class="copyrigth">
+      <p>Copyright ©2022 HelloCar S.R.L.</p>
+    </div>
+  </footer>
+</body>
+
 </html>

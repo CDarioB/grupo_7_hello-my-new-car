@@ -21,9 +21,20 @@ APP.get("/login", (req, res) => {
 });
 
 APP.get("/detalleDelProducto", (req, res) => {
-    res.sendFile(PATH.join(__dirname , "./detalleDelProducto.html"))
+    res.sendFile(PATH.join(__dirname , "./views/detalleDelProducto.html"))
 });
 
+APP.get("/detalle2", (req, res) => {
+    res.sendFile(PATH.join(__dirname , "./views/detalle2.html"))
+});
+
+APP.get("/detalle3", (req, res) => {
+    res.sendFile(PATH.join(__dirname , "./views/detalle3.html"))
+});
+
+APP.get("/detalle4", (req, res) => {
+    res.sendFile(PATH.join(__dirname , "./views/detalle4.html"))
+});
 APP.get("/recuperar-cuenta", (req, res) => {
     res.sendFile(PATH.resolve(__dirname, "./views/account-recover.html"))
 });

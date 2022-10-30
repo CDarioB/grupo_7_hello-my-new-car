@@ -1,13 +1,6 @@
-
-PaletaColores{
+PaletaColores {
     color:
-    #252759
-    #25275910
-    #1E2040
-    #D90404
-    #BF0404
-    #0D0D0D
-    #FFF;
+        #252759 #25275910 #1E2040 #D90404 #BF0404 #0D0D0D #FFF;
 }
 
 * {
@@ -26,14 +19,10 @@ body {
 header {
     width: 100vw;
     background-color: #FFF;
-    /*Fondo amarillo en todo el Header*/
+
 }
 
-.search {
-    max-width: 45vw;
-    position: relative;
-    text-align: center;
-}
+
 
 
 .home-top-banner {
@@ -43,7 +32,81 @@ header {
 }
 
 .home-top-banner img {
-    width: 90vw;
+    width: 95vw;
+}
+
+.search-bar {
+    max-width: 45vw;
+    position: relative;
+    margin-top: 15px
+}
+
+.search-bar input {
+    max-width: 85%;
+    height: 30px;
+    box-shadow: 0px 0px 1px rgb(100, 100, 100);
+    border-color: #25275910
+}
+
+.header-top-section {
+    display: flex;
+}
+
+.logo {
+    width: 60%;
+    max-width: 160px;
+    margin: 10px;
+    box-sizing: content-box;
+}
+
+.shopping-cart a {
+    padding: 20px;
+    color: #1E2040;
+    display: flex;
+}
+
+
+
+.title {
+    display: block;
+    margin: 20px 0 10px 0;
+    text-align: center;
+}
+
+.header-menu {
+    display: flex;
+    justify-content: space-around;
+    padding: 5px 0 5px 0;
+    background-color: #1E2040;
+}
+
+.first-menu {
+    display: none;
+}
+
+.second-menu {
+    display: none;
+}
+
+.header-menu a {
+    text-decoration: none;
+    color: white;
+    padding-left: 5px;
+}
+
+.header-menu ul {
+    list-style: none;
+
+}
+
+.header-menu li {
+    display: inline;
+    margin: 5px 5px 0 5px;
+}
+
+.burger-menu {
+    color: #fff;
+    padding: 5px;
 }
 
 /* *** end header config *** */
@@ -55,16 +118,23 @@ main {
     margin: auto;
 }
 
-.Logo{
-    width: 30%;
-}
 
-section .main-ofert {
+
+.main-ofert {
     display: flex;
     flex-wrap: wrap;
     justify-content: space-around;
     align-items: center;
-    background-color: white;
+    background-color: #FFF;
+    margin: 30px 0 10px 0;
+}
+
+.main-article-content {
+    padding: 5px 0 5px 5px;
+}
+
+.main-article-title {
+    font-weight: bold;
 }
 
 article {
@@ -88,14 +158,14 @@ article {
     margin: 0px;
 }
 
-.CheckboxContainer{
+.CheckboxContainer {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     margin-top: 10px;
 }
 
-.CheckControl{
+.CheckControl {
     width: 15px;
     margin-right: 3px;
 }
@@ -111,6 +181,7 @@ p.main-discountprice {
     font-size: 16px;
     margin: 0;
     flex: 30 0 0;
+    font-weight: bold   ;
 }
 
 p.main-discount {
@@ -120,36 +191,36 @@ p.main-discount {
     flex: 70 0 0;
 }
 
-.main-brands{
+.main-brands {
     background-color: rgb(242, 244, 246);
+    margin: 30px 0px 30px 0;
 }
 
 .main-carlogo-brands {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
-}
-
-.main-carlogo-brands{
-    display: block;
     box-sizing: border-box;
-    margin: 0 10px 0 10px;
+    margin: 10px 0 0 0;
+    width: 95vw;
 }
 
-.main-carlogo-name{
+.main-carlogo-name {
     font-weight: 700;
-    color:rgb(71, 117, 252);
+    color: rgb(71, 117, 252);
     text-decoration: none;
+    position: relative;
 }
 
-.each-brand-logo{
+.each-brand-logo {
     display: block;
     text-align: center;
     position: relative;
-    
-    
+
+
 
 }
+
 /* **** end main config **** */
 /* ************************* */
 
@@ -161,10 +232,19 @@ footer {
     padding: 0px;
     padding: 20px;
     margin: 0px;
+    background-color: #1E2040;
 }
 
-.footer-menu{
-   
+footer.footer-lists ul {
+    list-style: none;
+}
+
+footer.footer-lists a {
+    text-decoration: none;
+    color: #fff
+}
+
+.footer-menu {
     display: flex;
     justify-content: space-between;
     max-width: 80%;
@@ -173,24 +253,34 @@ footer {
     margin: start;
 }
 
-.first-footer-list a{
+.footer-lists {
+    display: flex;
+}
+
+.footer-lists ul {
+    display: flex;
+    list-style: none;
+    flex-direction: column;
+    align-items: flex-start;
+}
+
+.footer-lists a {
     text-decoration: none;
     text-align: left;
+    color: #fff;
 }
 
-.first-footer-list li{
-    text-decoration: none;
-    text-align: left;
+.first-footer-list {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
+
 }
 
-.second-footer-list a{
-    text-decoration: none;
-    text-align: right;
-}
-
-.second-footer-list li{
-    text-decoration: none;
-    text-align: right;
+.second-footer-list {
+    display: flex;
+    flex-direction: column;
+    width: 50vw;
 }
 
 
@@ -207,15 +297,15 @@ footer {
 
 /* ****** form config ****** */
 
-.CreateAccount{
+.CreateAccount {
     padding: 15px;
 }
 
-.LoginForm{
+.LoginForm {
     padding: 15px;
 }
 
-.TopContainer{
+.TopContainer {
     text-align: center;
     padding: 20px;
     display: flex;
@@ -223,31 +313,31 @@ footer {
     row-gap: 10px;
 }
 
-.TopContainer h3{
+.TopContainer h3 {
     text-align: center;
     color: #252759;
     font-size: 20px;
 }
 
-.FormItem{
+.FormItem {
     margin-bottom: 15px;
 }
 
-.FormItem label{
+.FormItem label {
     margin-bottom: 5px;
     font-weight: 800;
     display: block;
     color: #1E2040;
 }
 
-.InputControl{
+.InputControl {
     width: 100%;
     padding: 8px 8px;
     border: none;
     border-radius: 5px;
 }
 
-.SubmitBotton{
+.SubmitBotton {
     width: 100%;
     background-color: #252759;
     border: none;
@@ -258,11 +348,11 @@ footer {
     margin: 3px;
 }
 
-.SubmitBotton:hover{
+.SubmitBotton:hover {
     background-color: #25275910;
 }
 
-.FormItemLink{
+.FormItemLink {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
@@ -271,13 +361,13 @@ footer {
     row-gap: 15px;
 }
 
-.CheckboxContainer{
+.CheckboxContainer {
     padding: 15px;
     display: flex;
     flex-wrap: wrap;
 }
 
-.CheckControl{
+.CheckControl {
     width: 15px;
 }
 
@@ -290,21 +380,68 @@ footer {
 }
 
 /* 0-480: smaller smartphones */
-@media (min-width: 361px) {
-
-}
+@media (min-width: 361px) {}
 
 /* 481-768: tablets & lager smartphones */
 @media (min-width:481px) {
- 
+    .main-ofert-article {
+        max-width: 300px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
+    .main-ofert h2 {
+        align-items: center;
+        margin-bottom: 10px;
+    }
+
+    .header-top-section {
+        justify-content: space-around;
+    }
+
+    .logo-main {
+        width: 30vw;
+    }
+
+    .search-bar {
+        width: 60vw;
+        box-sizing: border-box;
+    }
+
+    .search-bar input {
+        width: 400px;
+        max-width: 85%;
+    }
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
 @media (min-width:769px) {
+    
 
+    .first-menu {
+        display: flex;
+
+    }
+
+    .second-menu {
+        display: flex;
+
+    }
+
+    .burger-menu {
+        display: none;
+    }
+
+    .shopping-cart {
+        position: relative;
+        align-items: center;
+        margin-top: 20px;
+    }
 }
+
 /* 1280 + ...: Larger desktops and monitors */
 @media (min-width:1280px) {
 
- 
+    .search-bar {
+        margin-top: 34px;
+    }
 }
