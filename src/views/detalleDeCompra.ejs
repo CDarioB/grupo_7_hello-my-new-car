@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="/css/normalize.css" rel="stylesheet" />
+    <link href="/css/style.css" rel="stylesheet" />
+    <link href="/css/detalles.css" rel="stylesheet" />
+    <title>Detalle de compra</title>
+  </head>
+  <body>
+    <%-include('./partials/header.ejs') %>
+    <% if(id==1){ %>
+      <%-include('./partials/detalle/detalle1.ejs'); %>
+    <% }else if(id==2){%>
+      <%-include('./partials/detalle/detalle2.ejs'); %>
+    <% }else if(id==3){%>
+      <%-include('./partials/detalle/detalle3.ejs'); %>
+    <% }else if(id==4){%>
+      <%-include('./partials/detalle/detalle4.ejs'); %>
+    <% }else{%>
+      <%-include('./partials/detalle/detallenull.ejs'); %>
+    <% }%>
+
+    <%-include('./partials/footer.ejs'); %>
+  </body>
+</html>

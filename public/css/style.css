@@ -128,21 +128,29 @@ main {
 
 .main-article-content {
     padding: 5px 0 5px 5px;
+    box-shadow: 0 0 6px black
 }
 
 .main-article-title {
     font-weight: bold;
+    
 }
 
 article {
     width: 90%;
     margin-top: 10px;
+    box-shadow: 0 0 6px black
 }
 
 .main-ofert-article img {
     width: 60vw;
     max-width: 300px;
+    box-shadow: 0 0 6px black
 }
+.main-ofert-article img:hover{
+    transform: rotate(6deg) scale(1.0);
+}
+
 
 .product-detail {
     /*display: flex;
@@ -271,6 +279,8 @@ footer.footer-lists a {
     display: flex;
     flex-direction: column;
     width: 50vw;
+    text-align: center;
+    padding-left: 20vh;
 
 }
 
@@ -278,11 +288,17 @@ footer.footer-lists a {
     display: flex;
     flex-direction: column;
     width: 50vw;
+    padding-left: 50vh;
+
 }
 
-
+.lista {
+    font-size: 15px;
+    text-align:justify;
+    text-justify: justify;
+}
 .copyrigth {
-    font-size: 12px;
+    font-size: 15px;
     padding-top: 20px;
     padding-bottom: 0px;
     margin: 10px;
@@ -368,6 +384,130 @@ footer.footer-lists a {
     width: 15px;
 }
 
+/*TODO ESTO ES DEL CARRITO */
+
+.cart .table{
+    margin-bottom: 30px;
+    border-bottom: 1px solid #fff;
+}
+
+.table tr td{
+    padding-right: 200px;
+    padding-left: 200px;
+}
+.text-white{
+    font-size: large;
+}
+.cart .table thead tr th{
+    border-top:0px;
+    font-size:16px;
+    font-weight: bold;
+    border-bottom:0px;
+    padding-right: 50px;
+    padding-left: 50px;
+}
+.cart .table tbody tr td{
+    padding-top:30px;
+    padding-bottom: 30px;
+    vertical-align: middle;
+    align-self: center;
+}
+.cart .table tbody tr td .main .d-flex{
+    padding-right:30px;
+}
+.cart .table tbody tr td .main .d-flex img{
+    border: 2px solid #000;
+    border-radius: 3px;
+}
+.cart .table tbody tr td .main .des{
+    vertical-align: middle;
+    align-self: center;
+}
+.cart .table tbody tr td .main .des p{
+    margin-bottom:0px;
+}
+.cart .table tbody tr td h6{
+    font-size:16px;
+    color:#000;
+    margin-bottom: 0px;
+}
+.cart .table tbody tr td .counter{
+    margin-bottom:0px;
+}
+.counter i{
+    border: 1px solid #000;
+    padding: 2px;
+
+}
+.counter input{
+    width:17px;
+    padding-left:2px;
+    height: 20px;
+    outline:none;
+    box-shadow: none;
+}
+
+
+.input-number{
+    text-align: left;
+}
+
+.checkout ul{
+    border: 2px solid #ebebeb;
+    background: #f3f3f3;
+    padding-left:25px;
+    padding-right:25px;
+    padding-top:16px;
+    padding-bottom: 20px;
+}
+.checkout ul li{
+    list-style: none;
+    font-size:16px;
+    font-weight: bold;
+    color:#252525;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+.checkout ul li.subtotal{
+    font-weight: bold;
+    text-transform: capitalize;
+    border-bottom:1px solid #fff;
+    padding-bottom: 14px;
+}
+.checkout ul li.subtotal span{
+    font-weight: bold;
+}
+.checkout ul li.cart-total{
+    padding-top: 10px
+}
+.checkout ul li.cart-total span{
+    color:#e7ab3c;
+}
+.checkout ul li span{
+    float:right;
+}
+.checkout .proceed-btn{
+    font-size:15px;
+    font-weight: bold;
+    color:#fff;
+    background:#1E2040;
+    text-transform: uppercase;
+    padding:15px 25px 14px 25px;
+    display: block;
+    text-align: center;
+}
+
+
+.main {
+    padding:0;
+}
+.main .description{
+    text-align:center;
+    font-size: large;
+}
+
+/* Fin de las cosas del carrito */
+
 /* *** end form config *** */
 /* ************************* */
 
@@ -408,7 +548,6 @@ footer.footer-lists a {
         width: 400px;
         max-width: 85%;
     }
-
     .LoginForm{
         padding: 0 20% 0 20%;
     }
@@ -420,6 +559,7 @@ footer.footer-lists a {
     .AccountRecover{
         padding: 0 20% 0 20%;
     }
+
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
@@ -445,18 +585,6 @@ footer.footer-lists a {
         align-items: center;
         margin-top: 20px;
     }
-
-    .LoginForm{
-        padding: 0 25% 0 25%;
-    }
-
-    .CreateAccount{
-        padding: 0 25% 0 25%;
-    }
-
-    .AccountRecover{
-        padding: 0 25% 0 25%;
-    }
 }
 
 /* 1280 + ...: Larger desktops and monitors */
@@ -464,17 +592,5 @@ footer.footer-lists a {
 
     .search-bar {
         margin-top: 34px;
-    }
-
-    .LoginForm{
-        padding: 0 30% 0 30%;
-    }
-
-    .CreateAccount{
-        padding: 0 30% 0 30%;
-    }
-
-    .AccountRecover{
-        padding: 0 30% 0 30%;
     }
 }
