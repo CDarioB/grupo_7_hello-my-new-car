@@ -318,6 +318,10 @@ footer.footer-lists a {
     padding: 15px;
 }
 
+.contenedor-botones-index-prod{
+    padding: 15px;
+}
+
 .TopContainer {
     text-align: center;
     padding: 20px;
@@ -560,6 +564,10 @@ footer.footer-lists a {
         padding: 0 20% 0 20%;
     }
 
+    .contenedor-botones-index-prod{
+        padding: 0 20% 0 20%;
+    }
+
 }
 
 /* 769-1279: Laptoos, larger tablets in landscape, & small smartphones */
@@ -584,6 +592,22 @@ footer.footer-lists a {
         position: relative;
         align-items: center;
         margin-top: 20px;
+    }
+
+    .LoginForm{
+        padding: 0 25% 0 25%;
+    }
+
+    .CreateAccount{
+        padding: 0 25% 0 25%;
+    }
+
+    .AccountRecover{
+        padding: 0 25% 0 25%;
+    }
+
+    .contenedor-botones-index-prod{
+        padding: 0 25% 0 25%;
     }
 }
 
