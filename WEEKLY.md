@@ -2,9 +2,25 @@
 
 ** WEEKLY 1 03/10/2022 - 08/10/2022 SPRINT 2 **
 
+#### ***Que se hizo durante la semana?***
+* Se realizó la retrospectiva y se actualizó el tablero de Trello
+
+#### ***Se econtró algún impedimento?***
+* Algunos incovenientes para reunir a todo el equipo de trabajo
+
+#### ***Que se va a hacer la próxima semana?***
+* Creación de archivos html 
+* Separar en las correspondientes carpetas de las vistas
 
 ** WEEKLY 2 10/10/2022 - 15/10/2022 SPRINT 2 **
+#### ***Que se hizo durante la semana?***
+* Se realizó la retrospectiva y se actualizó el tablero de Trello
 
+#### ***Se econtró algún impedimento?***
+* Algunos incovenientes para reunir a todo el equipo de trabajo
+
+#### ***Que se va a hacer la próxima semana?***
+* Se maquetaron las vistas con sus correspondientes archivos css
 
 ## **SPRINT 3**
 
