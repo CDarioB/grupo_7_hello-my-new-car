@@ -102,8 +102,21 @@
 .container-tit-des-menu-modificar{
     text-align: center;
 }
+
 .container-sel-auto{
-    text-align:center;
+    display: flex;
+}
+
+.filtros{
+    padding: 0px 20px 0px 20px;
+    width: 40%;
+}
+
+.listado-autos label {
+    margin-bottom: 5px;
+    font-weight: 800;
+    display: block;
+    color: #1E2040;
 }
 
 .container-article-modificar{

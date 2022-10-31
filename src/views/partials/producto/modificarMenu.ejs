@@ -6,23 +6,25 @@
 <%-include('../header.ejs') %>
 <body>
     <br>
-    <div class="container-tit-des-menu-modificar">
-        <p class="title-menu-modificar">Bienvenido Alberto, estás logueado como ADMINISTRADOR</p>
-        <br>
-        <p class="des-menu.modificar">¿Qué producto deseas modificar?</p>
+    <div class="TopContainer">
+        <h3>Bienvenido Alberto, estás logueado como ADMINISTRADOR</h3>
+        <p>¿Qué producto deseas modificar?</p>
     </div>
     <br><br>
     <div class="container-sel-auto">
-        <form method="POST">
+        <div class="filtros">
+        <form method="POST" class="filter-body">
+        <div class="FormItem">
         <label>Seleccione la categoría del auto que desea modificar: </label>
-        <select categoria="auto">
+        <select class="InputControl" categoria="auto">
             <option value="Camioneta">Camioneta</option>
             <option value="Automovil">Automovil</option>
             <option value="Deportivo">Deportivo</option>
         </select>
-        <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label>Seleccione la marca de auto que desea modificar: </label>
-        <select categoria="marcaAuto">
+        <select class="InputControl" categoria="marcaAuto">
             <option value="Audi">Audi</option>
             <option value="BMW">BMW</option>
             <option value="Ford">Ford</option>
@@ -32,9 +34,10 @@
             <option value="Ferrari">Ferrari</option>
             <option value="Tesla">Tesla</option>
         </select>
-        <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label class ="text-modelo-menu-mod">Seleccione el modelo del auto que quiera modificar: </label>
-        <select categoria="modelo">
+        <select class="InputControl" categoria="modelo">
             <option value="2007">2007</option>
             <option value="2008">2008</option>
             <option value="2009">2009</option>
@@ -52,27 +55,31 @@
             <option value="2021">2021</option>
             <option value="2022">2022</option>
         </select>
-        <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label>Seleccione una referencia la cual quiera modificar de las siguientes: </label>
-        <select categoria="selAuto">
+        <select class="InputControl" categoria="selAuto">
             <option value="Ford-Fiesta">Ford Fiesta 2022</option>
             <option value="Ford Fusion">Ford Fusion 2022</option>
             <option value="Ford Fashion">Ford Fashion 2022</option>
         </select>
-        <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label>Seleccione el color del auto que quiera modificar: </label>
         <input type="color" />
         <input type="color" value="#ff0000" />
         <input type="color" value="#1E3F66">
-        <br><br>
+    </div>
+    <a href="/productos/modificar"><button type="submit" class="SubmitBotton">Ir al producto</button></a>
+    </div>
+    <div class="listado-autos">
         <label>Confirme que el producto a modificar es el siguiente: </label>
         <section class="container-article-modificar">
             <img class="foto-article-modificar" src="/img/MINI-1.jpg">
         </section>
-        </form>
-        <a href="/productos/modificar"><button class="boton-enviar-modificar"><span>Ir al producto</span></button></a>
     </div>
-    <br>
+        </form>
+    </div>
 </body>
 <%-include('../footer.ejs') %>
 </html>
