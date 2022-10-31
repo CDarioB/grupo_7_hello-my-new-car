@@ -1,15 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
-    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
-    <link href="/css/normalize.css" rel="stylesheet"/>
-    <link href="/css/style.css" rel="stylesheet"/>
-    <link href="/css/productos.css" rel="stylesheet"/>
+    <%-include('../head.ejs') %>
     <title>Modificación de producto - Mini Cooper S</title>
 </head>
 <%-include('../header.ejs') %>
@@ -47,6 +38,9 @@
             <option value="Automovil">Automovil</option>
             <option value="Deportivo">Deportivo</option>
         </select>
+        <br> <br>
+        <a href="#"><button class="boton-enviar-producto"><span>Actualizar producto</span></button></a>
+        <a href="/productos/menuModificar"><button class="boton-enviar-modificar"><span>Regresar</span></button></a>
     </form>
 </div>
 <br><br>
