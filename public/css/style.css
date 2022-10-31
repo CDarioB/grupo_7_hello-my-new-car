@@ -318,6 +318,14 @@ h4{
     margin-bottom: 8px;
     font-size: 14px;
 }
+
+p.caracteristica{
+    margin-bottom: 8px;
+    text-align: center;
+    font-size: 14px;
+    color: #1E2040;
+}
+
 .TopContainer {
     text-align: center;
     padding: 20px;
