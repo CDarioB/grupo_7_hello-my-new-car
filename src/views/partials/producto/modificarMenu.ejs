@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css" rel="stylesheet" />
+    <link href="https://fonts.googleapis.com/css2?family=Lato&family=Roboto:wght@100&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.2.0/css/all.min.css">
+    <link href="/css/normalize.css" rel="stylesheet"/>
+    <link href="/css/style.css" rel="stylesheet"/>
+    <link href="/css/productos.css" rel="stylesheet"/>
+    <title>Menú - Modificación de productos</title>
+</head>
+<%-include('../header.ejs') %>
+<body>
+    <br>
+    <div class="container-tit-des-menu-modificar">
+        <p class="title-menu-modificar">Bienvenido Alberto, estás logueado como ADMINISTRADOR</p>
+        <br>
+        <p class="des-menu.modificar">¿Qué producto deseas modificar?</p>
+    </div>
+    <br><br>
+    <div class="container-sel-auto">
+        <form method="POST">
+        <label>Seleccione la categoría del auto que desea modificar: </label>
+        <select categoria="auto">
+            <option value="Camioneta">Camioneta</option>
+            <option value="Automovil">Automovil</option>
+            <option value="Deportivo">Deportivo</option>
+        </select>
+        <br><br><br><br>
+        <label>Seleccione la marca de auto que desea modificar: </label>
+        <select categoria="marcaAuto">
+            <option value="Audi">Audi</option>
+            <option value="BMW">BMW</option>
+            <option value="Ford">Ford</option>
+            <option value="Kia">Kia</option>
+            <option value="Chevrolet">Chevrolet</option>
+            <option value="Renault">Renault</option>
+            <option value="Ferrari">Ferrari</option>
+            <option value="Tesla">Tesla</option>
+        </select>
+        <br><br><br><br>
+        <label class ="text-modelo-menu-mod">Seleccione el modelo del auto que quiera modificar: </label>
+        <select categoria="modelo">
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+        <br><br><br><br>
+        <label>Seleccione una referencia la cual quiera modificar de las siguientes: </label>
+        <select categoria="selAuto">
+            <option value="Ford-Fiesta">Ford Fiesta 2022</option>
+            <option value="Ford Fusion">Ford Fusion 2022</option>
+            <option value="Ford Fashion">Ford Fashion 2022</option>
+        </select>
+        <br><br><br><br>
+        <label>Seleccione el color del auto que quiera modificar: </label>
+        <input type="color" />
+        <input type="color" value="#ff0000" />
+        <input type="color" value="#1E3F66">
+        <br><br>
+        <label>Confirme que el producto a modificar es el siguiente: </label>
+        <section class="container-article-modificar">
+            <img class="foto-article-modificar" src="/img/MINI-1.jpg">
+        </section>
+        </form>
+        <a href="/productos/modificar"><button class="boton-enviar-modificar"><span>Ir al producto</span></button></a>
+    </div>
+    <br>
+</body>
+<%-include('../footer.ejs') %>
+</html>

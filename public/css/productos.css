@@ -1,3 +1,14 @@
+.container-crear{
+    width: 95vh;
+    height: 72vh;
+    background-color: rgba(105, 101, 101, 0.7);
+    margin: auto;
+    color: #FFFFFF;
+    padding: 10px 0px 10px 0px;
+    text-align: center;
+    border-radius: 15px 15px 15px 15px;
+}
+
 .title-index-prod-form{
     font-size: x-large;
     text-align: center;
@@ -48,4 +59,70 @@
 
 .container-crear{
     text-align:center;
+}
+
+.title-crear, .des-crear{
+    font-size: x-large;
+}
+
+.text-ref, .text-marca, .text-ubicacion, .text-categoria, .text-modelo,.text-kilometraje,.text-precio, .text-img-brow
+{ 
+    font-size:large;
+}
+
+.boton-enviar-crear{
+    font-size:large;
+}
+
+.boton-adj-file{
+    font-size:larger;
+}
+
+
+
+.boton-enviar-crear {
+    background-color: #7a9dbe;
+    text-align: center;
+    border-radius: 12px;
+    border: 2px solid #ffffff;
+    padding: 14px 110px;
+    outline: none;
+    color: white;
+    cursor: pointer;
+    transition: 0.25px;
+}
+
+.boton-enviar-crear:hover {
+    background-color: #5390F5;
+  }
+
+/* Estilos para menú de selección de auto */
+.container-tit-des-menu-modificar{
+    text-align: center;
+}
+.container-sel-auto{
+    text-align:center;
+}
+
+.container-article-modificar{
+    margin: 3px;
+}
+
+.foto-article-modificar{
+    height: 40%;
+    width: 30%;
+}
+
+/* Estilos para producto a modificar */
+
+.container-menu-objeto-modificado{
+    text-align: center;
+}
+
+.container-form-objeto-modificado{
+    text-align: center;
+}
+
+.container-form-carac-modificar{
+    text-align: center;
 }
