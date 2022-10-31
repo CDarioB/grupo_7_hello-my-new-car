@@ -1,3 +1,4 @@
+
 .container-crear{
     width: 95vh;
     height: 72vh;
@@ -76,6 +77,7 @@
 
 .boton-adj-file{
     font-size:larger;
+    padding: 15px 0px;
 }
 
 

@@ -6,29 +6,39 @@
 <%-include('../header.ejs') %>
 <body>
 <br>
-<div class="container-crear">
-    <p class="title-crear">Crea un producto que desees vender</p>
-    <p class="des-crear">Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
+<div class="TopContainer">
+    <h3>Crea un producto que desees vender</h3>
+    <p>Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
     <br><br><br>
-    <form action="/productos/crear/nuevo" method="POST">
+</div>
+    <form action="/productos/crear/nuevo" method="POST" class="formBody">
+        <div class="FormItem">
         <label class="text-ref">¿Cuál es el referencia del vehículo?</label>
-        <input type="text" name="refCar" placeholder="Renault Logan">
+        <input class="InputControl" type="text" name="refCar" placeholder="Renault Logan">
         <br><br><br><br>
+    </div>
+        <div class="FormItem">
         <label class="text-marca">¿Cuál es la marca del vehículo?</label>
-        <input type="text" name="marcaCar" placeholder="Renault">
+        <input class="InputControl" type="text" name="marcaCar" placeholder="Renault">
         <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label class="text-ubicacion">¿En qué ciudad de Argentina se encuentra ubicado el vehículo?</label>
-        <input type="text" name="ubicacionCar" placeholder="Buenos Aires">
+        <input class="InputControl" type="text" name="ubicacionCar" placeholder="Buenos Aires">
         <br><br><br><br>
-        <label class ="text-categoria">Selecciona la categoría del vehículo que quieres vender: </label>
-        <select categoria="auto">
+    </div>
+    <div class="FormItem">
+        <label class ="text-class="InputControl" categoria">Selecciona la categoría del vehículo que quieres vender: </label>
+        <select class="InputControl" categoria="auto">
             <option value="Camioneta">Camioneta</option>
             <option value="Automovil">Automovil</option>
             <option value="Deportivo">Deportivo</option>
         </select>
         <br><br><br><br>
+    </div>
+    <div class="FormItem">       
         <label class ="text-modelo">Selecciona el modelo del vehículo que quieres vender: </label>
-        <select categoria="modelo">
+        <select class="InputControl" categoria="modelo">
             <option value="2007">2007</option>
             <option value="2008">2008</option>
             <option value="2009">2009</option>
@@ -47,18 +57,26 @@
             <option value="2022">2022</option>
         </select>
         <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label class="text-kilometraje">¿Cuanto kilometraje tiene el vehículo (ingrese únicamente un valor entero en KM)? </label>
-        <input type="text" name="kilometrajeCar" placeholder="10.000">
+        <input class="InputControl" type="text" name="kilometrajeCar" placeholder="10.000">
         <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label class="text-precio">¿Por cuanto dinero quiere vender el vehículo en ($ARS)? </label>
-        <input type="text" name="precioCar" placeholder="20.000">
+        <input class="InputControl" type="text" name="precioCar" placeholder="20.000">
         <br><br><br><br>
+    </div>
+    <div class="FormItem">
         <label class="text-img-brow">Adjunte las imagenes que quiere colocar del vehículo para su venta: </label>
         <input class="boton-adj-file" type="file" name="imagesCar" accept=".jpg .png .jpeg" multiple>
         <br><br><br><br>
-        <input class="boton-enviar-crear" type="submit" value="Enviar" >
+    </div>
+    <div class="FormItem">
+        <input class="SubmitBotton" type="submit" value="Enviar" >
+    </div>
     </form>
-</div>
 <br>
 </body>
 

@@ -310,18 +310,14 @@ footer.footer-lists a {
 
 /* ****** form config ****** */
 
-.CreateAccount {
+.formBody {
     padding: 15px;
 }
 
-.LoginForm {
-    padding: 15px;
+h4{
+    margin-bottom: 8px;
+    font-size: 14px;
 }
-
-.contenedor-botones-index-prod{
-    padding: 15px;
-}
-
 .TopContainer {
     text-align: center;
     padding: 20px;
@@ -552,21 +548,11 @@ footer.footer-lists a {
         width: 400px;
         max-width: 85%;
     }
-    .LoginForm{
+
+    .formBody{
         padding: 0 20% 0 20%;
     }
 
-    .CreateAccount{
-        padding: 0 20% 0 20%;
-    }
-
-    .AccountRecover{
-        padding: 0 20% 0 20%;
-    }
-
-    .contenedor-botones-index-prod{
-        padding: 0 20% 0 20%;
-    }
 
 }
 
@@ -594,21 +580,10 @@ footer.footer-lists a {
         margin-top: 20px;
     }
 
-    .LoginForm{
+    .formBody{
         padding: 0 25% 0 25%;
     }
 
-    .CreateAccount{
-        padding: 0 25% 0 25%;
-    }
-
-    .AccountRecover{
-        padding: 0 25% 0 25%;
-    }
-
-    .contenedor-botones-index-prod{
-        padding: 0 25% 0 25%;
-    }
 }
 
 /* 1280 + ...: Larger desktops and monitors */
