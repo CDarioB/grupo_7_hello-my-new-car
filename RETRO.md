@@ -35,16 +35,18 @@
 ## Restropectiva - Spring 3: 
 
 #### ***Start Doing:***
-* 
+* Actualizar tablero en trello y asignar responsabilidades
 
 #### ***Stop Doing:***
-* 
+* Dejar las tareas para el final
+* No informar cuando se necesita ayuda
 
 #### ***More of:*** 
-* 
+* Compromiso con el equipo y buena comunicación
 
 #### ***keep Doing:***
-* 
+* Entregas a tiempo
+* Cumplir con todos los requerimientos del sprint
 
 #### ***Less Of:***
-* 
+* Procastinación y ausencias a clase de algunos integrantes del grupo
