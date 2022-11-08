@@ -51,7 +51,32 @@
 * Adicionar estilos a las páginas de creación y edición de productos
 * Últimar detalles para entrega del sprint y preparación para el sprint 4
 
+
 ** WEEKLY 1 31/10/2022 - 05/11/2022 SPRINT 4 **
 #### ***Que se hizo durante la semana?***
+
+* Se actualizó el tablero de Trello
+* Se revisaron las observaciones de Lucas al sprint 3 y se adicionaron las actividades resultantes a Trello
+* Se asignaron las responsabilidades a cada miembro del equipo
+* Se pactó nueva fecha para la weekly (30 min cada lunes después de clase)
+
 #### ***Se econtró algún impedimento?***
+* Algunos inconvenientes para reunirnos, para esto se pacto nueva fecha de weekly y mayor compromiso en la comunicación
+
 #### ***Que se va a hacer la próxima semana?***
+* Definir los campos necesarios para los productos y generar archivo JSON (Darío - Tomás)
+* CRUD de productos (Darío - Tomás)
+* CRUD usuarios (Andrés - Stiven)
+* Pendiente Sprint 1 - Revisar estilos y nombres de archivos EN (Mateo)
+* Pendiente Sprint 2 - Diseño responsive (Tatiana)
+* Pendiente Sprint 3 - Modificar campo Form y Rutas (Mateo)
+
+
+** WEEKLY 2 07/11/2022 - 11/11/2022 SPRINT 4 **
+#### ***Que se hizo durante la semana?***
+
+#### ***Se econtró algún impedimento?***
+
+#### ***Que se va a hacer la próxima semana?***
+
+
