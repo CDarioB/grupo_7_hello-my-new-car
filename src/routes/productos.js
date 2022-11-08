@@ -1,10 +1,12 @@
-const EXPRESS = require ("express"); 
+const express = require ("express"); 
+const router = express.Router();
 let productosController = require('../controllers/productosController.js');
 
-var ROUTER = EXPRESS.Router();
-ROUTER.get('/detalle/:id', productosController.detalle);
-ROUTER.get('/index',productosController.index);
-ROUTER.get('/crear',productosController.crear);
-ROUTER.get('/modificar',productosController.modificar);
-ROUTER.get('/menuModificar',productosController.menuModificar);
-module.exports = ROUTER;
+
+router.get('/detalle/:id', productosController.detalle);
+router.get('/index',productosController.index);
+router.get('/crear',productosController.crear);
+router.get('/modificar',productosController.modificar); // Este sería del usuario
+router.get('/menuModificar',productosController.menuModificar); // Este sería del admin
+
+module.exports = router;

@@ -1,17 +1,17 @@
-const EXPRESS = require ("express"); 
-const PATH = require ("path"); 
-const APP = EXPRESS();
-const PUBLIC_PATH = PATH.join(__dirname, "./public");
+const express = require ("express"); 
+const path = require ("path"); 
+const app = express();
+const PUBLIC_PATH = path.join(__dirname, "./public");
 const PORT = process.env.PORT || 3000;
-APP.use(EXPRESS.static(PUBLIC_PATH));
+app.use(express.static(PUBLIC_PATH));
 
 // Levantando el servidor
-APP.listen(PORT, () =>{console.log("Corriendo servidor en el puerto" + " " + PORT + " " + "http://localhost:" + PORT) } )
+app.listen(PORT, () =>{console.log("Corriendo servidor en el puerto" + " " + PORT + " " + "http://localhost:" + PORT) } )
 
 // EJS
-APP.set('views', PATH.join(__dirname, 'src/views'));
-APP.set('view engine', 'ejs');
-console.log(__dirname)
+app.set('views', path.join(__dirname, 'src/views'));
+app.set('view engine', 'ejs');
+
 
 // Creando rutas
 var indexRouter = require('./src/routes/index');
@@ -19,8 +19,8 @@ var usuariosRouter = require('./src/routes/usuarios');
 var productosRouter = require('./src/routes/productos');
 
 // Manejo de vistas con rutas
-APP.use('/', indexRouter);
-APP.use('/usuarios', usuariosRouter);
-APP.use('/productos', productosRouter);
+app.use('/', indexRouter);
+app.use('/usuarios', usuariosRouter);
+app.use('/productos', productosRouter);
 
-module.exports = APP;
+module.exports = app;
