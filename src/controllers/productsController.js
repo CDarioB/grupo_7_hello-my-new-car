@@ -17,7 +17,7 @@ const productsController = {
         for (let i=0; i < req.files.length; i++) {
             img = {
                 "img_id": i+1,
-                "img_fileName": req.files[i].filename
+                "img_fileName": "/img/"+req.files[i].filename
             }; 
 
             imgList.push(img);

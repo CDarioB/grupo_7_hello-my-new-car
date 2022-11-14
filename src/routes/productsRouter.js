@@ -5,7 +5,7 @@ const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddleware');
 
 router.get('/index',productsController.index);
-router.get('/detalle/:id', productsController.detalle);
+router.get('/detail/:id', productsController.detalle);
 
 const maxFiles = 10;
 

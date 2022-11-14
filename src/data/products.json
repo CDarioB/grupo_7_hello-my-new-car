@@ -14,134 +14,137 @@
   "prd_img": [
    {
     "img_id": 1,
-    "img_fileName": "MINI-1.jpg"
+    "img_fileName": "/img/MINI-1.jpg"
    },
    {
     "img_id": 2,
-    "img_fileName": "MINI-1.jpg"
+    "img_fileName": "/img/MINI-1.jpg"
    },
    {
     "img_id": 3,
-    "img_fileName": "MINI-2.jpg"
+    "img_fileName": "/img/MINI-2.jpg"
    },
    {
     "img_id": 4,
-    "img_fileName": "MINI-3.jpg"
+    "img_fileName": "/img/MINI-3.jpg"
    },
    {
     "img_id": 5,
-    "img_fileName": "MINI-4.jpg"
+    "img_fileName": "/img/MINI-4.jpg"
    },
    {
     "img_id": 6,
-    "img_fileName": "MINI-5.jpg"
+    "img_fileName": "/img/MINI-5.jpg"
    }
   ]
  },
  {
-    "prd_id": 2,
-    "prd_references": "Ford Mustang 5.0 GT 421cv",
-    "prd_brand": "Ford",
-    "prd_province": "Santa Fe",
-    "prd_city": "Rosario",
-    "prd_category_type": "Automovil",
-    "prd_model_year": "2017",
-    "prd_mileage": "14.000",
-    "prd_price": 95000,
-    "prd_discount_Percentage": 10,
-    "discountprice": 85500,
-    "prd_img": [
-     {
-      "img_id": 1,
-      "img_fileName": "MUSTANG-1.jpg"
-     },
-     {
-      "img_id": 2,
-      "img_fileName": "MUSTANG-2.jpg"
-     },
-     {
-      "img_id": 3,
-      "img_fileName": "MUSTANG-3.jpg"
-     },
-     {
-      "img_id": 4,
-      "img_fileName": "MUSTANG-4.jpg"
-     },
-     {
-      "img_id": 5,
-      "img_fileName": "MUSTANG-5.jpg"
-     }
-    ]
+  "prd_id": 2,
+  "prd_references": "Ford Mustang 5.0 GT 421cv",
+  "prd_brand": "Ford",
+  "prd_province": "Santa Fe",
+  "prd_city": "Rosario",
+  "prd_category_type": "Automovil",
+  "prd_model_year": "2017",
+  "prd_mileage": "14.000",
+  "prd_price": 95000,
+  "prd_discount_Percentage": 10,
+  "discountprice": 85500,
+  "prd_img": [
+   {
+    "img_id": 1,
+    "img_fileName": "/img/MUSTANG-1.jpg"
    },
    {
-      "prd_id": 3,
-      "prd_references": "Toyota Etios 1.5 X",
-      "prd_brand": "Toyota",
-      "prd_province": "Buenos Aires",
-      "prd_city": "Capital Federal",
-      "prd_category_type": "Automovil",
-      "prd_model_year": "2017",
-      "prd_mileage": "67.526",
-      "prd_price": 10000,
-      "prd_discount_Percentage": 5,
-      "discountprice": 9500,
-      "prd_img": [
-       {
-        "img_id": 1,
-        "img_fileName": "ETIOS-1.jpg"
-       },
-       {
-        "img_id": 2,
-        "img_fileName": "ETIOS-2.jpg"
-       },
-       {
-        "img_id": 3,
-        "img_fileName": "ETIOS-3.jpg"
-       },
-       {
-        "img_id": 4,
-        "img_fileName": "ETIOS-4.jpg"
-       },
-       {
-        "img_id": 5,
-        "img_fileName": "ETIOS-5.jpg"
-       }
-      ]
-     },
-     {
-        "prd_id": 4,
-        "prd_references": "Ford Ranger Limited 3.2 4x4",
-        "prd_brand": "Ford",
-        "prd_province": "Córdoba",
-        "prd_city": "Córdoba",
-        "prd_category_type": "Camioneta",
-        "prd_model_year": "2018",
-        "prd_mileage": "102.384",
-        "prd_price": 25000,
-        "prd_discount_Percentage": 7,
-        "discountprice": 23250,
-        "prd_img": [
-         {
-          "img_id": 1,
-          "img_fileName": "ETIOS-1.jpg"
-         },
-         {
-          "img_id": 2,
-          "img_fileName": "ETIOS-2.jpg"
-         },
-         {
-          "img_id": 3,
-          "img_fileName": "ETIOS-3.jpg"
-         },
-         {
-          "img_id": 4,
-          "img_fileName": "ETIOS-4.jpg"
-         },
-         {
-          "img_id": 5,
-          "img_fileName": "ETIOS-5.jpg"
-         }
-        ]
-       }
-
+    "img_id": 2,
+    "img_fileName": "/img/MUSTANG-2.jpg"
+   },
+   {
+    "img_id": 3,
+    "img_fileName": "/img/MUSTANG-3.jpg"
+   },
+   {
+    "img_id": 4,
+    "img_fileName": "/img/MUSTANG-4.jpg"
+   },
+   {
+    "img_id": 5,
+    "img_fileName": "/img/MUSTANG-5.jpg"
+   }
+  ]
+ },
+ {
+  "prd_id": 3,
+  "prd_references": "Toyota Etios 1.5 X",
+  "prd_brand": "Toyota",
+  "prd_province": "Buenos Aires",
+  "prd_city": "Capital Federal",
+  "prd_category_type": "Automovil",
+  "prd_model_year": "2017",
+  "prd_mileage": "67.526",
+  "prd_price": 10000,
+  "prd_discount_Percentage": 5,
+  "discountprice": 9500,
+  "prd_img": [
+   {
+    "img_id": 1,
+    "img_fileName": "/img/ETIOS-1.jpg"
+   },
+   {
+    "img_id": 2,
+    "img_fileName": "/img/ETIOS-2.jpg"
+   },
+   {
+    "img_id": 3,
+    "img_fileName": "/img/ETIOS-3.jpg"
+   },
+   {
+    "img_id": 4,
+    "img_fileName": "/img/ETIOS-4.jpg"
+   },
+   {
+    "img_id": 5,
+    "img_fileName": "/img/ETIOS-5.jpg"
+   },
+   {
+    "img_id": 6,
+    "img_fileName": "/img/ETIOS-6.jpg"
+   }
+  ]
+ },
+ {
+  "prd_id": 4,
+  "prd_references": "Ford Ranger Limited 3.2 4x4",
+  "prd_brand": "Ford",
+  "prd_province": "Córdoba",
+  "prd_city": "Córdoba",
+  "prd_category_type": "Camioneta",
+  "prd_model_year": "2018",
+  "prd_mileage": "102.384",
+  "prd_price": 25000,
+  "prd_discount_Percentage": 7,
+  "discountprice": 23250,
+  "prd_img": [
+   {
+    "img_id": 1,
+    "img_fileName": "/img/RANGER-1.jpg"
+   },
+   {
+    "img_id": 2,
+    "img_fileName": "/img/RANGER-2.jpg"
+   },
+   {
+    "img_id": 3,
+    "img_fileName": "/img/RANGER-3.jpg"
+   },
+   {
+    "img_id": 4,
+    "img_fileName": "/img/RANGER-4.jpg"
+   },
+   {
+    "img_id": 5,
+    "img_fileName": "/img/RANGER-5.jpg"
+   }
+  ]
+ }
 ]
