@@ -17,9 +17,11 @@ router.get('/index',productsController.index);
 router.get('/create',productsController.create);
 router.post('/new', uploadFile.array("imagesCar", maxFiles), productsController.newProducts);
 
-// Modificar productos
+// Modificar Products
 router.get('/modificar',productsController.modificar); // Este sería del usuario
 router.get('/menuModificar',productsController.menuModificar); // Este sería del admin
 
+// Delete Products
+router.delete('/delete/:id', productsController.delete);
 
 module.exports = router;

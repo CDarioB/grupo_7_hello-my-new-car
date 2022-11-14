@@ -57,6 +57,11 @@ const productsController = {
     detail : function(req,res,next) {
         let objectData = products.find(p => p.prd_id == req.params.id )
         res.render('detalleDeCompra', { product: objectData});
+    },
+    delete: function(req,res) {
+        products.splice(req.params.id-1,req.params.id)
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+        res.redirect('/products/index');
     }
 }
 
