@@ -33,6 +33,7 @@ const productsController = {
             "prd_model_year": req.body.modelYearCar,
             "prd_mileage": req.body.mileageCar,
             "prd_price": req.body.priceCar,
+            "prd_discount": req.body.discountCar,
             "prd_img": imgList
         };
         products.push(newProducts);
