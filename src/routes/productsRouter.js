@@ -4,12 +4,16 @@ const router = express.Router();
 const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddleware');
 
-router.get('/index',productsController.index);
-router.get('/detail/:id', productsController.detalle);
+// Consulta de Products
+router.get('/', productsController.products);
+router.get('/detail/:id', productsController.detail);
 
 const maxFiles = 10;
 
-// Create Products
+// Crear/Modificar Products
+router.get('/index',productsController.index);
+
+//Crear Products
 router.get('/create',productsController.create);
 router.post('/new', uploadFile.array("imagesCar", maxFiles), productsController.newProducts);
 

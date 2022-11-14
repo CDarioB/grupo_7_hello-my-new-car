@@ -1,0 +1,20 @@
+<h2 class="title">Imperdibles</h2>
+<section class="main-ofert">
+  <% for(var i = 0; i < products.length; i++) { %>
+    <% if (products[i].prd_discount_Percentage != 0) { %>
+      <article class="main-ofert-article">
+        <img src= <%=products[i].prd_img[0].img_fileName%> alt="">
+        <div class="main-article-content">
+          <p class="main-article-title"> <%=products[i].prd_references%></p>
+          <p class="main-article-description">2016 - 70.000km - Buenos Aires</p>
+          <div>
+            <p class="main-price">$<%=products[i].prd_price%></p>
+            <p class="main-discount"><%=products[i].prd_discount_Percentage%>%</p>
+            <p class="main-discountprice">$<%=products[i].prd_discountprice%></p>
+            <a href="/products/detail/<%=products[i].prd_id%>"> Ver más <br></a>
+          </div>
+        </div>
+      </article>
+    <% } %>
+  <% } %>
+</section>

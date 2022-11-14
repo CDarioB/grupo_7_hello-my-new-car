@@ -10,7 +10,7 @@
   "prd_mileage": "70.000",
   "prd_price": 37500,
   "prd_discount_Percentage": 15,
-  "discountprice": 31875,
+  "prd_discountprice": 31875,
   "prd_img": [
    {
     "img_id": 1,
@@ -49,7 +49,7 @@
   "prd_mileage": "14.000",
   "prd_price": 95000,
   "prd_discount_Percentage": 10,
-  "discountprice": 85500,
+  "prd_discountprice": 85500,
   "prd_img": [
    {
     "img_id": 1,
@@ -84,7 +84,7 @@
   "prd_mileage": "67.526",
   "prd_price": 10000,
   "prd_discount_Percentage": 5,
-  "discountprice": 9500,
+  "prd_discountprice": 9500,
   "prd_img": [
    {
     "img_id": 1,
@@ -123,7 +123,7 @@
   "prd_mileage": "102.384",
   "prd_price": 25000,
   "prd_discount_Percentage": 7,
-  "discountprice": 23250,
+  "prd_discountprice": 23250,
   "prd_img": [
    {
     "img_id": 1,
@@ -144,6 +144,29 @@
    {
     "img_id": 5,
     "img_fileName": "/img/RANGER-5.jpg"
+   }
+  ]
+ },
+ {
+  "prd_id": 5,
+  "prd_references": "Peugeot 306",
+  "prd_brand": "Peugeot",
+  "prd_province": "Córdoba",
+  "prd_city": "Córdoba",
+  "prd_category_type": "Automovil",
+  "prd_model_year": "2007",
+  "prd_mileage": "10000",
+  "prd_price": 50000,
+  "prd_discount_Percentage": 0,
+  "prd_discountprice": 50000,
+  "prd_img": [
+   {
+    "img_id": 1,
+    "img_fileName": "/img/1668410286724_photo.jpg"
+   },
+   {
+    "img_id": 2,
+    "img_fileName": "/img/1668410286732_photo.jpg"
    }
   ]
  }
