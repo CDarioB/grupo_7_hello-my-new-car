@@ -58,9 +58,10 @@ const productsController = {
         let objectData = products.find(p => p.prd_id == req.params.id )
         res.render('detalleDeCompra', { product: objectData});
     },
-    delete: function(req,res) {
-        products.splice(req.params.id-1,req.params.id)
-        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+    delete: (req,res) => {
+        const id = req.params.id;
+        const finalProducts = products.filter(product => product.prd_id != id)
+        fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
         res.redirect('/products/index');
     }
 }
