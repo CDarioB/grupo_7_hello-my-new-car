@@ -6,37 +6,44 @@
 <%-include('../header.ejs') %>
 <body>
 <br>
-<div class="TopContainer">
-<h3>Bienvenido Alberto, estás logueado como ADMINISTRADOR</h3>
-<h4>Estás modificando el objeto Mini Cooper S de color Blanco, ubicado en Buenos Aires de categoría Deportivo y modelo 2016 </h4>
+<div class="container-menu-objeto-modificado">
+<p>Bienvenido Alberto, estás logueado como ADMINISTRADOR</p>
+<br>
+<p>Estás modificando el objeto Mini Cooper S de color Blanco, ubicado en Buenos Aires de categoría Deportivo y modelo 2016 </p>
+<br>
+<p>¿Qué caracteristica del producto deseas modificar?</p>
 </div>
-    <form  method="POST" class="formBody">
-        <p class="caracteristica">¿Qué caracteristica del producto deseas modificar?</p>
-        <div class="FormItem">    
+<br>
+<div class="container-form-objeto-modificado">
+    <form  method="POST">
         <label>Seleccione la caracteristica del Mini Cooper S que desee modificar: </label>
-        <select class="InputControl" caracteristica="caracteristica">
+        <select caracteristica="caracteristica">
             <option value="nombre">Nombre del producto</option>
             <option value="precio">Precio del producto en ARS</option>
             <option value="modelo">Modelo del producto</option>
             <option value="ubicacion">Ubicación del producto</option>
             <option value="categoria">Categoría del producto</option>
         </select>
-        </div>
-        <p class="caracteristica">Ha seleccionado la caracteristica Categoría del producto</p>
+    </form>
+</div>
+<br>
+
+<div class="container-form-carac-modificar">
+    <p>Ha seleccionado la caracteristica Categoría del producto</p>
     <br>
-    <div class="FormItem">    
+    <form>
         <label> ¿A qué categoría quiere que pertenezca el objeto Mini Cooper S?</label>
-        <select class="InputControl">
+        <select>
             <option value="Camioneta">Camioneta</option>
             <option value="Automovil">Automovil</option>
             <option value="Deportivo">Deportivo</option>
         </select>
-    </div>
-        <a href="#"><button type="submit" class="SubmitBotton">Actualizar producto</button></a>
-        <a href="/productos/menuModificar"><button type="submit" class="SubmitBotton">Regresar</button></a>
+        <br> <br>
+        <a href="#"><button class="boton-enviar-producto"><span>Actualizar producto</span></button></a>
+        <a href="/productos/menuModificar"><button class="boton-enviar-modificar"><span>Regresar</span></button></a>
     </form>
 </div>
-<br>
+<br><br>
 
 <%-include('../footer.ejs') %>
 </body>
