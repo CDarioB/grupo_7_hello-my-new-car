@@ -1,0 +1,14 @@
+[
+ {
+  "prd_id": 1,
+  "prd_references": "Renault Logan",
+  "prd_brand": "Renault",
+  "prd_province": "Buenos Aires",
+  "prd_city": "Capital Federal",
+  "prd_category_type": "Camioneta",
+  "prd_model_year": "2007",
+  "prd_mileage": "10.000",
+  "prd_price": "20.000",
+  "prd_img": "nnnn.png"
+ }
+]
