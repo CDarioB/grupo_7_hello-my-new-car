@@ -6,17 +6,20 @@
   </head>
   <body>
     <%-include('./partials/header.ejs') %>
-    <% if(id==1){ %>
-      <%-include('./partials/detalle/detalle1.ejs'); %>
-    <% }else if(id==2){%>
+    
+    <% if(product.prd_id==1){ %>
+      <%-include('./partials/detalle/details.ejs'); %>
+    <% }else if(product.prd_id==2){%>
       <%-include('./partials/detalle/detalle2.ejs'); %>
-    <% }else if(id==3){%>
+    <% }else if(product.prd_id==3){%>
       <%-include('./partials/detalle/detalle3.ejs'); %>
-    <% }else if(id==4){%>
+    <% }else if(product.prd_id==4){%>
       <%-include('./partials/detalle/detalle4.ejs'); %>
     <% }else{%>
       <%-include('./partials/detalle/detallenull.ejs'); %>
-    <% }%>
+      <% }%>
+
+    
 
     <%-include('./partials/footer.ejs'); %>
   </body>

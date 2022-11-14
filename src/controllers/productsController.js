@@ -33,13 +33,14 @@ const productsController = {
             "prd_model_year": req.body.modelYearCar,
             "prd_mileage": req.body.mileageCar,
             "prd_price": req.body.priceCar,
-            "prd_discount_Percentage": req.body.priceCar - ((req.body.priceCar * req.body.discountCar)/100),
+            "prd_discount_Percentage": req.body.discountCar,
+            "discountprice": req.body.priceCar - ((req.body.priceCar * req.body.discountCar)/100),
             "prd_img": imgList
         };
         products.push(newProducts);
         fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
-        //res.redirect('/products/index');
-        res.render('./partials/product/formularioIndex');
+        res.redirect('/products/index');
+        //res.render('./partials/product/formularioIndex');
     },
     modificar: function(req,res,next) {
         res.render('./partials/product/modificarProducto');
@@ -48,8 +49,8 @@ const productsController = {
         res.render('./partials/product/modificarMenu');
     },
     detalle : function(req,res,next) {
-        idPage = [req.params.id];
-        res.render('detalleDeCompra', {id: idPage});
+        let objectData = products.find(p => p.prd_id == req.params.id )
+        res.render('detalleDeCompra', { product: objectData});
     }
 }
 
