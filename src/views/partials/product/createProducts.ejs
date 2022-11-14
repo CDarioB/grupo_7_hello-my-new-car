@@ -10,34 +10,38 @@
     <h3>Crea un producto que desees vender</h3>
     <p>Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
 </div>
-    <form action="/productos/crear/nuevo" method="POST" class="formBody">
+    <form class="formBody" method="POST" action="/products/new" enctype="multipart/form-data">
         <div class="FormItem">
         <label>¿Cuál es el referencia del vehículo?</label>
-        <input class="InputControl" type="text" name="refCar" placeholder="Renault Logan">
+        <input class="InputControl" type="text" id="refCar" name="refCar" placeholder="Renault Logan">
 
     </div>
         <div class="FormItem">
         <label>¿Cuál es la marca del vehículo?</label>
-        <input class="InputControl" type="text" name="marcaCar" placeholder="Renault">
+        <input class="InputControl" type="text" id="brandCar" name="brandCar" placeholder="Renault">
+
+    </div>
+    <div class="FormItem">
+        <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
+        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" placeholder="Buenos Aires">
 
     </div>
     <div class="FormItem">
         <label>¿En qué ciudad de Argentina se encuentra ubicado el vehículo?</label>
-        <input class="InputControl" type="text" name="ubicacionCar" placeholder="Buenos Aires">
+        <input class="InputControl" type="text" id="cityCar" name="cityCar" placeholder="Capital Federal">
 
     </div>
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
-        <select class="InputControl" categoria="auto">
+        <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
             <option value="Camioneta">Camioneta</option>
             <option value="Automovil">Automovil</option>
             <option value="Deportivo">Deportivo</option>
         </select>
-
     </div>
     <div class="FormItem">       
         <label>Selecciona el modelo del vehículo que quieres vender: </label>
-        <select class="InputControl" categoria="modelo">
+        <select class="InputControl" id="modelYear" name="modelYearCar" categoria="modelo">
             <option value="2007">2007</option>
             <option value="2008">2008</option>
             <option value="2009">2009</option>
@@ -59,12 +63,17 @@
     </div>
     <div class="FormItem">
         <label>¿Cuanto kilometraje tiene el vehículo (ingrese únicamente un valor entero en KM)? </label>
-        <input class="InputControl" type="text" name="kilometrajeCar" placeholder="10.000">
+        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" placeholder="10.000">
 
     </div>
     <div class="FormItem">
         <label>¿Por cuanto dinero quiere vender el vehículo en ($ARS)? </label>
-        <input class="InputControl" type="text" name="precioCar" placeholder="20.000">
+        <input class="InputControl" type="number" id="priceCar" name="priceCar" placeholder="20.000">
+
+    </div>
+    <div class="FormItem">
+        <label>Desea agregar un descuento al precio. !!! </label>
+        <input class="InputControl" type="number" id="discountCar" name="discountCar" placeholder="15%">
 
     </div>
     <div class="FormItem">

@@ -6,18 +6,9 @@
   </head>
   <body>
     <%-include('./partials/header.ejs') %>
-    <% if(id==1){ %>
-      <%-include('./partials/detalle/detalle1.ejs'); %>
-    <% }else if(id==2){%>
-      <%-include('./partials/detalle/detalle2.ejs'); %>
-    <% }else if(id==3){%>
-      <%-include('./partials/detalle/detalle3.ejs'); %>
-    <% }else if(id==4){%>
-      <%-include('./partials/detalle/detalle4.ejs'); %>
-    <% }else{%>
-      <%-include('./partials/detalle/detallenull.ejs'); %>
-    <% }%>
-
+    
+    <%-include('./partials/details/details.ejs'); %>
+    
     <%-include('./partials/footer.ejs'); %>
   </body>
 </html>

@@ -1,5 +1,5 @@
 const EXPRESS = require ("express"); 
-let productosController = require('../controllers/productosController.js');
+let productosController = require('../controllers/productsController.js');
 
 var ROUTER = EXPRESS.Router();
 ROUTER.get('/', function(req,res){
