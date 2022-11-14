@@ -20,7 +20,7 @@ let indexController = {
     },
 
     cart: function(req,res,next) {
-        res.render('carritoDeCompra');
+        res.render('carritoDeCompra', { products: products});
     },
 
     favoritos: function(req,res,next) {
