@@ -18,8 +18,9 @@ router.get('/create',productsController.create);
 router.post('/new', uploadFile.array("imagesCar", maxFiles), productsController.newProducts);
 
 // Modificar Products
-router.get('/modificar',productsController.modificar); // Este sería del usuario
-router.get('/menuModificar',productsController.menuModificar); // Este sería del admin
+router.get('/modify',productsController.modify); // Vista admin listado de productos a modificar
+router.get('/edit/:id', productsController.edit); // Formulario editar producto
+router.put('/edit/:id', uploadFile.single('imgFile'), productsController.update); 
 
 // Delete Products
 router.delete('/delete/:id', productsController.delete);

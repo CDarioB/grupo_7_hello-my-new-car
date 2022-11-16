@@ -1,10 +1,16 @@
 [
  {
   "usr_id": 1,
-  "usr_firs_name": "Marcos",
+  "usr_first_name": "Marcos",
   "usr_last_name": "Perez",
   "usr_tel": "11 05 12545454",
   "usr_email": "marcos.perez@gmail.com",
   "usr_pass": "marcos#85"
+ },
+ {
+  "usr_id": 2
+ },
+ {
+  "usr_id": 3
  }
 ]

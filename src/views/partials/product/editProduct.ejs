@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('../head.ejs') %>
+    <title>Crear producto</title>
+</head>
+<%-include('../header.ejs') %>
+<body>
+<br>
+<div class="TopContainer">
+    <h3>Modificar <%=products[id].prd_references%></h3>
+</div>
+    <form class="formBody" method="POST" action="/products/edit/<%=product.prd_id%>?_method=PUT" enctype="multipart/form-data">
+        <div class="FormItem">
+        <label>Referencia del vehículo</label>
+        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=products[id].prd_references%></textarea>
+    </div>
+        <div class="FormItem">
+        <label>Marca del vehículo</label>
+        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=products[id].prd_brand%>
+    </div>
+    <div class="FormItem">
+        <label>Provincia de Argentina</label>
+        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=<%=products[id].prd_province%>
+    </div>
+    <div class="FormItem">
+        <label>Ciudad de Argentina se encuentra ubicado el vehículo</label>
+        <input class="InputControl" type="text" id="cityCar" name="cityCar" value=<%=products[id].prd_city%>
+    </div>
+    <div class="FormItem">
+        <label>Selecciona la categoría del vehículo que quieres vender: </label>
+        <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
+            <option value="Camioneta">Camioneta</option>
+            <option value="Automovil">Automovil</option>
+            <option value="Deportivo">Deportivo</option>
+        </select>
+    </div>
+    <div class="FormItem">       
+        <label>Selecciona el año del vehículo </label>
+        <select class="InputControl" id="modelYear" name="modelYearCar" categoria="modelo">
+            <option value="2007">2007</option>
+            <option value="2008">2008</option>
+            <option value="2009">2009</option>
+            <option value="2010">2010</option>
+            <option value="2011">2011</option>
+            <option value="2012">2012</option>
+            <option value="2013">2013</option>
+            <option value="2014">2014</option>
+            <option value="2015">2015</option>
+            <option value="2016">2016</option>
+            <option value="2017">2017</option>
+            <option value="2018">2018</option>
+            <option value="2019">2019</option>
+            <option value="2020">2020</option>
+            <option value="2021">2021</option>
+            <option value="2022">2022</option>
+        </select>
+
+    </div>
+    <div class="FormItem">
+        <label> Kilometraje </label>
+        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=products[id].prd_mileage%>
+
+    </div>
+    <div class="FormItem">
+        <label>Precio de venta ($ARS)</label>
+        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=products[id].prd_price%>
+
+    </div>
+    <div class="FormItem">
+        <label>Agregar Oferta </label>
+        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=products[id].prd_discount_Percentage%>
+    </div>
+    <div class="FormItem">
+        <label>Adjunte las imagenes que quiere colocar del vehículo</label>
+        <input class="boton-adj-file" type="file" name="imagesCar" accept=".jpg .png .jpeg" multiple>
+
+    </div>
+    <div class="FormItem">
+        <input class="SubmitBotton" type="submit" value="Guardar" >
+    </div>
+    </form>
+<br>
+</body>
+
+<%-include('../footer.ejs') %>
+</html>
