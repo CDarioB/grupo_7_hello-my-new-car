@@ -6,8 +6,6 @@ ROUTER.get('/', indexController.home);
 
 ROUTER.get('/login', indexController.login);
 
-ROUTER.get('/register', indexController.register);
-
 ROUTER.get('/recovery', indexController.recovery);
 
 ROUTER.get('/cart', indexController.cart);

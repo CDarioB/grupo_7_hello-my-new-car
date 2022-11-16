@@ -20,12 +20,12 @@ app.set('views', path.join(__dirname, 'views')); // Define la ubicación de la c
 
 // Creando rutas
 var indexRouter = require('./routes/index');
-var usuariosRouter = require('./routes/usuarios');
+var usersRouter = require('./routes/usersRouter');
 var productsRouter = require('./routes/productsRouter');
 
 // Manejo de vistas con rutas
 app.use('/', indexRouter);
-app.use('/usuarios', usuariosRouter);
+app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 
 
