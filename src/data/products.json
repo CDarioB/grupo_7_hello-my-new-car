@@ -39,13 +39,13 @@
   ]
  },
  {
-  "prd_id": 2,
+  "prd_id": "2",
   "prd_references": "Ford Mustang 5.0 GT 421cv",
   "prd_brand": "Ford",
-  "prd_province": "Santa Fe",
+  "prd_province": "Santa",
   "prd_city": "Rosario",
-  "prd_category_type": "Automovil",
-  "prd_model_year": "2017",
+  "prd_category_type": "Camioneta",
+  "prd_model_year": "2007",
   "prd_mileage": "14.000",
   "prd_price": 95000,
   "prd_discount_Percentage": 10,

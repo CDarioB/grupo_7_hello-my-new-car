@@ -57,36 +57,54 @@ const productsController = {
     edit: (req, res, next) => {
         const id = req.params.id;
         const product = products.find(product => product.prd_id == id);
-        res.render('partials/product/editProduct', {
-            product, products, id
-        })
+        res.render('partials/product/editProduct', {product});
     },
     update: (req, res) => {
         const id =req.params.id;
-        const productToEdit = products.find(product => product.id == id);
+        const productToEdit = products.find(product => product.prd_id == id);
 
-        const editProduct = {
-            prd_id: prd_id,
-            prd_references: req.body.prd_references,
-            prd_brand: req.body.prd_brand,
-            prd_province: req.body.prd_province,
-            prd_city: req.body.prd_city,
-            prd_category_type: req.body.prd_type,
-            prd_model_year: req.body.prd_model_year,
-            prd_mileage: req.body.prd_mileage,
-            prd_price: req.body.prd_price,
-            prd_discount_Percentage: req.body.prd_discount_Percentage,
-            prd_discountprice: price - ((price * discount)/100),
-            img: req.file ? req.file.filename : productToEdit.prd_img,
+        let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
+        let price = parseInt(req.body.priceCar);
+
+        /*let img = {};
+        let id_img = productToEdit.prd_img.length;
+        if (req.files) {
+            for (let i=0; i < req.files.length; i++) {
+                img = {
+                    "img_id": id_img + 1,
+                    "img_fileName": "/img/"+req.files[i].filename
+                }; 
+    
+                productToEdit.prd_img.push(img);
+            }
+        }*/
+        
+        let editProduct = {
+            "prd_id": id,
+            "prd_references": req.body.refCar,
+            "prd_brand": req.body.brandCar,
+            "prd_province": req.body.provinceCar,
+            "prd_city": req.body.cityCar,
+            "prd_category_type": req.body.categoryTypeCar,
+            "prd_model_year": req.body.modelYearCar,
+            "prd_mileage": req.body.mileageCar,
+            "prd_price": price,
+            "prd_discount_Percentage": discount,
+            "prd_discountprice": price - ((price * discount)/100),
+            "prd_img": productToEdit.prd_img
         }
+
 
         products.forEach((product, index) => {
             if (product.prd_id == id) {
                 products [index] = editProduct;
             }
         });
-        fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
-        res.redirect('./partials/product/productListModify')
+        fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "));
+        
+        res.render('partials/product/productListModify', {
+            products
+        });
     },
 
     menuModificar: function(req,res,next) {
