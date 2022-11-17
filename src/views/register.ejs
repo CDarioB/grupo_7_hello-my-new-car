@@ -15,27 +15,27 @@
         <p>¿Ya eres parte de Hello My New Car?</p>
         <a href="/login">Inicia sesión</a>
       </div>
-      <form class="formBody" method="POST" action="/users/new" enctype="multipart/form-data">
+      <form class="formBody" method="POST" action="/users/new">
         <h4>Completa tus datos:</h4>
         <div class="FormItem">
           <label for="nombre">Nombre*</label>
-          <input type="text" name="usr_first_name" id="usr_firs_name" placeholder="Tú nombre*" class="InputControl" />
+          <input type="text" name="firstName" id="firstName" placeholder="Tú nombre*" class="InputControl" />
         </div>
         <div class="FormItem">
           <label for="apellido">Apellido*</label>
-          <input type="text" name="usr_last_name" id="usr_last_name" placeholder="Tú apellido" class="InputControl" />
+          <input type="text" name="lastName" id="lastName" placeholder="Tú apellido" class="InputControl" />
         </div>
         <div class="FormItem">
           <label for="tel">Teléfono</label>
-          <input type="tel" name="usr_tel" id="usr_tel" placeholder="Ej: +57 3111111111" class="InputControl" />
+          <input type="tel" name="tel" id="tel" placeholder="Ej: +57 3111111111" class="InputControl" />
         </div>
         <div class="FormItem">
           <label for="email">E-mail*</label>
-          <input type="email" name="usr_email" id="usr_email" placeholder="Ej: direccion@correo.com" class="InputControl" />
+          <input type="email" name="email" id="email" placeholder="Ej: direccion@correo.com" class="InputControl"/>
         </div>
         <div class="FormItem">
           <label for="password">Contraseña*</label>
-          <input type="password" name="usr_pass" id="usr_pass" placeholder="Mínimo 8 caracteres" class="InputControl" />
+          <input type="password" name="pass" id="pass" placeholder="Mínimo 8 caracteres" class="InputControl" />
         </div>
         <p class="RequiredData">(*)Datos obligatorios.</p>
         <div class="CheckboxContainer">

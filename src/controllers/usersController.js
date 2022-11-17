@@ -14,12 +14,13 @@ const usersController = {
     newUsers: function(req,res) {
         const newUsers = {
             "usr_id": users[users.length - 1].usr_id + 1,
-            "usr_firs_name": req.body.usr_first_name,
-            "usr_last_name": req.body.usr_last_name,
-            "usr_tel": req.body.usr_tel,
-            "usr_email": req.body.usr_email,
-            "usr_pass": req.body.usr_pass
+            "usr_firs_name": req.body.firstName,
+            "usr_last_name": req.body.lastName,
+            "usr_tel": req.body.tel,
+            "usr_email": req.body.email,
+            "usr_pass": req.body.pass
         };
+        
         users.push(newUsers);
         fs.writeFileSync(usersFilePath, JSON.stringify(users, null, " "));
         res.redirect('/users/');

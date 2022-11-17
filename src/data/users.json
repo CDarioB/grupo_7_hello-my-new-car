@@ -12,5 +12,21 @@
  },
  {
   "usr_id": 3
+ },
+ {
+  "usr_id": 4,
+  "usr_firs_name": "Llllll",
+  "usr_last_name": "sssss",
+  "usr_tel": "5555555",
+  "usr_email": "carlosdario1@gmail.com",
+  "usr_pass": "sdasdasd"
+ },
+ {
+  "usr_id": 5,
+  "usr_firs_name": "Llllll",
+  "usr_last_name": "sssss",
+  "usr_tel": "5555555",
+  "usr_email": "carlosdario1@gmail.com",
+  "usr_pass": "asdasdasd"
  }
 ]
