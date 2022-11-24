@@ -7,24 +7,24 @@
 <body>
 <br>
 <div class="TopContainer">
-    <h3>Modificar <%=products[id].prd_references%></h3>
+    <h3>Modificar <%=product.prd_references%></h3>
 </div>
     <form class="formBody" method="POST" action="/products/edit/<%=product.prd_id%>?_method=PUT" enctype="multipart/form-data">
         <div class="FormItem">
         <label>Referencia del vehículo</label>
-        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=products[id].prd_references%></textarea>
+        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=product.prd_references%></textarea>
     </div>
         <div class="FormItem">
         <label>Marca del vehículo</label>
-        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=products[id].prd_brand%>
+        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=product.prd_brand%>>
     </div>
     <div class="FormItem">
         <label>Provincia de Argentina</label>
-        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=<%=products[id].prd_province%>
+        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=<%=product.prd_province%>>
     </div>
     <div class="FormItem">
         <label>Ciudad de Argentina se encuentra ubicado el vehículo</label>
-        <input class="InputControl" type="text" id="cityCar" name="cityCar" value=<%=products[id].prd_city%>
+        <input class="InputControl" type="text" id="cityCar" name="cityCar" value=<%=product.prd_city%>>
     </div>
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
@@ -58,17 +58,17 @@
     </div>
     <div class="FormItem">
         <label> Kilometraje </label>
-        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=products[id].prd_mileage%>
+        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=product.prd_mileage%>>
 
     </div>
     <div class="FormItem">
         <label>Precio de venta ($ARS)</label>
-        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=products[id].prd_price%>
+        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=product.prd_price%>>
 
     </div>
     <div class="FormItem">
         <label>Agregar Oferta </label>
-        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=products[id].prd_discount_Percentage%>
+        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.prd_discount_Percentage%>>
     </div>
     <div class="FormItem">
         <label>Adjunte las imagenes que quiere colocar del vehículo</label>
