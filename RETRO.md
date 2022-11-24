@@ -74,3 +74,31 @@
 #### ***Less Of:***
 * Dejar las tareas para el final
 * Falta de comunicación
+
+## Restropectiva - Spring 5: 
+
+#### ***Start Doing:***
+* Actualizar tablero en trello
+* Revisar las observaciones de Lucas del Sprint 4 y adicionar el feedback al tablero
+* Asignar responsabilidades
+
+#### ***Stop Doing:***
+* No realizar las reuniones en las fechas acordadas
+* No cumplir con las responsabilidades asignadas para el sprint
+* No informar a tiempo cuando no logramos terminar una actividad para brindar apoyo
+
+#### ***More of:*** 
+* Apoyarnos unos a otros cuando se necesite
+* Aportar y guiar con los temas en los que somos más hábiles
+* Animar al equipo para no perder el ritmo de trabajo
+* Estar atentos al feedback que nos da Lucas para seguir mejorando
+
+#### ***keep Doing:***
+* Entregas a tiempo
+* Buena comunicación
+* Cumplir con todos los requerimientos del sprint
+
+#### ***Less Of:***
+* Dejar las tareas para el final
+* Falta de comunicación
+* No realizar las reuniones pactadas

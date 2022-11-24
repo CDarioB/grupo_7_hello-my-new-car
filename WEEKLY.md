@@ -93,5 +93,20 @@
 * Seguir trabajando en el pendiente Sprint 3 - Modificar campo Form y Rutas (Mateo)
 * Seguir trabajando en el CRUD de productos (Darío - Tomás)
 
+## **SPRINT 5**
 
+** WEEKLY 1 **
+#### ***Que se hizo durante la semana?***
+
+* Se actualizó el tablero de Trello
+* Se revisaron las observaciones de Lucas al sprint 4
+* Se adicionó el feedback de Lucas a Trello para trabajarlo durante este sprint
+* Se realizó la restrospectiva
+
+#### ***Se econtró algún impedimento?***
+* Algunos inconvenientes para reunirnos aún, para esto estamos usando todos los medios de comunucación de los que disponemos para mantenernos en contacto.
+
+#### ***Que se va a hacer la próxima semana?***
+* Asignar las responsabilidades del sprint a cada miembro del equipo
+* Empezar a trabajar en las tareas asignadas
 
