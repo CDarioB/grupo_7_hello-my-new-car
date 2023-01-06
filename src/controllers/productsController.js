@@ -1,12 +1,21 @@
 const fs = require('fs');
 const path = require('path');
+const db = require('../database/models');
+const sequelize = db.sequelize;
+const { Op } = require("sequelize");
+const moment = require('moment');
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     products: function(req,res,next) {
-        res.render('./partials/product/products',{ products});
+        db.Product.findAll().then(products => {
+           for(let i = 0; i < products.length; i++){
+            products[i].img = products[i].img.split(",");
+           }
+           res.render('./partials/product/products',{ products});
+        });
     },
     index: function(req,res,next) {
         res.render('./partials/product/formularioIndex');

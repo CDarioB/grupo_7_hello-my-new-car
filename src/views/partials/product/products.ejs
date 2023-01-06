@@ -11,20 +11,20 @@
         <h2 class="title">Sin Descuento</h2>
         <section class="main-ofert">
             <% for(var i = 0; i < products.length; i++) { %>
-                <% if (products[i].prd_discount_Percentage == 0) { %>
+                <% if (products[i].discount_Percentage == 0) { %>
                     <article class="main-ofert-article">
-                        <img src= <%=products[i].prd_img[0].img_fileName%> alt="">
+                        <img src="/img/<%=products[i].img[0]%>" alt="">
                             <div class="main-article-content">
-                            <p class="main-article-title"> <%=products[i].prd_references%></p>
-                            <p class="main-article-description">2016 - 70.000km - Buenos Aires</p>
+                            <p class="main-article-title"> <%=products[i].references%></p>
+                            <p class="main-article-description"><%=products[i].model +' - '+products[i].mileage+'km'+' - '+products[i].province_id%></p>
                             <div>
-                                <p class="main-price">$<%=products[i].prd_price%></p>
-                                <p class="main-discount"><%=products[i].prd_discount_Percentage%>%</p>
-                                <p class="main-discountprice">$<%=products[i].prd_discountprice%></p>
-                                <form action="/products/delete/<%=products[i].prd_id%>?_method=DELETE" method="POST" style="display: inline-flex ;margin-top: 2px;">
+                                <p class="main-price">$<%=products[i].price%></p>
+                                <p class="main-discount"><%=products[i].discount_percentage%>%</p>
+                                <p class="main-discountprice">$<%=products[i].discount_price%></p>
+                                <form action="/products/delete/<%=products[i].id%>?_method=DELETE" method="POST" style="display: inline-flex ;margin-top: 2px;">
                                     <button type="submit" class="btn btn-outline-danger btn-block">Eliminar</button>
                                 </form>
-                                <a href="/products/detail/<%=products[i].prd_id%>"> Ver más <br></a>
+                                <a href="/products/detail/<%=products[i].id%>"> Ver más <br></a>
                             </div>
                         </div>
                     </article>
