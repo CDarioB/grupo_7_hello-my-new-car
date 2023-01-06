@@ -113,41 +113,6 @@
   ]
  },
  {
-  "prd_id": 4,
-  "prd_references": "Ford Ranger Limited 3.2 4x4",
-  "prd_brand": "Ford",
-  "prd_province": "Córdoba",
-  "prd_city": "Córdoba",
-  "prd_category_type": "Camioneta",
-  "prd_model_year": "2018",
-  "prd_mileage": "102.384",
-  "prd_price": 25000,
-  "prd_discount_Percentage": 7,
-  "prd_discountprice": 23250,
-  "prd_img": [
-   {
-    "img_id": 1,
-    "img_fileName": "/img/RANGER-1.jpg"
-   },
-   {
-    "img_id": 2,
-    "img_fileName": "/img/RANGER-2.jpg"
-   },
-   {
-    "img_id": 3,
-    "img_fileName": "/img/RANGER-3.jpg"
-   },
-   {
-    "img_id": 4,
-    "img_fileName": "/img/RANGER-4.jpg"
-   },
-   {
-    "img_id": 5,
-    "img_fileName": "/img/RANGER-5.jpg"
-   }
-  ]
- },
- {
   "prd_id": 5,
   "prd_references": "Peugeot 306",
   "prd_brand": "Peugeot",
