@@ -17,7 +17,6 @@ const productsController = {
             products[i].img = products[i].img.split(",");
            }
            res.render('./partials/product/products',{products});
-           //res.send(products);
         });
     },
     index: function(req,res,next) {
