@@ -50,8 +50,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "rol_id"
         })
 
-        User.belongsTo(models.Product, {  // un usuario puede tener muschos productos // Relacion (2)
-            as: "user-products",
+        User.hasMany(models.Product, {  // 1 usuario puede tener muschos productos // Relacion (2)
+            as: "products",
             foreignKey: 'user_id',
         })
     }

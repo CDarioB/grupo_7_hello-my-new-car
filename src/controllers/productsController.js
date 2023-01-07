@@ -10,11 +10,14 @@ let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     products: function(req,res,next) {
-        db.Product.findAll().then(products => {
+        db.Product.findAll({
+            include: ['province']
+        }).then(products => {
            for(let i = 0; i < products.length; i++){
             products[i].img = products[i].img.split(",");
            }
-           res.render('./partials/product/products',{ products});
+           res.render('./partials/product/products',{products});
+           //res.send(products);
         });
     },
     index: function(req,res,next) {
