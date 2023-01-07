@@ -5,8 +5,8 @@ const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/products.json');
+//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     products: function(req,res,next) {
@@ -120,8 +120,14 @@ const productsController = {
         res.render('./partials/product/modificarMenu');
     },
     detail : function(req,res,next) {
-        let objectData = products.find(p => p.prd_id == req.params.id )
-        res.render('detalleDeCompra', { product: objectData});
+        db.Product.findAll().then(products => {
+            for(let i = 0; i < products.length; i++){
+             products[i].img = products[i].img.split(",");
+            }
+            let product = products.find(p => p.id == req.params.id )
+            res.render('detalleDeCompra', {product});
+         });
+     
     },
     delete: function(req,res) {
         const id = req.params.id;
