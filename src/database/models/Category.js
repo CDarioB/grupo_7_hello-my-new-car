@@ -20,8 +20,8 @@ module.exports = (sequelize, dataTypes) => {
     const Category = sequelize.define(alias, cols, config); 
 
     Category.associate = function (models) {
-        Category.belongsTo(models.Product, {  // una categoria puede tener varios productos // Relacion (3)
-            as: "category-products",
+        Category.hasMany(models.Product, {  // 1 categoria puede estar varios productos // Relacion (3)
+            as: "catProducts",
             foreignKey: 'category_id',
         })
     }
