@@ -39,7 +39,7 @@ module.exports = (sequelize, dataTypes) => {
             allowNull: false
         },
         province_id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.BIGINT(11).UNSIGNED,
             allowNull: false
         },
         location_id: {
@@ -63,9 +63,9 @@ module.exports = (sequelize, dataTypes) => {
     const Product = sequelize.define(alias, cols, config); 
 
     Product.associate = function(models) {
-        Product.hasMany(models.User, { // N productos puede tener 1 usuario // Relacion (2)
-            as: "products-user", 
-            foreignKey: "rol_id"
+        Product.belongsTo(models.User, { // 1 productos puede tener 1 usuario // Relacion (2)
+            as: "user", 
+            foreignKey: "user_id"
         })
 
         Product.hasMany(models.Category, { // N productos puede tener 1 categoria // Relacion (3)
@@ -73,14 +73,9 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "category_id"
         })
 
-        Product.hasMany(models.Province, { // N productos puede tener 1 provincia // Relacion (4)
-            as: "products-province", 
+        Product.belongsTo(models.Province, { // 1 productos puede tener 1 provincia // Relacion (4)
+            as: "province", 
             foreignKey: "province_id"
-        })
-
-        Product.hasMany(models.Province, { // N productos puede tener 1 localidad // Relacion (5)
-            as: "products-location", 
-            foreignKey: "location_id"
         })
 
     }
