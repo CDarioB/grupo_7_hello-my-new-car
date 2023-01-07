@@ -14,7 +14,7 @@
             <div class="elementor-image-box-content">
                 <h3 class="titulo-contenedor">Ubicación</h3>
                 <p class="descripcion-contenedor">
-                    <%=product.province_id%>
+                    <%=product.province.province%>
                 </p>
             </div>
         </div>
@@ -85,9 +85,9 @@
     
     <% for(var i=0; i < product.img.length; i++) { %>
         <article class="ligth-box" id="image<%=product.img[i]%>">
-            <a href="image<%=product.img[i]%>" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <a href="#image<%=product.img[i-1]%>" class="next"><i class="fa-solid fa-arrow-left"></i></a>
             <img src= "/img/<%=product.img[i]%>" alt="">
-            <a href="image<%=product.img[i]%>" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="#image<%=product.img[i+1]%>" class="next"><i class="fa-solid fa-arrow-right"></i></a>
             <a href="" class="close">X</a>
         </article>
     <% } %>

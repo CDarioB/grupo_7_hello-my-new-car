@@ -10,7 +10,9 @@ const moment = require('moment');
 
 let indexController = {
     home: function(req, res, next) {
-        db.Product.findAll().then(products => {
+        db.Product.findAll({
+            include: ['province']
+        }).then(products => {
             for(let i = 0; i < products.length; i++){
              products[i].img = products[i].img.split(",");
             }
@@ -25,7 +27,9 @@ let indexController = {
     },
 
     cart: function(req,res,next) {
-        db.Product.findAll().then(products => {
+        db.Product.findAll({
+            include: ['province']
+        }).then(products => {
             for(let i = 0; i < products.length; i++){
              products[i].img = products[i].img.split(",");
             }

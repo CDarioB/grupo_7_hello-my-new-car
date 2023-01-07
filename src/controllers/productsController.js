@@ -17,7 +17,6 @@ const productsController = {
             products[i].img = products[i].img.split(",");
            }
            res.render('./partials/product/products',{products});
-           //res.send(products);
         });
     },
     index: function(req,res,next) {
@@ -42,7 +41,7 @@ const productsController = {
         let price = parseInt(req.body.priceCar); 
 
         let newProducts = {
-            "prd_id": products[products.length - 1].prd_id + 1,
+            "prd_id": products[products.length - 1].prd_id +    1,
             "prd_references": req.body.refCar,
             "prd_brand": req.body.brandCar,
             "prd_province": req.body.provinceCar,
@@ -123,7 +122,9 @@ const productsController = {
         res.render('./partials/product/modificarMenu');
     },
     detail : function(req,res,next) {
-        db.Product.findAll().then(products => {
+        db.Product.findAll({
+            include: ['province']
+        }).then(products => {
             for(let i = 0; i < products.length; i++){
              products[i].img = products[i].img.split(",");
             }
