@@ -68,8 +68,8 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: "user_id"
         })
 
-        Product.hasMany(models.Category, { // N productos puede tener 1 categoria // Relacion (3)
-            as: "products-category", 
+        Product.belongsTo(models.Category, { // 1 productos puede tener 1 categoria // Relacion (3)
+            as: "category", 
             foreignKey: "category_id"
         })
 
