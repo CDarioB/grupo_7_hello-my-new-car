@@ -6,9 +6,9 @@
         <img src="/img/<%=products[i].img[0]%>" alt="">
         <div class="main-article-content">
           <p class="main-article-title"> <%=products[i].references%></p>
-          <p class="main-article-description"><%=products[i].model +' - '+products[i].mileage+'km'+' - '+products[i].province_id%></p>
+          <p class="main-article-description"><%=products[i].model +' - '+products[i].mileage+'km'+' - '+products[i].province.province%></p>
           <div>
-            <p class="main-price">$<%=products[i].prd_price%></p>
+            <p class="main-price">$<%=products[i].price%></p>
             <p class="main-discount"><%=products[i].discount_percentage%>%</p>
             <p class="main-discountprice">$<%=products[i].discount_price%></p>
             <a class="ver-mas" href="/products/detail/<%=products[i].id%>"> Ver más <br></a>
