@@ -30,23 +30,25 @@ const productsController = {
     create: function(req,res,next) {
         let allProvinces;
         let allCategory;
-        let allLocation;
+        // let allLocation;
         //Provinces.findAll({include: ['locations']})
         Provinces.findAll()
             .then(provinces => {
                 allProvinces = provinces;
             })
+    
+    /*
         Locations.findAll()
             .then(locations => {
                 allLocation = locations;
         })
-        
+    */
         Categories.findAll()
             .then(categories => {
                 allCategory = categories;
         }).then( ()=>{
-            //res.render('./partials/product/createProducts',{allProvinces: allProvinces, allCategory: allCategory})
-            res.render('./partials/product/createProducts',{allProvinces: allProvinces, allLocation: allLocation, allCategory: allCategory});    
+            res.render('./partials/product/createProducts',{allProvinces: allProvinces, allCategory: allCategory})
+            //res.render('./partials/product/createProducts',{allProvinces: allProvinces, allLocation: allLocation, allCategory: allCategory});    
            
         })
     },
@@ -75,7 +77,7 @@ const productsController = {
                     img: images.join(','),
                     category_id: req.body.categoryTypeCar,
                     province_id: req.body.provinceCar,
-                    location_id: req.body.cityCar,
+                    // location_id: req.body.cityCar,
                     user_id: 1
                 }
             ).then(() =>{
@@ -122,7 +124,7 @@ const productsController = {
             "prd_references": req.body.refCar,
             "prd_brand": req.body.brandCar,
             "prd_province": req.body.provinceCar,
-            "prd_city": req.body.cityCar,
+            //"prd_city": req.body.cityCar,
             "prd_category_type": req.body.categoryTypeCar,
             "prd_model_year": req.body.modelYearCar,
             "prd_mileage": req.body.mileageCar,
