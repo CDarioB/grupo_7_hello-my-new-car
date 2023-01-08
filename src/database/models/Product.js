@@ -53,8 +53,8 @@ module.exports = (sequelize, dataTypes) => {
     };
 
     let config = {
-        tableName: 'products',
         timestamps: true,
+        tableName: 'products',
         createdAt: 'created_at',
         updatedAt: 'updated_at',
         deletedAt: false
@@ -77,7 +77,6 @@ module.exports = (sequelize, dataTypes) => {
             as: "province", 
             foreignKey: "province_id"
         })
-
     }
 
     return Product;

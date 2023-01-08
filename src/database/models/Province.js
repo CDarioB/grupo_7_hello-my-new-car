@@ -19,5 +19,14 @@ module.exports = (sequelize, dataTypes) => {
 
     const Province = sequelize.define(alias, cols, config); 
 
+    Province.associate = function(models) {
+        Province.hasMany(models.Location, {  // 1 provincia puede tener varias localidades  // Relacion (3)
+            as: "locations",
+            foreignKey: 'province_id',
+        })
+    }
+
+    
+
     return Province;
 };
