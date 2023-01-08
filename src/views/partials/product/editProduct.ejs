@@ -7,20 +7,37 @@
 <body>
 <br>
 <div class="TopContainer">
-    <h3>Modificar <%=product.prd_references%></h3>
+    <h3>Modificar <%=product.references%></h3>
 </div>
-    <form class="formBody" method="POST" action="/products/edit/<%=product.prd_id%>?_method=PUT" enctype="multipart/form-data">
+    <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
         <div class="FormItem">
         <label>Referencia del vehículo</label>
-        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=product.prd_references%></textarea>
+        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=product.references%></textarea>
     </div>
-        <div class="FormItem">
+    
+    <div class="FormItem">
         <label>Marca del vehículo</label>
-        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=product.prd_brand%>>
+        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
     </div>
+<!--
     <div class="FormItem">
         <label>Provincia de Argentina</label>
-        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=<%=product.prd_province%>>
+        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=< %=product.province.province%>>
+    </div>
+-->     
+    <div class="FormItem">
+        <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
+        <select class="InputControl" id="provinceCar" name="provinceCar">
+            <% allProvinces.forEach(provinces => { %>
+                <option value="<%= provinces.id %>"
+                    <%if(provinces.id == product.province_id) {%>
+                        selected >
+                        <% } else {%>
+                            >
+                    <% } %>
+                    <%= provinces.province %></option>
+            <% }); %>
+        </select>
     </div>
 <!--   
     <div class="FormItem">
@@ -31,46 +48,45 @@
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
         <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
-            <option value="Camioneta">Camioneta</option>
-            <option value="Automovil">Automovil</option>
-            <option value="Deportivo">Deportivo</option>
+            <% allCategory.forEach(category => { %>
+                <option value="<%= category.id %>"
+                    <%if(category.id == product.category_id) {%>
+                        selected >
+                        <% } else {%>
+                            >
+                    <% } %>
+                    <%= category.type %></option>
+            <% }); %>
         </select>
     </div>
     <div class="FormItem">       
         <label>Selecciona el año del vehículo </label>
         <select class="InputControl" id="modelYear" name="modelYearCar" categoria="modelo">
-            <option value="2007">2007</option>
-            <option value="2008">2008</option>
-            <option value="2009">2009</option>
-            <option value="2010">2010</option>
-            <option value="2011">2011</option>
-            <option value="2012">2012</option>
-            <option value="2013">2013</option>
-            <option value="2014">2014</option>
-            <option value="2015">2015</option>
-            <option value="2016">2016</option>
-            <option value="2017">2017</option>
-            <option value="2018">2018</option>
-            <option value="2019">2019</option>
-            <option value="2020">2020</option>
-            <option value="2021">2021</option>
-            <option value="2022">2022</option>
+            <% for(let i=2000;i < 2031; i++) {%>
+                <option value="<%= i %>"
+                    <%if(i == product.model) {%>
+                        selected >
+                    <% } else {%>
+                        >
+                    <% } %>
+                    <%= i %></option>
+            <% } %>
         </select>
 
     </div>
     <div class="FormItem">
         <label> Kilometraje </label>
-        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=product.prd_mileage%>>
+        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
 
     </div>
     <div class="FormItem">
         <label>Precio de venta ($ARS)</label>
-        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=product.prd_price%>>
+        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
 
     </div>
     <div class="FormItem">
-        <label>Agregar Oferta </label>
-        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.prd_discount_Percentage%>>
+        <label>Agregar Oferta (%)</label>
+        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
     </div>
     <div class="FormItem">
         <label>Adjunte las imagenes que quiere colocar del vehículo</label>
