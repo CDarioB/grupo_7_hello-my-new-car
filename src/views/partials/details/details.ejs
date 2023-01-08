@@ -1,4 +1,4 @@
-<h2><%=product.prd_references%></h2>
+<h2><%= product.references %></h2>
 <span class="linea"></span>
 <br>
 <section>
@@ -14,7 +14,7 @@
             <div class="elementor-image-box-content">
                 <h3 class="titulo-contenedor">Ubicación</h3>
                 <p class="descripcion-contenedor">
-                    <%=product.prd_city%>
+                    <%=product.province.province%>
                 </p>
             </div>
         </div>
@@ -27,7 +27,7 @@
 
             <div class="elementor-image-box-content">
                 <h3 class="titulo-contenedor">Kilometraje</h3>
-                <p class="descripcion-contenedor"><%=product.prd_mileage%></p>
+                <p class="descripcion-contenedor"><%=product.mileage%></p>
             </div>
         </div>
             
@@ -40,7 +40,7 @@
             <div>
                 <div class="elementor-image-box-content">
                     <h3 class="titulo-contenedor">Modelo</h3>
-                    <p class="descripcion-contenedor"><%=product.prd_model_year%></p>
+                    <p class="descripcion-contenedor"><%=product.model%></p>
                 </div>
             </div>
         </div>
@@ -54,7 +54,7 @@
             <div>
                 <div class="elementor-image-box-content">
                     <h3 class="titulo-contenedor">Categoría</h3>
-                    <p class="descripcion-contenedor"><%=product.prd_category_type%><</p>
+                    <p class="descripcion-contenedor"><%=product.category.type%></p>
                 </div>
             </div>
         </div>
@@ -69,7 +69,7 @@
             <div>
                 <div class="elementor-image-box-content">
                     <h3 class="titulo-contenedor">Precio</h3>
-                    <p class="descripcion-contenedor">$<%=product.prd_price%></p>
+                    <p class="descripcion-contenedor">$<%=product.price%></p>
                 </div>
             </div>
         </div>
@@ -78,17 +78,17 @@
 
 <section class="descripcion">
     <section class="galeria">
-        <% for(var i=0; i < product.prd_img.length; i++) { %>
-            <a href="#image<%=product.prd_img[i].img_id%>"><img src= <%=product.prd_img[i].img_fileName%> alt=""></a>
+        <% for(var i=0; i < product.img.length; i++) { %>
+            <a href="#image<%=product.img[i]%>"><img src= "/img/<%= product.img[i] %>" alt=""></a>
         <% } %>
     </section>
     
-    <% for(var i=0; i < product.prd_img.length; i++) { %>
-        <article class="ligth-box" id="image<%=product.prd_img[i].img_id%>">
-            <a href="#image<%=product.prd_img[i].img_id+1%>" class="next"><i class="fa-solid fa-arrow-left"></i></a>
-            <img src= <%=product.prd_img[i].img_fileName%> alt="">
-            <a href="#image<%=product.prd_img[i].img_id+1%>" class="next"><i class="fa-solid fa-arrow-right"></i></a>
-            <a href="#" class="close">X</a>
+    <% for(var i=0; i < product.img.length; i++) { %>
+        <article class="ligth-box" id="image<%=product.img[i]%>">
+            <a href="#image<%=product.img[i-1]%>" class="next"><i class="fa-solid fa-arrow-left"></i></a>
+            <img src= "/img/<%=product.img[i]%>" alt="">
+            <a href="#image<%=product.img[i+1]%>" class="next"><i class="fa-solid fa-arrow-right"></i></a>
+            <a href="" class="close">X</a>
         </article>
     <% } %>
     <a href="/" class="boton-inicio">Regresar</a>
