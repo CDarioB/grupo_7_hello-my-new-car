@@ -21,22 +21,42 @@
         <input class="InputControl" type="text" id="brandCar" name="brandCar" placeholder="Renault">
 
     </div>
+
     <div class="FormItem">
         <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
-        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" placeholder="Buenos Aires">
-
+        <select class="InputControl" id="provinceCar" name="provinceCar">
+            <option value="" disabled selected>- Seleccione la provincia del vehículo -</option>
+            <% allProvinces.forEach(province => { %>
+                <option value="<%= province.id %>"><%= province.province %> </option>
+            <% }); %>
+        </select>
     </div>
+    
+<!--
     <div class="FormItem">
-        <label>¿En qué ciudad de Argentina se encuentra ubicado el vehículo?</label>
+        <label>¿En qué localidad de Argentina se encuentra ubicado el vehículo?</label>
         <input class="InputControl" type="text" id="cityCar" name="cityCar" placeholder="Capital Federal">
+    </div> 
+-->
 
-    </div>
+    <div class="FormItem">
+        <label>¿En qué localidad de Argentina se encuentra ubicado el vehículo?</label>
+        <select class="InputControl" id="cityCar" name="cityCar">
+                <option value="" disabled selected>- Seleccione la localidad del vehículo -</option>
+                <% allLocation.forEach(location => { %>
+                    <option value="<%= location.id %>"><%= location.location %></option>
+                <% }); %>
+        </select>
+     </div>
+
+
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
         <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
-            <option value="Camioneta">Camioneta</option>
-            <option value="Automovil">Automovil</option>
-            <option value="Deportivo">Deportivo</option>
+            <option value="" disabled selected>- Seleccione el tipo del vehículo -</option>
+            <% allCategory.forEach(category => { %>
+                <option value="<%= category.id %>"><%= category.type %></option>
+            <% }); %>
         </select>
     </div>
     <div class="FormItem">       
@@ -86,6 +106,7 @@
     </div>
     </form>
 <br>
+<script src="/js/productsValidations.js"></script>
 </body>
 
 <%-include('../footer.ejs') %>
