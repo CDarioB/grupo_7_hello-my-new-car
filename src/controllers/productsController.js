@@ -8,7 +8,7 @@ const moment = require('moment');
 const Products = db.Product;
 const Categories = db.Category;
 const Provinces = db.Province;
-const Locations = db.Location;
+// const Locations = db.Location;
 
 const productsFilePath = path.join(__dirname, '../data/products.json');
 let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
@@ -30,23 +30,24 @@ const productsController = {
     create: function(req,res,next) {
         let allProvinces;
         let allCategory;
-        let allLocation;
-        //Provinces.findAll({include: ['locations']})
+        // let allLocation;
         Provinces.findAll()
             .then(provinces => {
                 allProvinces = provinces;
             })
+     /*
         Locations.findAll()
             .then(locations => {
                 allLocation = locations;
         })
+     */
         
         Categories.findAll()
             .then(categories => {
                 allCategory = categories;
         }).then( ()=>{
-            //res.render('./partials/product/createProducts',{allProvinces: allProvinces, allCategory: allCategory})
-            res.render('./partials/product/createProducts',{allProvinces: allProvinces, allLocation: allLocation, allCategory: allCategory});    
+            res.render('./partials/product/createProducts',{allProvinces: allProvinces, allCategory: allCategory})
+            //res.render('./partials/product/createProducts',{allProvinces: allProvinces, allLocation: allLocation, allCategory: allCategory});    
            
         })
     },
@@ -75,7 +76,7 @@ const productsController = {
                     img: images.join(','),
                     category_id: req.body.categoryTypeCar,
                     province_id: req.body.provinceCar,
-                    location_id: req.body.cityCar,
+                   // location_id: req.body.cityCar,
                     user_id: 1
                 }
             ).then(() =>{
