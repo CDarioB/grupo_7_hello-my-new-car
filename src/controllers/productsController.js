@@ -8,15 +8,15 @@ const moment = require('moment');
 const Products = db.Product;
 const Categories = db.Category;
 const Provinces = db.Province;
-const Locations = db.Location;
+//const Locations = db.Location;
 
-const productsFilePath = path.join(__dirname, '../data/products.json');
-let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
+//const productsFilePath = path.join(__dirname, '../data/products.json');
+//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     products: function(req,res,next) {
         Products.findAll({
-            include: ['province']
+            include: ['province','category']
         }).then(products => {
            for(let i = 0; i < products.length; i++){
             products[i].img = products[i].img.split(",");
@@ -55,7 +55,7 @@ const productsController = {
         
         let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
         let price = parseInt(req.body.priceCar); 
-        
+       
         for (let i=0; i < req.files.length; i++)
             images.push(req.files[i].filename);
         
@@ -149,8 +149,16 @@ const productsController = {
         res.render('./partials/product/modificarMenu');
     },
     detail : function(req,res,next) {
-        let objectData = products.find(p => p.prd_id == req.params.id )
-        res.render('detalleDeCompra', { product: objectData});
+        db.Product.findAll({
+            include: ['province','category']
+        }).then(products => {
+            for(let i = 0; i < products.length; i++){
+             products[i].img = products[i].img.split(",");
+            }
+            let product = products.find(p => p.id == req.params.id )
+            res.render('detalleDeCompra', {product});
+         });
+     
     },
     delete: function(req,res) {
         const id = req.params.id;
