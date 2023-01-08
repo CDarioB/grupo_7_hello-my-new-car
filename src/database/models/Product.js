@@ -42,10 +42,6 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.BIGINT(11).UNSIGNED,
             allowNull: false
         },
-        location_id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
-            allowNull: false
-        },
         user_id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
