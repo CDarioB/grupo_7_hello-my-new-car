@@ -24,5 +24,6 @@ router.put('/edit/:id', uploadFile.single('imgFile'), productsController.update)
 
 // Delete Products
 router.post('/delete/:id', productsController.delete);
+router.post('/deleteImg/:idProduct/:idImage',productsController.deleteImg)
 
 module.exports = router;

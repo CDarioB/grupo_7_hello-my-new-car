@@ -88,15 +88,24 @@
         <label>Agregar Oferta (%)</label>
         <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
     </div>
-    <div class="FormItem">
+    <br>
         <label>Adjunte las imagenes que quiere colocar del vehículo</label>
-        <input class="boton-adj-file" type="file" name="imagesCar" accept=".jpg .png .jpeg" multiple>
-
+    <br>
+    <input class="boton-adj-file" type="file" name="imagesCar" accept=".jpg .png .jpeg" multiple>
+    <div id="containerEditimg">
+        <% for(var i = 0; i < product.img.length; i++) { %>
+            <div class="elementEditimg">
+                    <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
+                    <input class="SubmitBotton" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>" value="Eliminar">
+            </div>
+        <% } %>
     </div>
     <div class="FormItem">
         <input class="SubmitBotton" type="submit" value="Guardar" >
     </div>
     </form>
+   
+
 <br>
 </body>
 

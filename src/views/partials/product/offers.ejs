@@ -12,9 +12,6 @@
             <p class="main-discount"><%=products[i].discount_percentage%>%</p>
             <p class="main-discountprice">$<%=products[i].discount_price%></p>
             <a class="ver-mas" href="/products/detail/<%=products[i].id%>"> Ver más <br></a>
-            <form action="/products/delete/<%=products[i].id%>?_method=DELETE" method="POST" style="display: inline-flex ;margin-top: 2px;">
-							<button type="submit" class="btn btn-outline-danger btn-block">Eliminar</button>
-						</form>
           </div>
         </div>
       </article>

@@ -173,6 +173,26 @@ const productsController = {
             }
         })
         res.redirect("/products/edit")
+    },
+    deleteImg: function(req,res){
+        let products = db.Product.findAll({
+            include: ['province','category']})
+        .then(function(products){
+        let idProduct = req.params.idProduct;
+        let idImage = req.params.idImage;
+        const Product = products[idProduct-1];
+        Product.img = Product.img.split(",");
+        Product.img = Product.img.filter((imagen) => imagen !== Product.img[idImage]);
+        console.log(Product.img[idImage])
+        Product.img = Product.img.join();
+        db.Product.update({
+            img : Product.img,
+        },{
+            where: {
+                id: idProduct,
+            }
+        })
+        res.redirect("/products/edit/"+ idProduct + "#containerEditimg")})
     }
 }
 

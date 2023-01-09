@@ -141,3 +141,24 @@
 .container-form-carac-modificar{
     text-align: center;
 }
+
+#containerEditimg{
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 1rem;
+
+}
+
+.elementEditimg{
+    width: 30%;
+    padding: 5px;
+}
+
+.imgEditForm{
+    object-fit: cover;
+    width: 12rem;
+    height: auto;
+    vertical-align: middle;
+    border-radius: 10%;
+}
