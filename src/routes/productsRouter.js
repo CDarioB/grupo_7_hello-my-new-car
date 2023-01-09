@@ -18,11 +18,11 @@ router.get('/create',productsController.create);
 router.post('/new', uploadFile.array("imagesCar", maxFiles), productsController.newProducts);
 
 // Modificar Products
-router.get('/modify',productsController.modify); // Vista admin listado de productos a modificar
+router.get('/edit',productsController.modify); // Vista admin listado de productos a modificar
 router.get('/edit/:id', productsController.edit); // Formulario editar producto
 router.put('/edit/:id', uploadFile.single('imgFile'), productsController.update); 
 
 // Delete Products
-router.delete('/delete/:id', productsController.delete);
+router.post('/delete/:id', productsController.delete);
 
 module.exports = router;

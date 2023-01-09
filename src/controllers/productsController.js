@@ -30,26 +30,15 @@ const productsController = {
     create: function(req,res,next) {
         let allProvinces;
         let allCategory;
-        // let allLocation;
-        //Provinces.findAll({include: ['locations']})
         Provinces.findAll()
             .then(provinces => {
                 allProvinces = provinces;
             })
-    
-    /*
-        Locations.findAll()
-            .then(locations => {
-                allLocation = locations;
-        })
-    */
         Categories.findAll()
             .then(categories => {
                 allCategory = categories;
         }).then( ()=>{
             res.render('./partials/product/createProducts',{allProvinces: allProvinces, allCategory: allCategory})
-            //res.render('./partials/product/createProducts',{allProvinces: allProvinces, allLocation: allLocation, allCategory: allCategory});    
-           
         })
     },
     newProducts: function(req,res) {
@@ -178,10 +167,12 @@ const productsController = {
      
     },
     delete: function(req,res) {
-        const id = req.params.id;
-        const finalProducts = products.filter(product => product.prd_id != id)
-        fs.writeFileSync(productsFilePath, JSON.stringify(finalProducts, null, " "));
-        res.redirect('/products/index');
+        db.Product.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/products/edit")
     }
 }
 
