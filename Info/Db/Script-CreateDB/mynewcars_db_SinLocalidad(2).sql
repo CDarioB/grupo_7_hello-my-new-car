@@ -52,6 +52,7 @@ CREATE TABLE `users` (
   `tel` varchar(25) COLLATE utf8_unicode_ci NOT NULL,
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pass`  varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   PRIMARY KEY (`id`),
   KEY `users_rol_id_foreign` (`rol_id`),
   CONSTRAINT `users_rol_id_foreign` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id`)
@@ -64,12 +65,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,NULL,1,'Dario','Barbara','1234567890','cdb@gmail.com','admin#85'),
-						   (2,NULL,NULL,2,'Pepe','Pepe','1234567890','pepe@gmail.com','pepe#86'),
-						   (3,NULL,NULL,2,'Marcos','Marcos','1234567890','marcos@gmail.com','marcos#87'),
-						   (4,NULL,NULL,2,'Marisa','Marisa','1234567890','marisa@gmail.com','marisa#88'),
-						   (5,NULL,NULL,2,'Sofia','Sofia','1234567890','sofia@gmail.com','sofia#89'),
-						   (6,NULL,NULL,2,'Martin','Martin','1234567890','martin@gmail.com','martin#90');
+INSERT INTO `users` VALUES (1,NULL,NULL,1,'Dario','Barbara','1234567890','cdb@gmail.com','admin#85','default.jpg'),
+						   (2,NULL,NULL,2,'Pepe','Pepe','1234567890','pepe@gmail.com','pepe#86','default.jpg'),
+						   (3,NULL,NULL,2,'Marcos','Marcos','1234567890','marcos@gmail.com','marcos#87','default.jpg'),
+						   (4,NULL,NULL,2,'Marisa','Marisa','1234567890','marisa@gmail.com','marisa#88','default.jpg'),
+						   (5,NULL,NULL,2,'Sofia','Sofia','1234567890','sofia@gmail.com','sofia#89','default.jpg'),
+						   (6,NULL,NULL,2,'Martin','Martin','1234567890','martin@gmail.com','martin#90','default.jpg');
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 

@@ -388,6 +388,15 @@ p.caracteristica{
     width: 15px;
 }
 
+/* Form config users */
+.avatarTopContainer{
+    text-align: center;
+}
+
+.avatarIMG{
+    width: 10%;
+}
+
 /*TODO ESTO ES DEL CARRITO */
 
 .cart .table{
@@ -519,6 +528,7 @@ p.caracteristica{
 .imgCenter {
     text-align: center
 }
+
 
 /* **********MEDIA QUERY********** */
 
