@@ -96,7 +96,7 @@
         <% for(var i = 0; i < product.img.length; i++) { %>
             <div class="elementEditimg">
                     <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
-                    <input class="SubmitBotton" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>" value="Eliminar">
+                    <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
             </div>
         <% } %>
     </div>
