@@ -13,6 +13,9 @@ app.use(express.json());
 const methodOverride = require('method-override');
 app.use(methodOverride('_method')); 
 
+// Implementando session
+const session = require('express-session');
+app.use(session({secret: "SECRETO"}))
 
 // EJS
 app.set('view engine', 'ejs');

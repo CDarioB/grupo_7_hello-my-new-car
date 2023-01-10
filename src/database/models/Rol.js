@@ -2,12 +2,12 @@ module.exports = (sequelize, dataTypes) => {
     let alias = 'Rol';
     let cols = {
         id: {
-            type: dataTypes.BIGINT(10).UNSIGNED,
+            type: dataTypes.INTEGER,
             primaryKey: true,
             autoIncrement: true
         },
         type: {
-            type: dataTypes.STRING(50),
+            type: dataTypes.INTEGER,
             allowNull: false
         }
     };
@@ -20,8 +20,8 @@ module.exports = (sequelize, dataTypes) => {
     const Rol = sequelize.define(alias, cols, config); 
 
     Rol.associate = function (models) {
-        Rol.belongsTo(models.User, {  // un rol puede tener varios usuarios // Relacion (1)
-            as: "rol-users",
+        Rol.hasMany(models.User, {  // un rol puede tener varios usuarios // Relacion (1)
+            as: "user",
             foreignKey: 'rol_id',
         })
     }

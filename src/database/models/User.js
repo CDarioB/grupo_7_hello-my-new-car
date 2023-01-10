@@ -6,8 +6,6 @@ module.exports = (sequelize, dataTypes) => {
             primaryKey: true,
             autoIncrement: true
         },
-        //created_at: dataTypes.TIMESTAMP,
-        //updated_at: dataTypes.TIMESTAMP,
         first_name: {
             type: dataTypes.STRING(100),
             allowNull: false
@@ -28,6 +26,10 @@ module.exports = (sequelize, dataTypes) => {
             type: dataTypes.STRING(255),
             allowNull: false
         },
+        image:{
+            type: dataTypes.STRING(100),
+            allowNull: false
+        },
         rol_id: {
             type: dataTypes.BIGINT(10).UNSIGNED,
             allowNull: false
@@ -45,9 +47,9 @@ module.exports = (sequelize, dataTypes) => {
     const User = sequelize.define(alias, cols, config); 
 
     User.associate = function(models) {
-        User.hasMany(models.Rol, { // un usuario puede tener 1 rol // Relacion (1)
-            as: "user-rol", 
-            foreignKey: "rol_id"
+        User.belongsTo(models.Rol, { // un usuario puede tener 1 rol // Relacion (1)
+            as: "rol", 
+            foreignKey: "id"
         })
 
         User.hasMany(models.Product, {  // 1 usuario puede tener muschos productos // Relacion (2)
@@ -55,10 +57,6 @@ module.exports = (sequelize, dataTypes) => {
             foreignKey: 'user_id',
         })
     }
-
-    
-    
-    
 
     return User;
 };
