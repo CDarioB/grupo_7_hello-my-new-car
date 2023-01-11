@@ -1,7 +1,7 @@
 module.exports = {
   "development": {
     "username": "root",
-    "password": 'afsb2210A!',
+    "password": '',
     "database": "mynewcars_db",
     "host": "127.0.0.1",
     "dialect": "mysql"
