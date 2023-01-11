@@ -17,15 +17,8 @@ let indexController = {
              products[i].img = products[i].img.split(",");
             }
             res.render('home', {products});
-         });
-        
+         });    
     },
-    login: function(req, res, next) {
-        res.render('login')},
-    recovery: function(req,res,next) {
-        res.render('accountRecover');
-    },
-
     cart: function(req,res,next) {
         db.Product.findAll({
             include: ['province','category']
@@ -36,7 +29,6 @@ let indexController = {
             res.render('carritoDeCompra', {products});
          });
     },
-
     favoritos: function(req,res,next) {
         res.send('Esta es la lista de favoritos');
     }

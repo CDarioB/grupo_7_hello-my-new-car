@@ -6,6 +6,10 @@ const uploadFile = require('../middlewares/multerMiddleware');
 
 //Middlewares
 
+router.get('/login', usersController.login);
+
+router.get('/recovery', usersController.recovery);
+
 // Consulta de users
 router.get('/', usersController.users);
 

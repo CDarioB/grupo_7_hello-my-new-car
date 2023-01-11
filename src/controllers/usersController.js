@@ -18,7 +18,14 @@ const usersController = {
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
             res.render('./partials/users/users',{users,roles})})
-    })},
+        })
+    },
+    login: function(req, res, next) {
+        res.render('login')
+    },
+    recovery: function(req,res,next) {
+        res.render('accountRecover');
+    },
     create: function(req,res,next) {
         let allRoles;
         db.Rol.findAll()
