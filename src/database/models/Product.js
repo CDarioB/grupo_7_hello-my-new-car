@@ -53,7 +53,8 @@ module.exports = (sequelize, dataTypes) => {
         tableName: 'products',
         createdAt: 'created_at',
         updatedAt: 'updated_at',
-        deletedAt: false
+        deletedAt: 'deleted_at',
+        paranoid: true,
     };
 
     const Product = sequelize.define(alias, cols, config); 
