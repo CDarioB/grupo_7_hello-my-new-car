@@ -13,16 +13,17 @@
                 <% if (products[i].discount_percentage == 0) { %>
                     <article class="main-ofert-article">
                         <img src="/img/<%=products[i].img[0]%>" alt="">
-                            <div class="main-article-content">
-                            <p class="main-article-title"> <%=products[i].references%></p>
-                            <p class="main-article-description"><%=products[i].model +' - '+products[i].mileage+'km'+' - '+products[i].province.province%></p>
-                            <div>
-                                <p class="main-price">$<%=products[i].price%></p>
-                                <p class="main-discount"><%=products[i].discount_percentage%>%</p>
+                        <div class="main-article-content">
+                            <div class="price-container">
+                                <br><br>
                                 <p class="main-discountprice">$<%=products[i].discount_price%></p>
-                                <a href="/products/detail/<%=products[i].id%>"> Ver más <br></a>
                             </div>
-                        </div>
+                            <br>
+                            <p class="main-article-description"><%=products[i].model +' - '+products[i].mileage+'km'+' - '+products[i].province.province%></p>
+                            <p class="main-article-title"> <%=products[i].references%></p>
+                            <br>
+                            <a class="ver-mas" href="/products/detail/<%=products[i].id%>"> Ver más <br></a>
+                          </div>
                     </article>
                 <% } %>
             <% } %>
