@@ -20,7 +20,7 @@ router.post('/new', uploadFile.array("imagesCar", maxFiles), productsController.
 // Modificar Products
 router.get('/edit',productsController.modify); // Vista admin listado de productos a modificar
 router.get('/edit/:id', productsController.edit); // Formulario editar producto
-router.put('/edit/:id', uploadFile.single('imgFile'), productsController.update); 
+router.put('/edit/:id', uploadFile.array('imagesCar',maxFiles), productsController.update); 
 
 // Delete Products
 router.post('/delete/:id', productsController.delete);
