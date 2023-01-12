@@ -36,12 +36,15 @@ const usersController = {
         db.User.findOne({
             where:{email: req.body.email}
         }).then((userToLogin)=>{
-            console.log(userToLogin)
             if(userToLogin){
                 let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
+                console.log(userToLogin)
                 if(validatedPassword){
-                    return res.send('ok puedes ingresar')
+                    console.log('Si ingresó')
                 }
+            }
+            else{
+     
             }
         })
         
