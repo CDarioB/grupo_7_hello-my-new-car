@@ -53,6 +53,7 @@ CREATE TABLE `users` (
   `email` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `pass`  varchar(255) COLLATE utf8_unicode_ci NOT NULL,
   `image` varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `users_rol_id_foreign` (`rol_id`),
   CONSTRAINT `users_rol_id_foreign` FOREIGN KEY (`rol_id`) REFERENCES `rol` (`id`)
@@ -65,12 +66,12 @@ CREATE TABLE `users` (
 
 LOCK TABLES `users` WRITE;
 /*!40000 ALTER TABLE `users` DISABLE KEYS */;
-INSERT INTO `users` VALUES (1,NULL,NULL,1,'Dario','Barbara','1234567890','cdb@gmail.com','admin#85','default.jpg'),
-						   (2,NULL,NULL,2,'Pepe','Pepe','1234567890','pepe@gmail.com','pepe#86','default.jpg'),
-						   (3,NULL,NULL,2,'Marcos','Marcos','1234567890','marcos@gmail.com','marcos#87','default.jpg'),
-						   (4,NULL,NULL,2,'Marisa','Marisa','1234567890','marisa@gmail.com','marisa#88','default.jpg'),
-						   (5,NULL,NULL,2,'Sofia','Sofia','1234567890','sofia@gmail.com','sofia#89','default.jpg'),
-						   (6,NULL,NULL,2,'Martin','Martin','1234567890','martin@gmail.com','martin#90','default.jpg');
+INSERT INTO `users` VALUES (1,NULL,NULL,1,'Dario','Barbara','1234567890','cdb@gmail.com','admin#85','default.jpg',NULL),
+						   (2,NULL,NULL,2,'Pepe','Pepe','1234567890','pepe@gmail.com','pepe#86','default.jpg',NULL),
+						   (3,NULL,NULL,2,'Marcos','Marcos','1234567890','marcos@gmail.com','marcos#87','default.jpg',NULL),
+						   (4,NULL,NULL,2,'Marisa','Marisa','1234567890','marisa@gmail.com','marisa#88','default.jpg',NULL),
+						   (5,NULL,NULL,2,'Sofia','Sofia','1234567890','sofia@gmail.com','sofia#89','default.jpg',NULL),
+						   (6,NULL,NULL,2,'Martin','Martin','1234567890','martin@gmail.com','martin#90','default.jpg',NULL);
 /*!40000 ALTER TABLE `users` ENABLE KEYS */;
 UNLOCK TABLES;
 
@@ -148,6 +149,7 @@ CREATE TABLE `products` (
   `category_id` int(10) unsigned NOT NULL,
   `province_id` int(11) unsigned NOT NULL,
   `user_id` int(10) unsigned NOT NULL,
+  `deleted_at` timestamp NULL DEFAULT NULL,
   PRIMARY KEY (`id`),
   KEY `products_category_id_foreign` (`category_id`),
   KEY `products_province_id_foreign` (`province_id`),
@@ -164,11 +166,11 @@ CREATE TABLE `products` (
 
 LOCK TABLES `products` WRITE;
 /*!40000 ALTER TABLE `products` DISABLE KEYS */;
-INSERT INTO `products` VALUES (1,'2022-12-16 00:00:00','2022-12-16 00:00:00','Mini Cooper S 1.6 Jcw Coupe 211cv','BMW',2006,70000,37500,15,31875,'MINI-1.jpg,MINI-2.jpg,MINI-3.jpg,MINI-4.jpg,MINI-5.jpg',1,1,2),
-							  (2,'2022-12-16 00:00:00','2022-12-16 00:00:00','Ford Mustang 5.0 GT 421cv','Ford',2007,14000,95000,10,85500,'MUSTANG-1.jpg,MUSTANG-2.jpg,MUSTANG-3.jpg,MUSTANG-4.jpg,MUSTANG-5.jpg',3,22,3),
-							  (3,'2022-12-16 00:00:00','2022-12-16 00:00:00','Toyota Etios 1.5 X','Toyota',2017,67526,10000,5,9500,'ETIOS-1.jpg,ETIOS-2.jpg,ETIOS-3.jpg,ETIOS-4.jpg,ETIOS-5.jpg,ETIOS-6.jpg',1,3,4),
-							  (4,'2022-12-16 00:00:00','2022-12-16 00:00:00','Ford Ranger Limited 3.2 4x4','Ford',2018,55000,25000,7,23250,'RANGER-1.jpg,RANGER-2.jpg,RANGER-3.jpg,RANGER-4.jpg,RANGER-5.jpg',3,7,5),
-							  (5,'2022-12-16 00:00:00','2022-12-16 00:00:00','Peugeot 306','Peugeot',2007,10000,100000,0,100000,'1668410286724_photo.jpg,1668410286732_photo.jpg',1,7,6);
+INSERT INTO `products` VALUES (1,'2022-12-16 00:00:00','2022-12-16 00:00:00','Mini Cooper S 1.6 Jcw Coupe 211cv','BMW',2006,70000,37500,15,31875,'MINI-1.jpg,MINI-2.jpg,MINI-3.jpg,MINI-4.jpg,MINI-5.jpg',1,1,2,NULL),
+							  (2,'2022-12-16 00:00:00','2022-12-16 00:00:00','Ford Mustang 5.0 GT 421cv','Ford',2007,14000,95000,10,85500,'MUSTANG-1.jpg,MUSTANG-2.jpg,MUSTANG-3.jpg,MUSTANG-4.jpg,MUSTANG-5.jpg',3,22,3,NULL),
+							  (3,'2022-12-16 00:00:00','2022-12-16 00:00:00','Toyota Etios 1.5 X','Toyota',2017,67526,10000,5,9500,'ETIOS-1.jpg,ETIOS-2.jpg,ETIOS-3.jpg,ETIOS-4.jpg,ETIOS-5.jpg,ETIOS-6.jpg',1,3,4,NULL),
+							  (4,'2022-12-16 00:00:00','2022-12-16 00:00:00','Ford Ranger Limited 3.2 4x4','Ford',2018,55000,25000,7,23250,'RANGER-1.jpg,RANGER-2.jpg,RANGER-3.jpg,RANGER-4.jpg,RANGER-5.jpg',3,7,5,NULL),
+							  (5,'2022-12-16 00:00:00','2022-12-16 00:00:00','Peugeot 306','Peugeot',2007,10000,100000,0,100000,'1668410286724_photo.jpg,1668410286732_photo.jpg',1,7,6,NULL);
 /*!40000 ALTER TABLE `products` ENABLE KEYS */;
 UNLOCK TABLES;
 

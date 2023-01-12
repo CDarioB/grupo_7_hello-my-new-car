@@ -8,10 +8,6 @@ const moment = require('moment');
 const Products = db.Product;
 const Categories = db.Category;
 const Provinces = db.Province;
-//const Locations = db.Location;
-
-//const productsFilePath = path.join(__dirname, '../data/products.json');
-//let products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const productsController = {
     products: function(req,res,next) {
@@ -54,8 +50,6 @@ const productsController = {
         
             Products    
                 .create({
-                    //created_at: moment(dateNow).locale('es-us').format('YYYY-MM-DD'),
-                    //updated_at: moment(dateNow).locale('es-us').format('YYYY-MM-DD'),
                     references: req.body.refCar,
                     brand: req.body.brandCar,
                     model: req.body.modelYearCar,
@@ -66,12 +60,10 @@ const productsController = {
                     img: images.join(','),
                     category_id: req.body.categoryTypeCar,
                     province_id: req.body.provinceCar,
-                    // location_id: req.body.cityCar,
                     user_id: 1
                 }
             ).then(() =>{
                 res.redirect('/products/index');
-                //res.render('./partials/product/formularioIndex');
             })
         } catch(error) {
             console.log(error)
@@ -116,39 +108,48 @@ const productsController = {
                 res.render('partials/product/editProduct',{product: productPkId, allProvinces: allProvinces, allCategory: allCategory});
         });
     },
-    update: (req, res) => {
+    update: (req,res,next) =>{
+        let idCar = req.params.id;
+        let Car;
         let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
         let price = parseInt(req.body.priceCar);
-        
-        Products.update({
-            //created_at: moment(dateNow).locale('es-us').format('YYYY-MM-DD'),
-            //updated_at: moment(dateNow).locale('es-us').format('YYYY-MM-DD'),
-            references: req.body.refCar,
-            brand: req.body.brandCar,
-            model: req.body.modelYearCar,
-            mileage: req.body.mileageCar,
-            price: price,
-            discount_percentage: discount,
-            discount_price: price - ((price * discount)/100),
-            //img: images.join(','),
-            category_id: req.body.categoryTypeCar,
-            province_id: req.body.provinceCar,
-            // location_id: req.body.cityCar,
-            user_id: 1
-        },{
-            where: {
-                id: req.params.id
-            }
-        }).then(()=> {
+        db.Product.findByPk(idCar)
+        .then((carro)=>{
+            Car = carro;
+            images = Car.img.split(",");
+            for (let i=0; i < req.files.length; i++)
+            images.push(req.files[i].filename);
+            return images;
+        })
+        .then(()=>{
+            Products.update({
+                references: req.body.refCar,
+                brand: req.body.brandCar,
+                model: req.body.modelYearCar,
+                mileage: req.body.mileageCar,
+                price: price,
+                discount_percentage: discount,
+                discount_price: price - ((price * discount)/100),
+                img: images.join(','),
+                category_id: req.body.categoryTypeCar,
+                province_id: req.body.provinceCar,
+                user_id: 1
+            },{
+                where: {
+                    id: idCar
+                }
+            })
+        })
+        .then(()=>{
             Products.findAll({
                 include: ['province']
-                //include: ['province','category']
             }).then(products => {
                for(let i = 0; i < products.length; i++){
                 products[i].img = products[i].img.split(",");
                }
                res.render('partials/product/productListModify',{products});
             });
+        
         })
     },
     menuModificar: function(req,res,next) {

@@ -2,24 +2,9 @@ const express = require ("express");
 const router = express.Router();
 
 const usersController = require('../controllers/usersController.js');
+const uploadFile = require('../middlewares/multerMiddleware');
 
 //Middlewares
-const uploadFile = require('../middlewares/multerMiddleware');
-const validateLogin = require('../middlewares/validateLoginMiddleware')
-
-//Login
-router.get('/login', usersController.login);
-router.post('/login', validateLogin, usersController.processLogin)
-router.get('/check', function(req, res){
-    if (req.session.usuarioLogeado == undefined) {
-        res.send('El usuario no está logeado')
-    } else {
-        res.send('El usuario logeado es ' + req.session.usuarioLogeado)
-    }
-})
-
-//Recuperar cuenta de usuario
-router.get('/recovery', usersController.recovery);
 
 // Consulta de users
 router.get('/', usersController.users);
@@ -30,9 +15,9 @@ router.post('/new', usersController.newUsers);
 
 // Modificar Users
 router.get('/modificacion/:id',usersController.modificar); // Este sería del admin
-router.post('/edit/:id',usersController.update);
+router.put('/edit/:id',uploadFile.single('avatarUserFile') ,usersController.update);
 
 // Delete Users
-router.delete('/delete/:id', usersController.delete);
+router.post('/delete/:id', usersController.delete);
 
 module.exports = router;
