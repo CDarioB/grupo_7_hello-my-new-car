@@ -7,17 +7,53 @@
 <%-include('./partials/header.ejs') %>
 <body>
     <main>
-      <form action="/" method="GET" class="formBody">
+      <% if (typeof errors != 'undefined'){ %>
+        <p class="errors">ERROR</p>
+        <ul>
+          <% for(let i=0; i<errors.length; i++){%>
+            <li>
+              <%= errors[i].msg %> 
+            </li>
+            <% } %>  
+        </ul> 
+        <% } %> 
+      <form action="/users/login" method="POST" class="formBody">
         <div class="TopContainer">
           <h3>¡Bienvenido!</h3>
         </div>
         <div class="FormItem">
-          <label for="nombre-usuario">Usuario / E-mail:</label>
-          <input type="text" name="nombre-usuario" placeholder="Nombre de usuario" class="InputControl" />
+          <label for="email">E-mail:</label>
+          <input 
+              type="text" 
+              name="email" 
+              placeholder="Ingrese su correo electrónico" 
+              class="InputControl <%= locals.errors && errors.email ? 'is-invalid' : null %>"
+              value="<%= locals.oldData ? oldData.email : null %>" 
+          />
+          <br>
+          <% if (locals.errors && errors.email) { %>
+            <div class="text-danger">
+                <%= errors.email.msg %> 
+            </div>             
+            <br>
+        <% } %>
         </div>
         <div class="FormItem">
           <label for="password">Contraseña:</label>
-          <input type="password" name="password" placeholder="Contraseña" class="InputControl" />
+          <input 
+              type="password" 
+              name="password" 
+              placeholder="Ingrese su contraseña" 
+              class="InputControl <%= locals.errors && errors.password ? 'is-invalid' : null %>"
+              value="<%= locals.oldData ? oldData.password : null %>" 
+          />
+          <br>
+          <% if (locals.errors && errors.password) { %>
+              <div class="text-danger">
+                  <%= errors.password.msg %> 
+              </div>             
+              <br>
+          <% } %>
         </div>
         <div>
           <button type="submit" class="SubmitBotton">Login</button>
