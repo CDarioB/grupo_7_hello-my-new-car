@@ -18,42 +18,7 @@ const usersController = {
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
             res.render('./partials/users/users',{users,roles})})
-
-        })
-    },
-    login: function(req, res, next) {
-        res.render('login')
-    },
-    recovery: function(req,res,next) {
-        res.render('accountRecover');
-    },
-    processLogin: function(req, res){
-        //let errors = validationResult(req)
-        db.User.findOne({
-            where:{email: req.body.email}
-        }).then((userToLogin)=>{
-            if(userToLogin){
-                let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
-                console.log(userToLogin)
-                if(validatedPassword){
-                    console.log('Si ingresó')
-                }
-            }
-            else{
-     
-            }
-        })
-        
-
-
-        /*return res.render ('login', {
-            errors:{
-                email: {
-                    msg:'Credenciales inválidas'
-                }
-            }
-        })*/
-    },
+    })},
     create: function(req,res,next) {
         let allRoles;
         db.Rol.findAll()
