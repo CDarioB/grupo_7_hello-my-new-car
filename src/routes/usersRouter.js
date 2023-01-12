@@ -30,9 +30,9 @@ router.post('/new', usersController.newUsers);
 
 // Modificar Users
 router.get('/modificacion/:id',usersController.modificar); // Este sería del admin
-router.post('/edit/:id',usersController.update);
+router.put('/edit/:id',uploadFile.single('avatarUserFile') ,usersController.update);
 
 // Delete Users
-router.delete('/delete/:id', usersController.delete);
+router.post('/delete/:id', usersController.delete);
 
 module.exports = router;

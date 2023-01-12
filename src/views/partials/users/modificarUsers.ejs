@@ -18,7 +18,7 @@
 <div class ="avatarTopContainer">
     <img class="avatarIMG" src="/img/<%=AllUsers[idUser-1].image%>" alt="">
 </div>
-<form class="formBody" method="POST" action="/users/edit/<%=idUser%>" >
+<form class="formBody" method="POST" action="/users/edit/<%=idUser%>?_method=PUT" enctype="multipart/form-data">
     <div class="FormItem">
         <label> Nombres:</label>
         <input class="InputControl" type="text" id="firstName" name="firstName" value=<%=AllUsers[idUser-1].first_name%>>
@@ -39,6 +39,9 @@
         <label for="password">Contraseña:</label>
         <input type="password" name="pass" id="pass" placeholder="Mínimo 8 caracteres" class="InputControl" value="<%=AllUsers[idUser-1].pass%>" />
       </div>
+      <label>Holiwis</label>
+      <br>
+      <input class="boton-adj-file" type="file" name="avatarUserFile" accept=".jpg, .jpeg, .png">
     <div class="FormItem">
         <input class="SubmitBotton" type="submit" value="Actualizar información" >
     </div>

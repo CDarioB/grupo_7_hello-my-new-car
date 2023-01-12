@@ -92,32 +92,53 @@ const usersController = {
             AllUsers=users;
         })
         .then(()=>{
-            res.render('./partials/users/modificarUsers',{AllRoles,AllUsers,idUser})
+            res.render('./partials/users/modificarUsers', {AllRoles,AllUsers,idUser})
         })
     },
     update: function(req,res){
-        db.User.update({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            tel: req.body.tel,
-            email: req.body.email,
-            pass: req.body.pass,
-            image: 'default.jpg',
-        },
-        {
-            where:{
-                id: req.params.id,
-            }
-        }).then(()=>{
-
-            res.redirect('../');
-        })
+        if (req.file){
+            let filename = req.file.filename;
+            db.User.update({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                tel: req.body.tel,
+                email: req.body.email,
+                pass: req.body.pass,
+                image: filename,
+            },
+            {
+                where:{
+                    id: req.params.id,
+                }
+            }).then(()=>{
+                res.redirect('../');
+            })
+        }
+        else{
+            db.User.update({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                tel: req.body.tel,
+                email: req.body.email,
+                pass: req.body.pass,
+            },
+            {
+                where:{
+                    id: req.params.id,
+                }
+            }).then(()=>{
+                res.redirect('../');
+            })
+        }
+        
     },
     delete: (req,res) => {
-        const id = req.params.id;
-        const finalUsers = users.filter(user => user.usr_id != id)
-        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
-        res.redirect('/users/');
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/")
     }
 }
 
