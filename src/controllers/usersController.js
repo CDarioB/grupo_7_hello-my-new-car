@@ -4,6 +4,11 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
+const { validationResult } = require('express-validator');
+const bcrypt = require('bcryptjs')
+
+// ********** para leer el JSON temporal probando login***********
+const usersFilePath = path.join(__dirname, '../data/users.json')// ruta del archivo .json donde están todos los héroes (simula bd)
 
 const Products = db.Product;
 const Categories = db.Category;
@@ -18,7 +23,38 @@ const usersController = {
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
             res.render('./partials/users/users',{users,roles})})
-    })},
+        })
+    },
+    login: function(req, res, next) {
+        res.render('login')
+    },
+    recovery: function(req,res,next) {
+        res.render('accountRecover');
+    },
+    processLogin: function(req, res){
+        //let errors = validationResult(req)
+        db.User.findOne({
+            where:{email: req.body.email}
+        }).then((userToLogin)=>{
+            console.log(userToLogin)
+            if(userToLogin){
+                let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
+                if(validatedPassword){
+                    return res.send('ok puedes ingresar')
+                }
+            }
+        })
+        
+
+
+        /*return res.render ('login', {
+            errors:{
+                email: {
+                    msg:'Credenciales inválidas'
+                }
+            }
+        })*/
+    },
     create: function(req,res,next) {
         let allRoles;
         db.Rol.findAll()

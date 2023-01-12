@@ -33,6 +33,27 @@ img{
     height:100%;
 }
 
+.errors{
+    color: #BF0404;
+    width: 800;
+    text-align: center;
+    margin-top: 20px;
+}
+
+.text-danger{
+    color: #BF0404;
+}
+
+input.is-invalid{
+    border-width: 1px;
+    border-color: #BF0404;
+}
+
+input.is-valid{
+    border-width: 1px;
+    border-color: green;
+}
+
 
 /* ***** header config ***** */
 header {
