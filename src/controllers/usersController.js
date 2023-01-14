@@ -38,25 +38,27 @@ const usersController = {
         }).then((userToLogin)=>{
             if(userToLogin){
                 let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
-                console.log(userToLogin)
                 if(validatedPassword){
-                    console.log('Si ingresó')
+                    return res.redirect('/users/profile')
+                }else{
+                    return res.render ('login', {
+                        errors:{
+                            email: {
+                                msg:'Contrasena inválida'
+                            }
+                        }
+                    })     
                 }
-            }
-            else{
-     
+            }else{
+                return res.render ('login', {
+                    errors:{
+                        email: {
+                            msg:'No se encuentra este email en nuestra base de datos'
+                        }
+                    }
+                })     
             }
         })
-        
-
-
-        /*return res.render ('login', {
-            errors:{
-                email: {
-                    msg:'Credenciales inválidas'
-                }
-            }
-        })*/
     },
     create: function(req,res,next) {
         let allRoles;
@@ -74,7 +76,7 @@ const usersController = {
                     last_name: req.body.lastName,
                     tel: req.body.tel,
                     email: req.body.email,
-                    pass: req.body.pass,
+                    pass: bcrypt.hashSync(req.body.pass,10),
                     image: 'default.jpg',
                     rol_id: 2,
                 }
@@ -104,7 +106,7 @@ const usersController = {
             last_name: req.body.lastName,
             tel: req.body.tel,
             email: req.body.email,
-            pass: req.body.pass,
+            pass: bcrypt.hashSync(req.body.pass,10),
             image: 'default.jpg',
         },
         {
@@ -121,6 +123,9 @@ const usersController = {
         const finalUsers = users.filter(user => user.usr_id != id)
         fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
         res.redirect('/users/');
+    },
+    profile: (req, res, next) =>{
+        res.render('profile')
     }
 }
 
