@@ -6,9 +6,11 @@ const usersController = require('../controllers/usersController.js');
 //Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
 const validateLogin = require('../middlewares/validateLoginMiddleware')
+const guestMiddleware = require('../middlewares/guestMiddleware')
+const authMiddleware = require('../middlewares/authMiddleware')
 
 //Login
-router.get('/login', usersController.login);
+router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validateLogin, usersController.processLogin)
 
 /*router.get('/check', function(req, res){
@@ -26,7 +28,7 @@ router.get('/recovery', usersController.recovery);
 router.get('/', usersController.users);
 
 //Crear Users
-router.get('/create',usersController.create);
+router.get('/create', guestMiddleware, usersController.create);
 router.post('/new', usersController.newUsers);
 
 // Modificar Users
@@ -37,6 +39,6 @@ router.post('/edit/:id',usersController.update);
 router.delete('/delete/:id', usersController.delete);
 
 //Perfil de usuario
-router.get('/profile', usersController.profile)
+router.get('/profile', authMiddleware, usersController.profile)
 
 module.exports = router;

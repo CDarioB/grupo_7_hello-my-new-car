@@ -15,7 +15,11 @@ app.use(methodOverride('_method'));
 
 // Implementando session
 const session = require('express-session');
-app.use(session({secret: "SECRETO"}))
+app.use(session({
+    secret: "SECRETO",
+    resave: false,
+    saveUninitialized: false,
+}))
 
 // EJS
 app.set('view engine', 'ejs');

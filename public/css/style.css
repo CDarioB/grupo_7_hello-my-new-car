@@ -94,10 +94,23 @@ header {
     width: 10%;
 }
 
+.user-profile{
+    display: flex;
+    margin: auto;
+    width: 10%;
+}
+
 .shopping-cart a{
     margin: 0px auto;
     color: #252759;
     font-size: 12px;
+}
+
+.user-profile a
+{
+    margin: 0px auto;
+    color: #252759;
+    font-size: 14px;
 }
 
 .title {
@@ -140,6 +153,14 @@ header {
 .burger-menu {
     color: #fff;
     padding: 5px;
+}
+
+.user-name{
+    text-align: end;
+    padding: 0px 5px 5px;
+    font-weight: 600;
+    color: #252759
+    
 }
 
 /* *** end header config *** */
@@ -270,6 +291,27 @@ p.main-discount {
     text-align: center;
     position: relative;
 }
+
+/****** user profile *****/
+.profile-container{
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 20px;
+    
+}
+
+.user-avatar{
+    width: 20%;
+}
+
+.alert-success{
+    font-size: 16px;
+    background-color:#FFF;
+    padding: 10px;
+}
+/****** end user profile *****/ 
 
 /* **** end main config **** */
 /* ************************* */
@@ -608,6 +650,10 @@ p.caracteristica{
         font-size: 16px;
     }
 
+    .user-profile a{
+        font-size: 18px;
+    }
+
       
     .first-menu {
         display: flex;
@@ -649,6 +695,10 @@ p.caracteristica{
 
     .shopping-cart a {
         font-size: 18px;
+    }
+
+    .user-profile a{
+        font-size: 20px;
     }
 
     .first-menu {

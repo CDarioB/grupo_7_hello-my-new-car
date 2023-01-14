@@ -39,6 +39,8 @@ const usersController = {
             if(userToLogin){
                 let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
                 if(validatedPassword){
+                    delete userToLogin.pass //esto no me funciona, se supone que no debe mostrar el password
+                    req.session.userLoggedIn = userToLogin
                     return res.redirect('/users/profile')
                 }else{
                     return res.render ('login', {
@@ -125,7 +127,9 @@ const usersController = {
         res.redirect('/users/');
     },
     profile: (req, res, next) =>{
-        res.render('profile')
+        res.render('./partials/users/profile', {
+            user: req.session.userLoggedIn
+        })
     }
 }
 

@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+  <%-include('../head.ejs') %>
+    <title>Iniciar sesión</title>
+  </head>
+
+<%-include('../header.ejs') %>
+<body>
+    <main>
+      <div class="profile-container">
+        <h2>Hola <%= user.first_name %>! </h2>
+        <img class="user-avatar" src="/img/<%= user.image%>" alt="">
+        <br>
+        <div class="alert-success"><%= user.email %> ✅ </div>
+      </div>
+    </main>
+    <%-include('../footer.ejs') %>
+</body>
+</html>
