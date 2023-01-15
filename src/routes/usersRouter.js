@@ -13,14 +13,6 @@ const authMiddleware = require('../middlewares/authMiddleware')
 router.get('/login', guestMiddleware, usersController.login);
 router.post('/login', validateLogin, usersController.processLogin)
 
-/*router.get('/check', function(req, res){
-    if (req.session.usuarioLogeado == undefined) {
-        res.send('El usuario no está logeado')
-    } else {
-        res.send('El usuario logeado es ' + req.session.usuarioLogeado)
-    }
-})*/
-
 //Recuperar cuenta de usuario
 router.get('/recovery', usersController.recovery);
 
@@ -40,5 +32,8 @@ router.delete('/delete/:id', usersController.delete);
 
 //Perfil de usuario
 router.get('/profile', authMiddleware, usersController.profile)
+
+//Logout
+router.get('/logout', usersController.logout)
 
 module.exports = router;

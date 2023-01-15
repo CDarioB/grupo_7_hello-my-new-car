@@ -126,10 +126,14 @@ const usersController = {
         fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
         res.redirect('/users/');
     },
-    profile: (req, res, next) =>{
+    profile: (req, res) =>{
         res.render('./partials/users/profile', {
             user: req.session.userLoggedIn
         })
+    },
+    logout: (req, res)=>{
+        req.session.destroy()
+        return res.redirect('/')
     }
 }
 

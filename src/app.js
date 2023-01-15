@@ -5,6 +5,9 @@ const path = require ("path");
 const PUBLIC_PATH = path.join(__dirname, "../public");
 app.use(express.static(PUBLIC_PATH)); // Para los archivos estáticos en el folder /public
 
+// Middleware de Login
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
 // Para poder trabajar con archivos json
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -20,6 +23,9 @@ app.use(session({
     resave: false,
     saveUninitialized: false,
 }))
+
+//implementando Middleware de Login
+app.use(userLoggedMiddleware)
 
 // EJS
 app.set('view engine', 'ejs');
