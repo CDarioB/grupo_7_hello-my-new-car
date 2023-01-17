@@ -4,26 +4,13 @@ const router = express.Router();
 const usersController = require('../controllers/usersController.js');
 const uploadFile = require('../middlewares/multerMiddleware');
 
-const validateLogin = require('../middlewares/validateLoginMiddleware')
-const guestMiddleware = require('../middlewares/guestMiddleware')
-const authMiddleware = require('../middlewares/authMiddleware')
-
-//Login
-router.get('/login', guestMiddleware, usersController.login);
-router.post('/login', validateLogin, usersController.processLogin)
-
-//Recuperar cuenta de usuario
-router.get('/recovery', usersController.recovery);
-
-
 //Middlewares
-
 
 // Consulta de users
 router.get('/', usersController.users);
 
 //Crear Users
-router.get('/create', guestMiddleware, usersController.create);
+router.get('/create',usersController.create);
 router.post('/new', usersController.newUsers);
 
 // Modificar Users
@@ -32,11 +19,5 @@ router.put('/edit/:id',uploadFile.single('avatarUserFile') ,usersController.upda
 
 // Delete Users
 router.post('/delete/:id', usersController.delete);
-
-//Perfil de usuario
-router.get('/profile', authMiddleware, usersController.profile)
-
-//Logout
-router.get('/logout', usersController.logout)
 
 module.exports = router;

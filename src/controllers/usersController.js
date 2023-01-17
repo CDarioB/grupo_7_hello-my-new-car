@@ -18,56 +18,7 @@ const usersController = {
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
             res.render('./partials/users/users',{users,roles})})
-
-        })
-    },
-    login: function(req, res, next) {
-        res.render('login')
-    },
-    recovery: function(req,res,next) {
-        res.render('accountRecover');
-    },
-    processLogin: function(req, res){
-        //let errors = validationResult(req)
-        db.User.findOne({
-            where:{email: req.body.email}
-        }).then((userToLogin)=>{
-            if(userToLogin){
-                let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
-                if(validatedPassword){
-                    delete userToLogin.pass
-                    req.session.userLoggedIn = userToLogin
-                    return res.redirect('/users/profile')
-                }else{
-                    return res.render ('login', {
-                        errors:{
-                            email: {
-                                msg:'Contraseña inválida'
-                            }
-                        }
-                    })     
-                }
-            }else{
-                return res.render ('login', {
-                    errors:{
-                        email: {
-                            msg:'No se encuentra este email en nuestra base de datos'
-                        }
-                    }
-                })     
-            }
-        })
-    },
-    profile: (req, res) =>{
-        res.render('./partials/users/profile', {
-            user: req.session.userLoggedIn
-        })
-    },
-    logout: (req, res)=>{
-        req.session.destroy()
-        return res.redirect('/')
-    },
-
+    })},
     create: function(req,res,next) {
         let allRoles;
         db.Rol.findAll()
@@ -84,7 +35,7 @@ const usersController = {
                     last_name: req.body.lastName,
                     tel: req.body.tel,
                     email: req.body.email,
-                    pass: bcrypt.hashSync(req.body.pass,10),
+                    pass: req.body.pass,
                     image: 'default.jpg',
                     rol_id: 2,
                 }
@@ -109,24 +60,41 @@ const usersController = {
         })
     },
     update: function(req,res){
-    
-        db.User.update({
-            first_name: req.body.firstName,
-            last_name: req.body.lastName,
-            tel: req.body.tel,
-            email: req.body.email,
-            pass: bcrypt.hashSync(req.body.pass,10),
-            image: 'default.jpg',
-        },
-        {
-            where:{
-                id: req.params.id,
-            }
-        }).then(()=>{
-
-            res.redirect('../');
-        })
-
+        if (req.file){
+            let filename = req.file.filename;
+            db.User.update({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                tel: req.body.tel,
+                email: req.body.email,
+                pass: req.body.pass,
+                image: filename,
+            },
+            {
+                where:{
+                    id: req.params.id,
+                }
+            }).then(()=>{
+                res.redirect('../');
+            })
+        }
+        else{
+            db.User.update({
+                first_name: req.body.firstName,
+                last_name: req.body.lastName,
+                tel: req.body.tel,
+                email: req.body.email,
+                pass: req.body.pass,
+            },
+            {
+                where:{
+                    id: req.params.id,
+                }
+            }).then(()=>{
+                res.redirect('../');
+            })
+        }
+        
     },
     delete: (req,res) => {
         db.User.destroy({
