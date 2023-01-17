@@ -14,15 +14,13 @@
       <a href="/cart"><i class="fa-solid fa-cart-shopping fa-xl"></i></a>
     </div>
   </div>
-  <p class="user-name">Hola! </p>
   <div class="header-menu">
     <% if(!locals.isLoggedIn) {%>     
     <div class="first-menu">
       <nav>
         <ul>    
           <li><a href='/products' class="lista">Comprá tu auto</a></li>
-          <li><a href='/products/index' class="lista">Vendé tu auto</a></li>
-          <li><a href='#' class="lista">Ayuda</a></li>
+          <li><a href='/products/index' class="lista">Vendé tu auto</a></li>          
         </ul>
       </nav>
     </div>
@@ -31,17 +29,17 @@
         <ul>
           <li><a href='/users/create' class="lista">Creá tu cuenta </a></li>
           <li><a href='/users/login' class="lista">Ingresá</a></li>
-
+          <li><a href='#' class="lista">Ayuda</a></li>
         </ul>
       </nav>
     </div>
     <% }else{ %>
       <div class="first-menu">
         <nav>
-          <ul>    
+          <ul>
+            <li> <a href="/users/profile" class="lista">Hola <%= locals.userLoggedIn.first_name %>! </a></li>     
             <li><a href='/products' class="lista">Comprá tu auto</a></li>
             <li><a href='/products/index' class="lista">Vendé tu auto</a></li>
-            <li><a href='#' class="lista">Ayuda</a></li>
           </ul>
         </nav>
       </div>
@@ -49,6 +47,7 @@
         <nav>
           <ul>
             <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
+            <li><a href='#' class="lista">Ayuda</a></li>
           </ul>
         </nav>
       </div>

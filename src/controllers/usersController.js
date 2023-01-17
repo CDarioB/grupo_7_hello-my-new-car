@@ -39,14 +39,14 @@ const usersController = {
             if(userToLogin){
                 let validatedPassword = bcrypt.compareSync(req.body.password, userToLogin.pass)
                 if(validatedPassword){
-                    delete userToLogin.pass //esto no me funciona, se supone que no debe mostrar el password
+                    delete userToLogin.pass
                     req.session.userLoggedIn = userToLogin
                     return res.redirect('/users/profile')
                 }else{
                     return res.render ('login', {
                         errors:{
                             email: {
-                                msg:'Contrasena inválida'
+                                msg:'Contraseña inválida'
                             }
                         }
                     })     
@@ -61,6 +61,15 @@ const usersController = {
                 })     
             }
         })
+    },
+    profile: (req, res) =>{
+        res.render('./partials/users/profile', {
+            user: req.session.userLoggedIn
+        })
+    },
+    logout: (req, res)=>{
+        req.session.destroy()
+        return res.redirect('/')
     },
     create: function(req,res,next) {
         let allRoles;
@@ -125,15 +134,6 @@ const usersController = {
         const finalUsers = users.filter(user => user.usr_id != id)
         fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
         res.redirect('/users/');
-    },
-    profile: (req, res) =>{
-        res.render('./partials/users/profile', {
-            user: req.session.userLoggedIn
-        })
-    },
-    logout: (req, res)=>{
-        req.session.destroy()
-        return res.redirect('/')
     }
 }
 
