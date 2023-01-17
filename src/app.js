@@ -5,6 +5,9 @@ const path = require ("path");
 const PUBLIC_PATH = path.join(__dirname, "../public");
 app.use(express.static(PUBLIC_PATH)); // Para los archivos estáticos en el folder /public
 
+// Middleware de Login
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware')
+
 // Para poder trabajar con archivos json
 app.use(express.urlencoded({ extended: false }));
 app.use(express.json());
@@ -15,7 +18,14 @@ app.use(methodOverride('_method'));
 
 // Implementando session
 const session = require('express-session');
+app.use(session({
+    secret: "SECRETO",
+    resave: false,
+    saveUninitialized: false,
+}))
 
+//implementando Middleware de Login
+app.use(userLoggedMiddleware)
 // EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Define la ubicación de la carpeta de las Vistas
