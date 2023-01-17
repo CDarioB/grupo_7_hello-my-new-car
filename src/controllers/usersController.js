@@ -4,11 +4,6 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
-const { validationResult } = require('express-validator');
-const bcrypt = require('bcryptjs')
-
-// ********** para leer el JSON temporal probando login***********
-const usersFilePath = path.join(__dirname, '../data/users.json')// ruta del archivo .json donde están todos los héroes (simula bd)
 
 const Products = db.Product;
 const Categories = db.Category;
@@ -23,6 +18,7 @@ const usersController = {
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
             res.render('./partials/users/users',{users,roles})})
+
         })
     },
     login: function(req, res, next) {
@@ -71,6 +67,7 @@ const usersController = {
         req.session.destroy()
         return res.redirect('/')
     },
+
     create: function(req,res,next) {
         let allRoles;
         db.Rol.findAll()
@@ -108,10 +105,11 @@ const usersController = {
             AllUsers=users;
         })
         .then(()=>{
-            res.render('./partials/users/modificarUsers',{AllRoles,AllUsers,idUser})
+            res.render('./partials/users/modificarUsers', {AllRoles,AllUsers,idUser})
         })
     },
     update: function(req,res){
+    
         db.User.update({
             first_name: req.body.firstName,
             last_name: req.body.lastName,
@@ -128,12 +126,15 @@ const usersController = {
 
             res.redirect('../');
         })
+
     },
     delete: (req,res) => {
-        const id = req.params.id;
-        const finalUsers = users.filter(user => user.usr_id != id)
-        fs.writeFileSync(usersFilePath, JSON.stringify(finalUsers, null, " "));
-        res.redirect('/users/');
+        db.User.destroy({
+            where: {
+                id: req.params.id
+            }
+        })
+        res.redirect("/users/")
     }
 }
 

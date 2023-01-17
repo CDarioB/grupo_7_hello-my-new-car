@@ -33,27 +33,6 @@ img{
     height:100%;
 }
 
-.errors{
-    color: #BF0404;
-    width: 800;
-    text-align: center;
-    margin-top: 20px;
-}
-
-.text-danger{
-    color: #BF0404;
-}
-
-input.is-invalid{
-    border-width: 1px;
-    border-color: #BF0404;
-}
-
-input.is-valid{
-    border-width: 1px;
-    border-color: green;
-}
-
 
 /* ***** header config ***** */
 header {
@@ -466,6 +445,11 @@ p.caracteristica{
     width: 10%;
 }
 
+.userListImage img {
+    width: 100%;
+    box-shadow: 0 0 6px black
+}
+
 /*TODO ESTO ES DEL CARRITO */
 
 .cart .table{
@@ -636,6 +620,11 @@ p.caracteristica{
         padding: 0 20% 0 20%;
     }
 
+    .userListImage {
+        max-width: 45%;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
 
 }
 
@@ -684,6 +673,12 @@ p.caracteristica{
         margin: auto;
     }
 
+    .userListImage  {
+        max-width: 30%;
+        column-gap: 10px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+
 }
 
 /* 1024 + ...: Desktops, larger desktops and monitors */
@@ -729,5 +724,12 @@ p.caracteristica{
         width: 728px;
         margin: auto;
     }
+    
+    .userListImage {
+        max-width: 30%;
+        column-gap: 10px;
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    
     
 }

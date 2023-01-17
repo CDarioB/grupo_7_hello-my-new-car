@@ -26,7 +26,6 @@ app.use(session({
 
 //implementando Middleware de Login
 app.use(userLoggedMiddleware)
-
 // EJS
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Define la ubicación de la carpeta de las Vistas

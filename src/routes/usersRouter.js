@@ -2,9 +2,8 @@ const express = require ("express");
 const router = express.Router();
 
 const usersController = require('../controllers/usersController.js');
-
-//Middlewares
 const uploadFile = require('../middlewares/multerMiddleware');
+
 const validateLogin = require('../middlewares/validateLoginMiddleware')
 const guestMiddleware = require('../middlewares/guestMiddleware')
 const authMiddleware = require('../middlewares/authMiddleware')
@@ -16,6 +15,10 @@ router.post('/login', validateLogin, usersController.processLogin)
 //Recuperar cuenta de usuario
 router.get('/recovery', usersController.recovery);
 
+
+//Middlewares
+
+
 // Consulta de users
 router.get('/', usersController.users);
 
@@ -25,10 +28,10 @@ router.post('/new', usersController.newUsers);
 
 // Modificar Users
 router.get('/modificacion/:id',usersController.modificar); // Este sería del admin
-router.post('/edit/:id',usersController.update);
+router.put('/edit/:id',uploadFile.single('avatarUserFile') ,usersController.update);
 
 // Delete Users
-router.delete('/delete/:id', usersController.delete);
+router.post('/delete/:id', usersController.delete);
 
 //Perfil de usuario
 router.get('/profile', authMiddleware, usersController.profile)
