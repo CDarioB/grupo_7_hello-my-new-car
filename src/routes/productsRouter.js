@@ -1,6 +1,8 @@
 const express = require ("express"); 
 const router = express.Router();
 
+const { body } = require('express-validator'); // clase 25
+
 const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddleware');
 
