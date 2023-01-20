@@ -12,7 +12,8 @@
     <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
         <div class="FormItem">
         <label>Referencia del vehículo</label>
-        <input class="InputControl" type="text" id="refCar" name="refCar" value="<%=product.references%>">
+        <input class="InputControl <%= locals.errors && errors.refCar ? 'is-invalid' : null %>" 
+               type="text" id="refCar" name="refCar" value="<%=product.references%>">
         <% if (locals.errors && errors.refCar) { %>
             <div class="text-error">
                 <%= errors.refCar.msg %> 
@@ -22,7 +23,8 @@
     
     <div class="FormItem">
         <label>Marca del vehículo</label>
-        <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
+        <input class="InputControl <%= locals.errors && errors.brandCar ? 'is-invalid' : null %>" 
+               type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
         <% if (locals.errors && errors.brandCar) { %>
             <div class="text-error">
                 <%= errors.brandCar.msg %> 
@@ -32,7 +34,8 @@
     
     <div class="FormItem">
         <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
-        <select class="InputControl" id="provinceCar" name="provinceCar">
+        <select class="InputControl <%= locals.errors && errors.provinceCar ? 'is-invalid' : null %>"
+                id="provinceCar" name="provinceCar">
             <% allProvinces.forEach(provinces => { %>
                 <option value="<%= provinces.id %>"
                     <%if(provinces.id == product.province_id) {%>
@@ -52,7 +55,8 @@
 
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
-        <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
+        <select class="InputControl <%= locals.errors && errors.categoryTypeCar ? 'is-invalid' : null %>" 
+                id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
             <% allCategory.forEach(category => { %>
                 <option value="<%= category.id %>"
                     <%if(category.id == product.category_id) {%>
@@ -72,7 +76,8 @@
 
     <div class="FormItem">       
         <label>Selecciona el modelo del vehículo </label>
-        <select class="InputControl" id="modelYear" name="modelYearCar" categoria="modelo">
+        <select class="InputControl <%= locals.errors && errors.modelYearCar ? 'is-invalid' : null %>"
+                id="modelYear" name="modelYearCar" categoria="modelo">
             <% for(let i=2000;i < 2031; i++) {%>
                 <option value="<%= i %>"
                     <%if(i == product.model) {%>
@@ -92,7 +97,8 @@
 
     <div class="FormItem">
         <label> Kilometraje </label>
-        <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
+        <input class="InputControl <%= locals.errors && errors.mileageCar ? 'is-invalid' : null %>"
+               type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
         <% if (locals.errors && errors.mileageCar) { %>
             <div class="text-error">
                 <%= errors.mileageCar.msg %> 
@@ -102,7 +108,8 @@
 
     <div class="FormItem">
         <label>Precio de venta ($ARS)</label>
-        <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
+        <input class="InputControl <%= locals.errors && errors.priceCar ? 'is-invalid' : null %>"
+               type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
         <% if (locals.errors && errors.priceCar) { %>
             <div class="text-error">
                 <%= errors.priceCar.msg %> 
@@ -112,7 +119,8 @@
 
     <div class="FormItem">
         <label>Agregar Oferta (%)</label>
-        <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
+        <input class="InputControl <%= locals.errors && errors.discountCar ? 'is-invalid' : null %>" 
+               type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
         <% if (locals.errors && errors.discountCar) { %>
             <div class="text-error">
                 <%= errors.discountCar.msg %> 

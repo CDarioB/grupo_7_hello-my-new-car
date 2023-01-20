@@ -360,6 +360,13 @@ p.caracteristica{
     border-radius: 5px;
 }
 
+.is-invalid {
+    background-color: ivory;
+    border: none;
+    outline: 1px solid red;
+    border-radius: 5px;
+}
+
 .text-error{
     color: red;
 }
