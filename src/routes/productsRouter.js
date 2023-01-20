@@ -5,7 +5,7 @@ const { check } = require('express-validator');
 const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddleware');
 
-const productCreationValidations = [
+const productValidations = [
 	check('refCar')
         .notEmpty().withMessage('Tienes que escribir una referencia.')
         .isLength({ min: 20}).withMessage('La referencia debe tener por lo menos 20 caracteres'),
@@ -57,12 +57,12 @@ router.get('/index',productsController.index);
 
 //Crear Products
 router.get('/create',productsController.create);
-router.post('/new', uploadFile.array("imagesCar", maxFiles), productCreationValidations, productsController.newProducts);
+router.post('/new', uploadFile.array("imagesCar", maxFiles), productValidations, productsController.newProducts);
 
 // Modificar Products
 router.get('/edit',productsController.modify); // Vista admin listado de productos a modificar
 router.get('/edit/:id', productsController.edit); // Formulario editar producto
-router.put('/edit/:id', uploadFile.array('imagesCar',maxFiles), productCreationValidations, productsController.update); 
+router.put('/edit/:id', uploadFile.array('imagesCar',maxFiles), productValidations, productsController.update); 
 
 // Delete Products
 router.post('/delete/:id', productsController.delete);
