@@ -360,6 +360,10 @@ p.caracteristica{
     border-radius: 5px;
 }
 
+.text-error{
+    color: red;
+}
+
 .SubmitBotton {
     width: 100%;
     background-color: #252759;

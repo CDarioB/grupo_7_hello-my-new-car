@@ -12,19 +12,24 @@
     <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
         <div class="FormItem">
         <label>Referencia del vehículo</label>
-        <textarea class="InputControl" type="text" id="refCar" name="refCar"><%=product.references%></textarea>
+        <input class="InputControl" type="text" id="refCar" name="refCar" value="<%=product.references%>">
+        <% if (locals.errors && errors.refCar) { %>
+            <div class="text-error">
+                <%= errors.refCar.msg %> 
+            </div>
+        <% } %> 
     </div>
     
     <div class="FormItem">
         <label>Marca del vehículo</label>
         <input class="InputControl" type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
+        <% if (locals.errors && errors.brandCar) { %>
+            <div class="text-error">
+                <%= errors.brandCar.msg %> 
+            </div>
+        <% } %>
     </div>
-<!--
-    <div class="FormItem">
-        <label>Provincia de Argentina</label>
-        <input class="InputControl" type="text" id="provinceCar" name="provinceCar" value=< %=product.province.province%>>
-    </div>
--->     
+    
     <div class="FormItem">
         <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
         <select class="InputControl" id="provinceCar" name="provinceCar">
@@ -38,13 +43,13 @@
                     <%= provinces.province %></option>
             <% }); %>
         </select>
+        <% if (locals.errors && errors.provinceCar) { %>
+            <div class="text-error">
+                <%= errors.provinceCar.msg %> 
+            </div>
+        <% } %> 
     </div>
-<!--   
-    <div class="FormItem">
-        <label>Ciudad de Argentina se encuentra ubicado el vehículo</label>
-        <input class="InputControl" type="text" id="cityCar" name="cityCar" value=< %=product.prd_city%>>
-    </div>
--->   
+
     <div class="FormItem">
         <label>Selecciona la categoría del vehículo que quieres vender: </label>
         <select class="InputControl" id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
@@ -58,9 +63,15 @@
                     <%= category.type %></option>
             <% }); %>
         </select>
+        <% if (locals.errors && errors.categoryTypeCar) { %>
+            <div class="text-error">
+                <%= errors.categoryTypeCar.msg %> 
+            </div>
+        <% } %> 
     </div>
+
     <div class="FormItem">       
-        <label>Selecciona el año del vehículo </label>
+        <label>Selecciona el modelo del vehículo </label>
         <select class="InputControl" id="modelYear" name="modelYearCar" categoria="modelo">
             <% for(let i=2000;i < 2031; i++) {%>
                 <option value="<%= i %>"
@@ -72,26 +83,55 @@
                     <%= i %></option>
             <% } %>
         </select>
-
+        <% if (locals.errors && errors.modelYearCar) { %>
+            <div class="text-error">
+                <%= errors.modelYearCar.msg %> 
+            </div>
+        <% } %>
     </div>
+
     <div class="FormItem">
         <label> Kilometraje </label>
         <input class="InputControl" type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
-
+        <% if (locals.errors && errors.mileageCar) { %>
+            <div class="text-error">
+                <%= errors.mileageCar.msg %> 
+            </div>
+        <% } %>
     </div>
+
     <div class="FormItem">
         <label>Precio de venta ($ARS)</label>
         <input class="InputControl" type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
-
+        <% if (locals.errors && errors.priceCar) { %>
+            <div class="text-error">
+                <%= errors.priceCar.msg %> 
+            </div>
+        <% } %>
     </div>
+
     <div class="FormItem">
         <label>Agregar Oferta (%)</label>
         <input class="InputControl" type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
+        <% if (locals.errors && errors.discountCar) { %>
+            <div class="text-error">
+                <%= errors.discountCar.msg %> 
+            </div>
+        <% } %>
     </div>
+
     <br>
         <label>Adjunte las imagenes que quiere colocar del vehículo</label>
     <br>
-    <input class="boton-adj-file" type="file" name="imagesCar" accept=".jpg, .png, .jpeg" multiple>
+    <input class="boton-adj-file" type="file" name="imagesCar" multiple>
+        <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
+    <!--
+    < % if (locals.errors && errors.imagesCar) { %>
+        <div class="text-error">
+            < %= errors.imagesCar.msg %> 
+        </div>
+    < % } %>
+    -->
     <div id="containerEditimg">
         <% for(var i = 0; i < product.img.length; i++) { %>
             <div class="elementEditimg">
