@@ -10,6 +10,7 @@
     <h3>Modificar <%=product.references%></h3>
 </div>
     <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
+        <ul id="ulErrors"> </ul>
         <div class="FormItem">
         <label>Referencia del vehículo</label>
         <input class="InputControl <%= locals.errors && errors.refCar ? 'is-invalid' : null %>" 
@@ -152,9 +153,9 @@
         <input class="SubmitBotton" type="submit" value="Guardar" >
     </div>
     </form>
-   
-
 <br>
+<!-- <script src="../js/productValidations.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
 </body>
 
 <%-include('../partials/footer.ejs') %>
