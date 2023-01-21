@@ -360,6 +360,24 @@ p.caracteristica{
     border-radius: 5px;
 }
 
+.alert-warning{
+    color:#842029;
+    background-color: #F8D7DA;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.is-invalid {
+    background-color: ivory;
+    border: none;
+    outline: 1px solid red;
+    border-radius: 5px;
+}
+
+.text-error{
+    color: red;
+}
+
 .SubmitBotton {
     width: 100%;
     background-color: #252759;
