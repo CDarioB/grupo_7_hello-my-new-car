@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../head.ejs') %>
+    <%-include('../partials/head.ejs') %>
     <title>Crear producto</title>
 </head>
-<%-include('../header.ejs') %>
+<%-include('../partials/header.ejs') %>
 <body>
 <br>
 <div class="TopContainer">
@@ -77,7 +77,7 @@
     <div class="FormItem">       
         <label>Selecciona el modelo del vehículo </label>
         <select class="InputControl <%= locals.errors && errors.modelYearCar ? 'is-invalid' : null %>"
-                id="modelYear" name="modelYearCar" categoria="modelo">
+                id="modelYearCar" name="modelYearCar" categoria="modelo">
             <% for(let i=2000;i < 2031; i++) {%>
                 <option value="<%= i %>"
                     <%if(i == product.model) {%>
@@ -157,5 +157,5 @@
 <br>
 </body>
 
-<%-include('../footer.ejs') %>
+<%-include('../partials/footer.ejs') %>
 </html>

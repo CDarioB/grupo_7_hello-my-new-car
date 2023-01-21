@@ -22,7 +22,7 @@ function rederCreateProducts(req,res,errorMapped){
         .then(categories => {
             allCategory = categories;
     }).then( ()=>{
-        res.render('./partials/product/createProducts',
+        res.render('./product/createProducts',
             {
                 allProvinces: allProvinces,
                 allCategory: allCategory, 
@@ -58,7 +58,7 @@ function rederEditProducts(res,id,oldProductPkId,errorMapped){
                 .then(categories => {
                         allCategory = categories;
                     }).then(() => {
-                        res.render('partials/product/editProduct',
+                        res.render('./product/editProduct',
                         {
                             product: productPkId,
                             allProvinces: allProvinces,
@@ -77,11 +77,11 @@ const productsController = {
            for(let i = 0; i < products.length; i++){
             products[i].img = products[i].img.split(",");
            }
-           res.render('./partials/product/products',{products});
+           res.render('./product/products',{products});
         });
     },
     index: function(req,res,next) {
-        res.render('./partials/product/formularioIndex');
+        res.render('./product/formularioIndex');
     },
     create: function(req,res,next) {
         rederCreateProducts(req,res,null);
@@ -138,7 +138,7 @@ const productsController = {
            for(let i = 0; i < products.length; i++){
             products[i].img = products[i].img.split(",");
            }
-           res.render('partials/product/productListModify',{products});
+           res.render('./product/productListModify',{products});
         });
     },
 
@@ -206,14 +206,14 @@ const productsController = {
                 for(let i = 0; i < products.length; i++){
                     products[i].img = products[i].img.split(",");
                 }
-                res.render('partials/product/productListModify',{products});
+                res.render('product/productListModify',{products});
                 });
             
             })
         }
     },
     menuModificar: function(req,res,next) {
-        res.render('./partials/product/modificarMenu');
+        res.render('./product/modificarMenu');
     },
     detail : function(req,res,next) {
         db.Product.findAll({

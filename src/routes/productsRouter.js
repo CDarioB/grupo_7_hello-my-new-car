@@ -11,7 +11,7 @@ const productValidations = [
         .isLength({ min: 20}).withMessage('La referencia debe tener por lo menos 20 caracteres'),
     check('brandCar')
         .notEmpty().withMessage('Tienes que escribir la marca del vehículo.')
-        .isLength({ min: 4}).withMessage('La referencia debe tener por lo menos 5 caracteres.'),
+        .isLength({ min: 3}).withMessage('La marca debe tener por lo menos 3 caracteres.'),
     check('provinceCar')
 	    .notEmpty().withMessage('Seleciona provincia en que se encuentra ubicado el vehículo.'),
 	check('categoryTypeCar')

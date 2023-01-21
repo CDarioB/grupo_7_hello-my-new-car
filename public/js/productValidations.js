@@ -1,109 +1,96 @@
 window.onload = function(){
-    let titulo = document.querySelector('.moviesAddTitulo')
-    let formulario = document.querySelector('#formulario');
-    let article = document.querySelector('article');
-    titulo.innerHTML = 'AGREGAR PELÍCULA';
-    titulo.classList.add('titulo');
-    article.classList.add('fondoTransparente');
-    formulario.classList.add('fondoCRUD');
-
-//------------------------CLASE 39 -----------------------------//
-//------DESDE AQUÍ CONTINÚE CON LAS VALIDACIONES DEL FORMULARIO //
-//-------------------DE REGISTRO DE PELÍCULAS------------------//    
-
-
-    let form = document.querySelector('.form');
-    form.title.focus()
-
+    
+    let form = document.querySelector('.formBody');
+    
     form.addEventListener('submit', async (e) => {
         e.preventDefault()
-        let errores = []
+        let errors = [] 
         
-        let title = document.querySelector('#title')
-        let rating = document.querySelector("#rating")
-        let awards = document.querySelector("#awards")
-        let release_date = document.querySelector("#release_date")
-        let length = document.querySelector("#length")
-        let genre_id = document.querySelector("#genre_id")
+        let refCar = document.getElementById('refCar');
+        let brandCar = document.getElementById('brandCar');
+        let provinceCar = document.getElementById('provinceCar');
+	    let categoryTypeCar = document.getElementById('categoryTypeCar');
+        let modelYearCar = document.getElementById('modelYearCar');
+        let mileageCar = document.getElementById('mileageCar');
+        let priceCar = document.getElementById('priceCar');
+        let discountCar = document.getElementById('discountCar');
+        
+        // let imagesCar =document.getElementById('imagesCar');
 
+        if (refCar.value == "") {
+            errors.push("La referencia del vehículo no puede estar vacía.");
+            refCar.classList.add('is-invalid');
+        } else if (refCar.value.length < 20) {
+            errors.push("La referencia debe tener por lo menos 20 caracteres.");
+            refCar.classList.add('is-invalid');
+        } else refCar.classList.remove('is-invalid');
+        
+        
+        if (brandCar.value == "") {
+            errors.push("La marca del vehículo no puede estar vacía.");
+            brandCar.classList.add('is-invalid');
+        } else if (brandCar.value.length < 3) {
+            errors.push("La marca debe tener por lo menos 3 caracteres.");
+            brandCar.classList.add('is-invalid');
+        } else brandCar.classList.remove('is-invalid');
 
-        if (title.value == ""){
-            errores.push("El titulo no puede estar vacío")
-            title.classList.add('is-invalid')
-            title.classList.remove('is-valid')
-        }
-        else {
-            title.classList.add("is-valid")
-            title.classList.remove('is-invalid')
-        }
+        if (provinceCar.value == "") {
+            errors.push("Seleciona provincia en que se encuentra ubicado el vehículo.");
+            provinceCar.classList.add('is-invalid');
+        } else provinceCar.classList.remove('is-invalid');
 
-        if (release_date.value == ""){
-            errores.push("La fecha no puede estar vacia")
-            release_date.classList.add('is-invalid')
-            release_date.classList.remove('is-valid')
-        }
-        else {
-            release_date.classList.add("is-valid")
-            release_date.classList.remove('is-invalid')
-        }
+        if (categoryTypeCar.value == "") {
+            errors.push("Seleciona un categoría del vehículo.");
+            categoryTypeCar.classList.add('is-invalid');
+        } else categoryTypeCar.classList.remove('is-invalid');
 
+        if (modelYearCar.value == "") {
+            errors.push("Seleciona el modelo del vehículo.");
+            modelYearCar.classList.add('is-invalid');
+        } else modelYearCar.classList.remove('is-invalid');
+        
+        if (mileageCar.value == "") {
+            errors.push("Introdusca los km recorrido por el vehículo.");
+            mileageCar.classList.add('is-invalid');
+        } else if (isNaN(mileageCar.value)) {
+            errors.push("Solo se permiten valores numericos en los Km.");
+            mileageCar.classList.add('is-invalid');
+        } else if (Number.isInteger(mileageCar.value)) { 
+            errors.push("Solo se permiten valores numericos enteros en los Km.");
+            mileageCar.classList.add('is-invalid');
+        } else mileageCar.classList.remove('is-invalid');
 
-        if (genre_id.value == ""){
-            errores.push("Tiene que elegir un genero")
-            genre_id.classList.add('is-invalid')
-            genre_id.classList.remove('is-valid')
-        }
-        else {
-            genre_id.classList.add("is-valid")
-            genre_id.classList.remove('is-invalid')
-        }
+        if (priceCar.value == "") {
+            errors.push("Introdusca el pecio de venta del vehículo sin descuento.");
+            priceCar.classList.add('is-invalid');
+        } else if (isNaN(priceCar.value)) {
+            errors.push("Solo se permiten valores numericos para los precios.");
+            priceCar.classList.add('is-invalid');
+        } else mileageCar.classList.remove('is-invalid');
+        
+        if (discountCar.value == "") {
+            errors.push("Introdusca el % de descuento, en caso de no tener descuento introdusca 0 (cero).");
+            discountCar.classList.add('is-invalid');
+        } else if (isNaN(discountCar.value)) {
+            errors.push("Solo se permiten valores numericos (sin %).");
+            discountCar.classList.add('is-invalid');
+        } else discountCar.classList.remove('is-invalid');
 
-        if (rating.value <= 0 || rating.value > 10) {
-            errores.push("El rating tiene que ir de 1 a 10")
-            rating.classList.add('is-invalid')
-            rating.classList.remove('is-valid')
-        }
-        else {
-            rating.classList.add("is-valid")
-            rating.classList.remove('is-invalid')
-        }
-
-        if (awards.value <= 0 || awards.value > 10) {
-            errores.push("Los premios obtenidos van de 1 a 10")
-            awards.classList.add('is-invalid')
-            awards.classList.remove('is-valid')
-        }
-        else {
-            awards.classList.add("is-valid")
-            awards.classList.remove('is-invalid')
-        }
-
-        if (length.value < 60 || length.value > 360) {
-            errores.push("El largo pelicula tiene que estar entre 60 y 360 minutos")
-            length.classList.add('is-invalid')
-            length.classList.remove('is-valid')
-        }
-        else {
-            length.classList.add("is-valid")
-            length.classList.remove('is-invalid')
-        }
-
-        if (errores.length > 0) {
-            let ulErrores = document.querySelector('.errores')
-            ulErrores.classList.add("alert-warning")
-            ulErrores.innerHTML = ""
-            for (let i = 0; i < errores.length; i++) {
-                ulErrores.innerHTML += `<li> ${errores[i]} </li>`
+        if (errors.length > 0) {
+            let ulErrors = document.getElementById('ulErrors')
+            ulErrors.classList.add("alert-warning")
+            ulErrors.innerHTML = ""
+            for (let i = 0; i < errors.length; i++) {
+                ulErrors.innerHTML += `<li> ${errors[i]} </li>`
             }
             Swal.fire(
                 'Cuidado!',
                 'Verifica los errores',
                 'error'
             )
-        }
-        else {
-
-            let body = {
+        } else {
+            form.submit();
+            /* let body = {
                 title: title.value,
                 rating: rating.value,
                 awards: awards.value,
@@ -125,13 +112,13 @@ window.onload = function(){
                     'Hubo un error al cargar la pelicula',
                     'error'
                 )
-            }
+            } */
             
         }
 
     })
 
-    async function fetchCreate(model) {
+    /* async function fetchCreate(model) {
         const res = await fetch('/api/movies/create', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json'},
@@ -139,6 +126,6 @@ window.onload = function(){
         })
         let info = await res.json()
         return info
-    }
+    } */
 
 }

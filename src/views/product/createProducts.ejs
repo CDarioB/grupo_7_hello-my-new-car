@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../head.ejs') %>
+    <%-include('../partials/head.ejs') %>
     <title>Crear producto</title>
 </head>
-<%-include('../header.ejs') %>
+<%-include('../partials/header.ejs') %>
 <body>
 <br>
 <div class="TopContainer">
@@ -11,6 +11,7 @@
     <p>Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
 </div>
     <form class="formBody" method="POST" action="/products/new" enctype="multipart/form-data">
+        <ul id="ulErrors"> </ul>
         <div class="FormItem">
             <label>¿Cuál es el referencia del vehículo?</label>
             <input class="InputControl <%= locals.errors && errors.refCar ? 'is-invalid' : null %>" 
@@ -86,7 +87,7 @@
         <div class="FormItem">       
             <label>Selecciona el modelo del vehículo que quieres vender: </label>
             <select class="InputControl <%= locals.errors && errors.modelYearCar ? 'is-invalid' : null %>"
-                    id="modelYear" name="modelYearCar" categoria="modelo">
+                    id="modelYearCar" name="modelYearCar" categoria="modelo">
                 <option value="" disabled selected>- Seleccione el modelo del vehículo -</option>
                 <% for(let i=2000;i < 2031; i++) {%>
                     <option value="<%= i %>"
@@ -159,8 +160,9 @@
         </div>
     </form>
 <br>
-<script src="/js/productValidations.js"></script>
+<script src="../js/productValidations.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
-<%-include('../footer.ejs') %>
+<%-include('../partials/footer.ejs') %>
 </html>
