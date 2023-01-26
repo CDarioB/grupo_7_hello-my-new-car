@@ -15,7 +15,7 @@ window.onload = function(){
         let priceCar = document.getElementById('priceCar');
         let discountCar = document.getElementById('discountCar');
         
-        // let imagesCar =document.getElementById('imagesCar');
+        // let imagesCar = document.getElementById('imagesCar');
 
         if (refCar.value == "") {
             errors.push("La referencia del vehículo no puede estar vacía.");
