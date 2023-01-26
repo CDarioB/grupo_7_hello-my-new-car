@@ -28,7 +28,7 @@ const productValidations = [
     check('discountCar')
         .notEmpty().withMessage('Introdusca el % de descuento, en caso de no tener descuento introdusca 0 (cero).')
         .isNumeric().withMessage('Solo numeros.'),    
-	/*check('imagesCar')
+	check('imagesCar')
         .custom((value, { req }) => {
             let file = req.file;
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
@@ -43,7 +43,7 @@ const productValidations = [
             }
 
             return true; 
-        })*/
+        })
 ]
 
 // Consulta de Products

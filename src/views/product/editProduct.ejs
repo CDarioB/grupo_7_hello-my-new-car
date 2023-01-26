@@ -12,150 +12,150 @@
     <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
         <ul id="ulErrors"> </ul>
         <div class="FormItem">
-        <label>Referencia del vehículo</label>
-        <input class="InputControl <%= locals.errors && errors.refCar ? 'is-invalid' : null %>" 
-               type="text" id="refCar" name="refCar" value="<%=product.references%>">
-        <% if (locals.errors && errors.refCar) { %>
-            <div class="text-error">
-                <%= errors.refCar.msg %> 
-            </div>
-        <% } %> 
-    </div>
-    
-    <div class="FormItem">
-        <label>Marca del vehículo</label>
-        <input class="InputControl <%= locals.errors && errors.brandCar ? 'is-invalid' : null %>" 
-               type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
-        <% if (locals.errors && errors.brandCar) { %>
-            <div class="text-error">
-                <%= errors.brandCar.msg %> 
-            </div>
-        <% } %>
-    </div>
-    
-    <div class="FormItem">
-        <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
-        <select class="InputControl <%= locals.errors && errors.provinceCar ? 'is-invalid' : null %>"
-                id="provinceCar" name="provinceCar">
-            <% allProvinces.forEach(provinces => { %>
-                <option value="<%= provinces.id %>"
-                    <%if(provinces.id == product.province_id) {%>
-                        selected >
-                        <% } else {%>
-                            >
-                    <% } %>
-                    <%= provinces.province %></option>
-            <% }); %>
-        </select>
-        <% if (locals.errors && errors.provinceCar) { %>
-            <div class="text-error">
-                <%= errors.provinceCar.msg %> 
-            </div>
-        <% } %> 
-    </div>
-
-    <div class="FormItem">
-        <label>Selecciona la categoría del vehículo que quieres vender: </label>
-        <select class="InputControl <%= locals.errors && errors.categoryTypeCar ? 'is-invalid' : null %>" 
-                id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
-            <% allCategory.forEach(category => { %>
-                <option value="<%= category.id %>"
-                    <%if(category.id == product.category_id) {%>
-                        selected >
-                        <% } else {%>
-                            >
-                    <% } %>
-                    <%= category.type %></option>
-            <% }); %>
-        </select>
-        <% if (locals.errors && errors.categoryTypeCar) { %>
-            <div class="text-error">
-                <%= errors.categoryTypeCar.msg %> 
-            </div>
-        <% } %> 
-    </div>
-
-    <div class="FormItem">       
-        <label>Selecciona el modelo del vehículo </label>
-        <select class="InputControl <%= locals.errors && errors.modelYearCar ? 'is-invalid' : null %>"
-                id="modelYearCar" name="modelYearCar" categoria="modelo">
-            <% for(let i=2000;i < 2031; i++) {%>
-                <option value="<%= i %>"
-                    <%if(i == product.model) {%>
-                        selected >
-                    <% } else {%>
-                        >
-                    <% } %>
-                    <%= i %></option>
-            <% } %>
-        </select>
-        <% if (locals.errors && errors.modelYearCar) { %>
-            <div class="text-error">
-                <%= errors.modelYearCar.msg %> 
-            </div>
-        <% } %>
-    </div>
-
-    <div class="FormItem">
-        <label> Kilometraje </label>
-        <input class="InputControl <%= locals.errors && errors.mileageCar ? 'is-invalid' : null %>"
-               type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
-        <% if (locals.errors && errors.mileageCar) { %>
-            <div class="text-error">
-                <%= errors.mileageCar.msg %> 
-            </div>
-        <% } %>
-    </div>
-
-    <div class="FormItem">
-        <label>Precio de venta ($ARS)</label>
-        <input class="InputControl <%= locals.errors && errors.priceCar ? 'is-invalid' : null %>"
-               type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
-        <% if (locals.errors && errors.priceCar) { %>
-            <div class="text-error">
-                <%= errors.priceCar.msg %> 
-            </div>
-        <% } %>
-    </div>
-
-    <div class="FormItem">
-        <label>Agregar Oferta (%)</label>
-        <input class="InputControl <%= locals.errors && errors.discountCar ? 'is-invalid' : null %>" 
-               type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
-        <% if (locals.errors && errors.discountCar) { %>
-            <div class="text-error">
-                <%= errors.discountCar.msg %> 
-            </div>
-        <% } %>
-    </div>
-
-    <br>
-        <label>Adjunte las imagenes que quiere colocar del vehículo</label>
-    <br>
-    <input class="boton-adj-file" type="file" name="imagesCar" multiple>
-        <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
-    <!--
-    < % if (locals.errors && errors.imagesCar) { %>
-        <div class="text-error">
-            < %= errors.imagesCar.msg %> 
+            <label>Referencia del vehículo</label>
+            <input class="InputControl <%= locals.errors && errors.refCar ? 'is-invalid' : null %>" 
+                type="text" id="refCar" name="refCar" value="<%=product.references%>">
+            <% if (locals.errors && errors.refCar) { %>
+                <div class="text-error">
+                    <%= errors.refCar.msg %> 
+                </div>
+            <% } %> 
         </div>
-    < % } %>
-    -->
-    <div id="containerEditimg">
-        <% for(var i = 0; i < product.img.length; i++) { %>
-            <div class="elementEditimg">
-                    <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
-                    <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
+    
+        <div class="FormItem">
+            <label>Marca del vehículo</label>
+            <input class="InputControl <%= locals.errors && errors.brandCar ? 'is-invalid' : null %>" 
+                type="text" id="brandCar" name="brandCar" value=<%=product.brand%>>
+            <% if (locals.errors && errors.brandCar) { %>
+                <div class="text-error">
+                    <%= errors.brandCar.msg %> 
+                </div>
+            <% } %>
+        </div>
+        
+        <div class="FormItem">
+            <label>¿En qué provincia de Argentina se encuentra ubicado el vehículo?</label>
+            <select class="InputControl <%= locals.errors && errors.provinceCar ? 'is-invalid' : null %>"
+                    id="provinceCar" name="provinceCar">
+                <% allProvinces.forEach(provinces => { %>
+                    <option value="<%= provinces.id %>"
+                        <%if(provinces.id == product.province_id) {%>
+                            selected >
+                            <% } else {%>
+                                >
+                        <% } %>
+                        <%= provinces.province %></option>
+                <% }); %>
+            </select>
+            <% if (locals.errors && errors.provinceCar) { %>
+                <div class="text-error">
+                    <%= errors.provinceCar.msg %> 
+                </div>
+            <% } %> 
+        </div>
+
+        <div class="FormItem">
+            <label>Selecciona la categoría del vehículo que quieres vender: </label>
+            <select class="InputControl <%= locals.errors && errors.categoryTypeCar ? 'is-invalid' : null %>" 
+                    id="categoryTypeCar" name="categoryTypeCar" categoria="auto">
+                <% allCategory.forEach(category => { %>
+                    <option value="<%= category.id %>"
+                        <%if(category.id == product.category_id) {%>
+                            selected >
+                            <% } else {%>
+                                >
+                        <% } %>
+                        <%= category.type %></option>
+                <% }); %>
+            </select>
+            <% if (locals.errors && errors.categoryTypeCar) { %>
+                <div class="text-error">
+                    <%= errors.categoryTypeCar.msg %> 
+                </div>
+            <% } %> 
+        </div>
+
+        <div class="FormItem">       
+            <label>Selecciona el modelo del vehículo </label>
+            <select class="InputControl <%= locals.errors && errors.modelYearCar ? 'is-invalid' : null %>"
+                    id="modelYearCar" name="modelYearCar" categoria="modelo">
+                <% for(let i=2000;i < 2031; i++) {%>
+                    <option value="<%= i %>"
+                        <%if(i == product.model) {%>
+                            selected >
+                        <% } else {%>
+                            >
+                        <% } %>
+                        <%= i %></option>
+                <% } %>
+            </select>
+            <% if (locals.errors && errors.modelYearCar) { %>
+                <div class="text-error">
+                    <%= errors.modelYearCar.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="FormItem">
+            <label> Kilometraje </label>
+            <input class="InputControl <%= locals.errors && errors.mileageCar ? 'is-invalid' : null %>"
+                type="text" id="mileageCar" name="mileageCar" value=<%=product.mileage%>>
+            <% if (locals.errors && errors.mileageCar) { %>
+                <div class="text-error">
+                    <%= errors.mileageCar.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="FormItem">
+            <label>Precio de venta ($ARS)</label>
+            <input class="InputControl <%= locals.errors && errors.priceCar ? 'is-invalid' : null %>"
+                type="number" id="priceCar" name="priceCar" value=<%=product.price%>>
+            <% if (locals.errors && errors.priceCar) { %>
+                <div class="text-error">
+                    <%= errors.priceCar.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <div class="FormItem">
+            <label>Agregar Oferta (%)</label>
+            <input class="InputControl <%= locals.errors && errors.discountCar ? 'is-invalid' : null %>" 
+                type="number" id="discountCar" name="discountCar" value=<%=product.discount_percentage%>>
+            <% if (locals.errors && errors.discountCar) { %>
+                <div class="text-error">
+                    <%= errors.discountCar.msg %> 
+                </div>
+            <% } %>
+        </div>
+
+        <br>
+            <label>Adjunte las imagenes que quiere colocar del vehículo</label>
+        <br>
+        <input class="boton-adj-file" type="file" name="imagesCar" multiple>
+            <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
+        <!--
+        < % if (locals.errors && errors.imagesCar) { %>
+            <div class="text-error">
+                < %= errors.imagesCar.msg %> 
             </div>
-        <% } %>
-    </div>
-    <div class="FormItem">
-        <input class="SubmitBotton" type="submit" value="Guardar" >
-    </div>
+        < % } %>
+        -->
+        <div id="containerEditimg">
+            <% for(var i = 0; i < product.img.length; i++) { %>
+                <div class="elementEditimg">
+                        <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
+                        <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
+                </div>
+            <% } %>
+        </div>
+        <div class="FormItem">
+            <input class="SubmitBotton" type="submit" value="Guardar" >
+        </div>
     </form>
 <br>
-<!-- <script src="../js/productValidations.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script> -->
+<script src="/js/productValidations.js"></script>
+<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 <%-include('../partials/footer.ejs') %>
