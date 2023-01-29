@@ -6,6 +6,7 @@ window.onload = function(){
         e.preventDefault()
         let errors = [] 
         
+        let flagForm = document.getElementById('flagForm'); 
         let refCar = document.getElementById('refCar');
         let brandCar = document.getElementById('brandCar');
         let provinceCar = document.getElementById('provinceCar');
@@ -14,9 +15,8 @@ window.onload = function(){
         let mileageCar = document.getElementById('mileageCar');
         let priceCar = document.getElementById('priceCar');
         let discountCar = document.getElementById('discountCar');
+        let imagesCar = document.getElementById('imagesCar');
         
-        // let imagesCar = document.getElementById('imagesCar');
-
         if (refCar.value == "") {
             errors.push("La referencia del vehículo no puede estar vacía.");
             refCar.classList.add('is-invalid');
@@ -26,6 +26,7 @@ window.onload = function(){
         } else refCar.classList.remove('is-invalid');
         
         
+
         if (brandCar.value == "") {
             errors.push("La marca del vehículo no puede estar vacía.");
             brandCar.classList.add('is-invalid');
@@ -34,21 +35,25 @@ window.onload = function(){
             brandCar.classList.add('is-invalid');
         } else brandCar.classList.remove('is-invalid');
 
+
         if (provinceCar.value == "") {
             errors.push("Seleciona provincia en que se encuentra ubicado el vehículo.");
             provinceCar.classList.add('is-invalid');
         } else provinceCar.classList.remove('is-invalid');
+
 
         if (categoryTypeCar.value == "") {
             errors.push("Seleciona un categoría del vehículo.");
             categoryTypeCar.classList.add('is-invalid');
         } else categoryTypeCar.classList.remove('is-invalid');
 
+
         if (modelYearCar.value == "") {
             errors.push("Seleciona el modelo del vehículo.");
             modelYearCar.classList.add('is-invalid');
         } else modelYearCar.classList.remove('is-invalid');
         
+
         if (mileageCar.value == "") {
             errors.push("Introdusca los km recorrido por el vehículo.");
             mileageCar.classList.add('is-invalid');
@@ -60,6 +65,7 @@ window.onload = function(){
             mileageCar.classList.add('is-invalid');
         } else mileageCar.classList.remove('is-invalid');
 
+
         if (priceCar.value == "") {
             errors.push("Introdusca el pecio de venta del vehículo sin descuento.");
             priceCar.classList.add('is-invalid');
@@ -68,6 +74,7 @@ window.onload = function(){
             priceCar.classList.add('is-invalid');
         } else mileageCar.classList.remove('is-invalid');
         
+
         if (discountCar.value == "") {
             errors.push("Introdusca el % de descuento, en caso de no tener descuento introdusca 0 (cero).");
             discountCar.classList.add('is-invalid');
@@ -75,6 +82,31 @@ window.onload = function(){
             errors.push("Solo se permiten valores numericos (sin %).");
             discountCar.classList.add('is-invalid');
         } else discountCar.classList.remove('is-invalid');
+
+
+        if (!imagesCar.value == "") {
+            let acceptedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+            let notAccepted = false;
+            for(let i=0; i < imagesCar.files.length && !notAccepted; i++) {
+                // Seperar tipo de extension del archivo por / y obtiene la extensión, luego busca si esta permitido dentro del array accept
+                if (!acceptedExtensions.includes(imagesCar.files[i].type.split('/').pop().toLowerCase()))
+                    notAccepted = true;
+            }
+
+            if (notAccepted) {
+                errors.push(`Las extensiones de archivos permitidos son ${acceptedExtensions.join(', ')}`);
+                imagesCar.classList.add('is-invalid');
+            }
+        } else if (flagForm.value == 'Create-Product') {
+                errors.push("Tienes que subir por lo menos una imagen del vehículo.");
+                imagesCar.classList.add('is-invalid');
+        } else if(flagForm.value == 'Edit-Product') {
+            let imgEditForm = document.querySelectorAll(".imgEditForm");
+            if(imgEditForm.length < 1 && imagesCar.value == "") {
+                errors.push("Tienes que subir por lo menos una imagen del vehículo.");
+                imagesCar.classList.add('is-invalid');
+            }
+        }
 
         if (errors.length > 0) {
             let ulErrors = document.getElementById('ulErrors')
@@ -127,5 +159,9 @@ window.onload = function(){
         let info = await res.json()
         return info
     } */
+
+}
+
+function extValided() {
 
 }

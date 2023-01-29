@@ -253,7 +253,7 @@ const productsController = {
                 id: idProduct,
             }
         })
-        res.redirect("/products/edit/"+ idProduct + "#containerEditimg")})
+        res.redirect("/products/edit/"+ idProduct + "#containerEditing")})
     }
 }
 

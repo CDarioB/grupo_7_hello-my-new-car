@@ -34,7 +34,7 @@ const productValidations = [
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
             
             if (!file) {
-                throw new Error('Tienes que subir una imagen');
+                throw new Error('Tienes que subir una imagen.');
             } else {
                 let fileExtension = path.extname(file.originalname);
                 if (!acceptedExtensions.includes(fileExtension)) {
