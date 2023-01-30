@@ -5,11 +5,13 @@
 </head>
 <%-include('../partials/header.ejs') %>
 <body>
-<br>
-<div class="TopContainer">
-    <h3>Crea un producto que desees vender</h3>
-    <p>Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
-</div>
+    <input id="flagForm" name="flagForm" type="hidden" value="Create-Product">
+    <br>
+    <div class="TopContainer">
+        <h3>Crea un producto que desees vender</h3>
+        <p>Responde los siguientes campos asociados a la creación de tu nuevo vehículo a vender</p>
+    </div>
+
     <form class="formBody" method="POST" action="/products/new" enctype="multipart/form-data">
         <ul id="ulErrors"> </ul>
         <div class="FormItem">
@@ -146,22 +148,22 @@
 
         <div class="FormItem">
             <label>Adjunte las imagenes que quiere colocar del vehículo para su venta: </label>
-            <input class="boton-adj-file" type="file" name="imagesCar"  multiple>
-                <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
+            <input class="boton-adj-file" type="file" id="imagesCar" name="imagesCar"  multiple>
+                
             <% if (locals.errors && errors.imagesCar) { %>
                 <div class="text-error">
                     <%= errors.imagesCar.msg %> 
                 </div>
             <% } %>
         </div>
-
+        
         <div class="FormItem">
             <input class="SubmitBotton" type="submit" value="Enviar" >
         </div>
     </form>
-<br>
-<script src="/js/productValidations.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <br>
+    <script src="/js/productValidations.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 <%-include('../partials/footer.ejs') %>

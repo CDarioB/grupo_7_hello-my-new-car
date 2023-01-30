@@ -5,10 +5,11 @@
 </head>
 <%-include('../partials/header.ejs') %>
 <body>
-<br>
-<div class="TopContainer">
-    <h3>Modificar <%=product.references%></h3>
-</div>
+    <input id="flagForm" name="flagForm" type="hidden" value="Edit-Product">
+    <br>
+    <div class="TopContainer">
+        <h3>Modificar <%=product.references%></h3>
+    </div>
     <form class="formBody" method="POST" action="/products/edit/<%=product.id%>?_method=PUT" enctype="multipart/form-data">
         <ul id="ulErrors"> </ul>
         <div class="FormItem">
@@ -132,7 +133,7 @@
         <br>
             <label>Adjunte las imagenes que quiere colocar del vehículo</label>
         <br>
-        <input class="boton-adj-file" type="file" name="imagesCar" multiple>
+        <input class="boton-adj-file" type="file" id="imagesCar" name="imagesCar" multiple>
             <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
         <!--
         < % if (locals.errors && errors.imagesCar) { %>
@@ -141,7 +142,7 @@
             </div>
         < % } %>
         -->
-        <div id="containerEditimg">
+        <div id="containerEditing">
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
                         <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
@@ -153,9 +154,9 @@
             <input class="SubmitBotton" type="submit" value="Guardar" >
         </div>
     </form>
-<br>
-<script src="/js/productValidations.js"></script>
-<script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+    <br>
+    <script src="/js/productValidations.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 
 <%-include('../partials/footer.ejs') %>
