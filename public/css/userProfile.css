@@ -1,19 +1,50 @@
 .containerProfile {
-    position: relative;
-    height: 40rem;
-    text-align: center;
-    font-size: xx-large;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: 40rem;
+  width: 35rem;
+  text-align: center;
+  font-size: xx-large;
+  border: 2px solid lightgray;
+  padding: 2rem;
+  border-radius: 10px;
+  margin: 0 auto;
   }
-  
-  .imageProfile {
-    width: 10rem;
-    height: 10rem;
-    border-radius: 50%;
-    object-fit: cover;
-    display: block;
-    margin: 0 auto;
-  }
-  
-  .titleProfile {
-    position: relative;
-  }
+.imageProfile {
+  width: 10rem;
+  height: 10rem;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  margin: 2rem auto;
+  border: 2px solid lightgray;
+}
+
+.titleProfile {
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 2rem;
+}
+
+.infoContainer {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: left;
+  width: 50%;
+  margin-top: 2rem;
+}
+
+.nameProfileTitle,
+.telProfileTitle {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nameProfileText,
+.telProfileText,
+.emailProfileText {
+  font-size: 1.2rem;
+  margin-bottom: 1rem;
+}

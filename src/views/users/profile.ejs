@@ -1,33 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../partials/head.ejs') %>
-    <title>Perfil de <%= user.first_name + " " +user.last_name%> </title>
-</head>
-<%-include('../partials/header.ejs') %>
-<body>
-    <main>  
-        <div class = "containerProfile">
-            <p class = "titleProfile"><%= "Bienvenido a tu perfil " + user.first_name %></p>
-                <img class="imageProfile" src= "/img/users/<%= user.image%>" alt="">
-            
-            <div class="infoContainer">
-                <div class="name">
-                    <p class = "nameProfileTitle"> Nombre completo del usuario: </p> <p class="nameProfileText">  <%= user.first_name + " " + user.last_name%> </p>
+<%-include('../partials/head.ejs') %>
+    <title>Perfil de <%= user.first_name + " " +user.last_name%>
+    </title>
+    </head>
+    <%-include('../partials/header.ejs') %>
+
+        <body>
+            <main>
+                <div class="containerProfile">
+                    <p class="titleProfile"> 
+                        <i class="fa fa-car" aria-hidden="true"></i> Bienvenido a tu perfil  <i class="fa fa-car" aria-hidden="true"></i>
+                    </p>
+                    <img class="imageProfile" src="/img/users/<%= user.image%>" alt="">
+
+                    <div class="infoContainer">
+                        <p class="nameProfileTitle"> Nombre del usuario </p>
+                        <p class="nameProfileText">
+                            <%= user.first_name + " " + user.last_name%>
+                        </p>
+
+                        <p class="telProfileTitle"> Telefono del usuario </p>
+                        <p class="telProfileText">
+                            <%= user.tel %>
+                        </p>
+                        <p class="telProfileTitle"> Email del usuario</p>
+                        <p class="emailProfileText">
+                            <%= user.email %>
+                        </p>
+                    </div>
                 </div>
-                <p class = "telProfileTitle"> Telefono del usuario: </p> <p class="telProfileText"><%= user.tel %> </p>
-                <p class = "telProfileTitle"> Email del usuario:</p>  <p class="emailProfileText"> <%= user.email %> </p>
-            </div>
-                
-                
-        </div>
+                <p>
+                    <%= Object.keys(user) %>
+                </p>
+            </main>
+        </body>
+        <%-include('../partials/footer.ejs') %>
 
-    
-<p><%= Object.keys(user) %></p>
-
-
-
-</main>
-</body>
-
-<%-include('../partials/footer.ejs') %>
 </html>
