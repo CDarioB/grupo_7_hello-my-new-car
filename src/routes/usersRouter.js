@@ -1,8 +1,11 @@
 const express = require ("express"); 
 const router = express.Router();
-
+const {body} = require('express-validator');
 const usersController = require('../controllers/usersController.js');
-const uploadFile = require('../middlewares/multerMiddleware');
+const uploadFile = require('../middlewares/multerMiddlewareUsers');
+let validationLogin = [
+    body('nombreUsuario').notEmpty().withMessage('Debes completar el campo email').isEmail().withMessage('Debes ingresar un formato de email válido'),
+    body('password').notEmpty().withMessage('Debes ingresar la contraseña').isLength({min: 8}).withMessage('La contraseña debe tener al menos 8 caracteres')];
 
 //Middlewares
 
@@ -19,5 +22,13 @@ router.put('/edit/:id',uploadFile.single('avatarUserFile') ,usersController.upda
 
 // Delete Users
 router.post('/delete/:id', usersController.delete);
+
+//Login User
+router.get('/login', usersController.login);
+router.post('/login',validationLogin,usersController.checkLogin)
+
+//User logeado
+router.get('/profile',usersController.logged)
+
 
 module.exports = router;

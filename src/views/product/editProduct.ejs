@@ -145,7 +145,7 @@
         <div id="containerEditing">
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
-                        <img class="imgEditForm" src="/img/<%=product.img[i]%>" alt="">
+                        <img class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
                         <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
                 </div>
             <% } %>

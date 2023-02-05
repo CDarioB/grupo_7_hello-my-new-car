@@ -1,0 +1,19 @@
+.containerProfile {
+    position: relative;
+    height: 40rem;
+    text-align: center;
+    font-size: xx-large;
+  }
+  
+  .imageProfile {
+    width: 10rem;
+    height: 10rem;
+    border-radius: 50%;
+    object-fit: cover;
+    display: block;
+    margin: 0 auto;
+  }
+  
+  .titleProfile {
+    position: relative;
+  }

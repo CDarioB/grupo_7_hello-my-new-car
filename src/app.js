@@ -15,6 +15,7 @@ app.use(methodOverride('_method'));
 
 // Implementando session
 const session = require('express-session');
+app.use(session({secret : "CARSECRETO"}));
 
 // EJS
 app.set('view engine', 'ejs');
@@ -32,7 +33,7 @@ app.use('/products', productsRouter);
 
 
 // Levantando el servidor
-const PORT = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3001;
 app.listen(PORT, () => {
     console.log(`Servidor corriendo en http://localhost:${PORT}`);
 });

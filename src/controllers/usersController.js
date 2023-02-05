@@ -4,6 +4,9 @@ const db = require('../database/models');
 const sequelize = db.sequelize;
 const { Op } = require("sequelize");
 const moment = require('moment');
+var cookieParser = require('cookie-parser');
+const bcrypt = require('bcryptjs');
+const {validationResult} = require('express-validator');
 
 const Products = db.Product;
 const Categories = db.Category;
@@ -17,7 +20,7 @@ const usersController = {
         db.Rol.findAll()
         .then(roles =>{
         db.User.findAll({include: ['rol']}).then(users =>{
-            res.render('./partials/users/users',{users,roles})})
+            res.render('./users/users',{users,roles})})
     })},
     create: function(req,res,next) {
         let allRoles;
@@ -35,12 +38,12 @@ const usersController = {
                     last_name: req.body.lastName,
                     tel: req.body.tel,
                     email: req.body.email,
-                    pass: req.body.pass,
+                    pass:bcrypt.hashSync(req.body.pass,10),
                     image: 'default.jpg',
                     rol_id: 2,
                 }
             ).then(() =>{
-                res.redirect('../users');
+                res.redirect('./users/users');
             })
     },
     modificar: function(req,res,next) {
@@ -56,7 +59,7 @@ const usersController = {
             AllUsers=users;
         })
         .then(()=>{
-            res.render('./partials/users/modificarUsers', {AllRoles,AllUsers,idUser})
+            res.render('./users/modificarUsers', {AllRoles,AllUsers,idUser})
         })
     },
     update: function(req,res){
@@ -67,7 +70,7 @@ const usersController = {
                 last_name: req.body.lastName,
                 tel: req.body.tel,
                 email: req.body.email,
-                pass: req.body.pass,
+                pass: bcrypt.hashSync(req.body.pass,10),
                 image: filename,
             },
             {
@@ -84,7 +87,7 @@ const usersController = {
                 last_name: req.body.lastName,
                 tel: req.body.tel,
                 email: req.body.email,
-                pass: req.body.pass,
+                pass: bcrypt.hashSync(req.body.pass,10),
             },
             {
                 where:{
@@ -103,7 +106,44 @@ const usersController = {
             }
         })
         res.redirect("/users/")
-    }
+    },login: function(req, res, next) {
+        res.render('login')},
+        
+    checkLogin: async function(req,res,next){
+        let errores = validationResult(req);
+        if(!errores.isEmpty()){
+            return res.render('login',{mensajesDeError : errores.mapped(),old:req.body});
+        }
+        else{
+            let usuario = await db.User.findOne({where: 
+            {email: req.body.nombreUsuario,}})
+                
+                if(usuario){
+                    let validationPass = bcrypt.compareSync(req.body.password,usuario.pass);
+                    if (validationPass){
+                        usuario.pass = '';
+                        req.session.userLogged = usuario;
+                        return res.redirect('/users/profile');
+                    }
+                    else{
+                        return res.render('login',{mensajesDeError : {password:{msg:'La contraseña ingresada no es correcta'}},old:req.body});
+
+                    }
+                }
+                else{
+                return res.render('./login',
+                {mensajesDeError :{
+                    nombreUsuario:{
+                        msg:'Verifica el email introducido'},
+                                    },
+                    old:req.body,
+                });}
+            }
+        
+    },
+    logged: async (req,res,next)=>{
+        return res.render('./users/profile',{user: req.session.userLogged})
+    }  
 }
 
 module.exports = usersController;
