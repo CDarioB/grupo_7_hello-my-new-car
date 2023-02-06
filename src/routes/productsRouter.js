@@ -4,6 +4,7 @@ const { check } = require('express-validator');
 
 const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddlewareProducts');
+
 const productValidations = [
 	check('refCar')
         .notEmpty().withMessage('Tienes que escribir una referencia.')

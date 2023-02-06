@@ -1,9 +1,11 @@
 const express = require ("express"); 
 const app = express();
-
 const path = require ("path");
 const PUBLIC_PATH = path.join(__dirname, "../public");
 app.use(express.static(PUBLIC_PATH)); // Para los archivos estáticos en el folder /public
+const cookies = require('cookie-parser');
+
+const userLoggedMiddleware = require('./middlewares/userLoggedMiddleware');
 
 // Para poder trabajar con archivos json
 app.use(express.urlencoded({ extended: false }));
@@ -16,6 +18,9 @@ app.use(methodOverride('_method'));
 // Implementando session
 const session = require('express-session');
 app.use(session({secret : "CARSECRETO"}));
+app.use(cookies());
+app.use(userLoggedMiddleware);
+
 
 // EJS
 app.set('view engine', 'ejs');

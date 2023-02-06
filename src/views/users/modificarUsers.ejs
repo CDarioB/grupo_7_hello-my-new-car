@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-    <%-include('../head.ejs') %>
+    <%-include('../partials/head.ejs') %>
     <title>Modificación de Usuario</title>
 </head>
-<%-include('../header.ejs') %>
+<%-include('../partials/header.ejs') %>
 <body>
 <br>
 <div class="container-menu-objeto-modificado">
@@ -16,7 +16,7 @@
     <h3>Modificación del usuario <%= AllUsers[idUser-1].first_name + " " + AllUsers[idUser-1].last_name%></h3>
 </div>
 <div class ="avatarTopContainer">
-    <img class="avatarIMG" src="/img/<%=AllUsers[idUser-1].image%>" alt="">
+    <img class="avatarIMG" src="/img/users/<%=AllUsers[idUser-1].image%>" alt="">
 </div>
 <form class="formBody" method="POST" action="/users/edit/<%=idUser%>?_method=PUT" enctype="multipart/form-data">
     <div class="FormItem">
@@ -39,14 +39,12 @@
         <label for="password">Contraseña:</label>
         <input type="password" name="pass" id="pass" placeholder="Mínimo 8 caracteres" class="InputControl" value="<%=AllUsers[idUser-1].pass%>" />
       </div>
-      <label>Holiwis</label>
       <br>
       <input class="boton-adj-file" type="file" name="avatarUserFile" accept=".jpg, .jpeg, .png">
     <div class="FormItem">
         <input class="SubmitBotton" type="submit" value="Actualizar información" >
     </div>
 </form>
-
-<%-include('../footer.ejs') %>
+<%-include('../partials/footer.ejs') %>
 </body>
 </html>
