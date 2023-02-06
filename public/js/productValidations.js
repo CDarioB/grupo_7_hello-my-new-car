@@ -55,7 +55,7 @@ window.onload = function(){
         
 
         if (mileageCar.value == "") {
-            errors.push("Introdusca los km recorrido por el vehículo.");
+            errors.push("Introduzca los km recorrido por el vehículo.");
             mileageCar.classList.add('is-invalid');
         } else if (isNaN(mileageCar.value)) {
             errors.push("Solo se permiten valores numericos en los Km.");
@@ -67,10 +67,10 @@ window.onload = function(){
 
 
         if (priceCar.value == "") {
-            errors.push("Introdusca el pecio de venta del vehículo sin descuento.");
+            errors.push("Introduzca el pecio de venta del vehículo sin descuento.");
             priceCar.classList.add('is-invalid');
         } else if (isNaN(priceCar.value)) {
-            errors.push("Solo se permiten valores numericos para los precios.");
+            errors.push("Solo se permiten valores numéricos para los precios.");
             priceCar.classList.add('is-invalid');
         } else mileageCar.classList.remove('is-invalid');
         

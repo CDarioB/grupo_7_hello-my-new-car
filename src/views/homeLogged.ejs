@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+
+  <%-include('./partials/headLogged.ejs') %>
+  <title>My New Car - Compra y venta de autos usados garantizados</title>
+</head>
+
+<body>
+  <%-include('./partials/header.ejs') %>
+  <main>
+    <div class="slider">
+      <div id="img">
+        <img src="img/BANNER-1.jpg"/>
+      </div>
+    </div>
+    
+    <%-include('./product/offers.ejs')%>
+
+    <%-include('./partials/brands.ejs')%>
+
+  </main>
+
+  <%-include('./partials/footer.ejs') %>
+  <script src="js/script.js"></script>
+</body>
+
+</html>

@@ -77,14 +77,14 @@
 <section class="descripcion">
     <section class="galeria">
         <% for(var i=0; i < product.img.length; i++) { %>
-            <a href="#image<%=product.img[i]%>"><img src= "/img/<%= product.img[i] %>" alt=""></a>
+            <a href="#image<%=product.img[i]%>"><img src= "/img/products/<%= product.img[i] %>" alt=""></a>
         <% } %>
     </section>
     
     <% for(var i=0; i < product.img.length; i++) { %>
         <article class="ligth-box" id="image<%=product.img[i]%>">
             <a href="#image<%=product.img[i-1]%>" class="next"><i class="fa-solid fa-arrow-left"></i></a>
-            <img src= "/img/<%=product.img[i]%>" alt="">
+            <img src= "/img/products/<%=product.img[i]%>" alt="">
             <a href="#image<%=product.img[i+1]%>" class="next"><i class="fa-solid fa-arrow-right"></i></a>
             <a href="" class="close">X</a>
         </article>

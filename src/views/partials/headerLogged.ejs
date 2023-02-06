@@ -20,38 +20,34 @@
         </ul>
       </nav>
     </div>
-    <% if (!locals.isLogged) { %>
-      <div class="second-menu">
-        <nav>
-          <ul>
-            <li><a href='/users/create' class="lista">Creá tu cuenta </a></li>
-            <li><a href='/users/login' class="lista">Ingresá</a></li>
-            <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
-            <li><a href='#' class="lista">Ayuda</a></li>
-          </ul>
-        </nav>
-      </div>
-      <% } else { %>
+
+    <div class="second-menu">
+      <nav>
+        <ul>
+          <li><a href='/users/create' class="lista">Creá tu cuenta </a></li>
+          <li><a href='/login' class="lista">Ingresá</a></li>
+          <li><a href='/favoritos' class="lista">Mis favoritos</a></li>
+          <li><a href='#' class="lista">Ayuda</a></li>
+        </ul>
+      </nav>
+    </div>
     <div class="third-menu">
       <li class="user-dropdown">
         <div class="user-name-container">
-          <span class="user-name">Logeado como:</span>
+          <span class="user-name">Loggeado como:</span> 
         </div>
         <div class="username-container">
-
-          <span> <%= locals.userLogged.first_name %> </span>
-
+          <span> Andres</span>
         </div>
         <div class="user-icon-container">
           <i class="fas fa-angle-down"></i>
         </div>
         <div class="user-dropdown-content">
-          <a href="/users/profile">Mi perfil</a>
-          <a href="/users/logout">Cerrar sesión</a>
+          <a href="">Mi perfil</a>
+          <a href="#">Cerrar sesión</a>
         </div>
       </li>
     </div>
-    <% } %>
 
     <div class="burger-menu">
       <i class="fas fa-bars fa-xl"></i>

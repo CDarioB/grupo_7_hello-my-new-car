@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+    <%-include('../partials/head.ejs') %>
+    <title>Lista de Usuarios</title>
+</head>
+<%-include('../partials/header.ejs') %>
+<body>
+    <main>   
+        <h2 class="title">Usuarios registrados</h2>
+        <section class="main-ofert">
+            <% for (let i =0; i < users.length; i++){ %>
+                <article class = "userListImage">
+                    <img src= "/img/users/<%= users[i].image%>" alt="">
+                    <div class="main-article-content">
+                        <p class = "main-article-title"><%=users[i].first_name +" "+ users[i].last_name%></p>
+                        <p class = "main-article-description">Rol de usuario: <%=roles[users[i].rol_id-1].type%></p>
+                        <a href="/users/modificacion/<%=users[i].id%>"> Editar Usuario <br></a>
+                        <form action = "/users/delete/<%=users[i].id%>" method="POST">
+                            <button type ="submit">Eliminar Usuario</button>
+                        </form>
+                    </div>
+                </article>
+            <% } %>
+        </section>
+    </main>
+</body>
+
+<%-include('../partials/footer.ejs') %>
+</html>
