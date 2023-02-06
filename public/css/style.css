@@ -100,6 +100,11 @@ header {
     display: none;
 }
 
+.third-menu {
+display: block;
+}
+
+
 .header-menu a {
     text-decoration: none;
     color: white;
@@ -411,6 +416,16 @@ p.caracteristica{
 .CheckControl {
     width: 15px;
 }
+
+.checkbox-container {
+    display: flex;
+    align-items: center;
+    margin-top: 10px;
+  }
+
+  .checkbox-container label {
+    margin-left: 10px;
+  }
 
 /* Form config users */
 .avatarTopContainer{

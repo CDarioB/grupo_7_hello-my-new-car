@@ -7,26 +7,44 @@
 <%-include('./partials/header.ejs') %>
 <body>
     <main>
-      <form action="/" method="GET" class="formBody">
-        <div class="TopContainer">
-          <h3>¡Bienvenido!</h3>
-        </div>
-        <div class="FormItem">
-          <label for="nombre-usuario">Usuario / E-mail:</label>
-          <input type="text" name="nombre-usuario" placeholder="Nombre de usuario" class="InputControl" />
-        </div>
-        <div class="FormItem">
-          <label for="password">Contraseña:</label>
-          <input type="password" name="password" placeholder="Contraseña" class="InputControl" />
-        </div>
-        <div>
-          <button type="submit" class="SubmitBotton">Login</button>
-        </div>
-        <div class="FormItemLink">
-          <a href="/recovery">¿Olvidaste tu contraseña?</a>
-          <a href="/register">Creá tu cuenta</a>
-        </div>
-      </form>
+    <% if (locals && locals.mensajesDeError) {%>
+      <center>
+      <p style="color:red">¡ERROR!</p>
+      <% for(let error in mensajesDeError) { %>   
+        <ol>
+          <li style ="color: orange">
+            <%= mensajesDeError[error].msg %>
+          </li>
+        </ul>
+      <% } %>
+    </center>
+    <% } %>
+    <form action="/users/login" method="POST" class="formBody">
+      <div class="TopContainer">
+        <h3>¡Bienvenido!</h3>
+      </div>
+      <div class="FormItem">
+        <label for="nombre-usuario">Usuario / E-mail:</label>
+        <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="InputControl" value ="<%= locals.old && old.nombreUsuario ? old.nombreUsuario :""%>">
+      </div>
+      <div class="FormItem">
+        <label for="password">Contraseña:</label>
+        <input type="password" name="password" placeholder="Contraseña" class="InputControl"  value ="<%= locals.old && old.password ? old.password :""%>">
+      </div>
+      <div class="checkbox-container">
+        <input type="checkbox" name="rememberUser" id="rememberUser" >
+        <label for="rememberUser">Recordar mi usuario</label>
+      </div>
+      <br>
+      <div>
+        <button type="submit" class="SubmitBotton">Login</button>
+      </div>
+      <div class="FormItemLink">
+        <a href="/recovery">¿Olvidaste tu contraseña?</a>
+        <a href="/register">Creá tu cuenta</a>
+      </div>
+    </form>
+    
     </main>
     <%-include('./partials/footer.ejs') %>
 </body>
