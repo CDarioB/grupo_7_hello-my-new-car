@@ -33,7 +33,7 @@ function rederCreateProducts(req,res,errorMapped){
     })
 }
 
-function rederEditProducts(res,id,oldProductPkId,errorMapped){
+function renderEditProducts(res,id,oldProductPkId,errorMapped){
     let allCategory;
     let productPkId;
     let allProvinces;
@@ -143,7 +143,7 @@ const productsController = {
     },
 
     edit: (req, res, next) => {
-        rederEditProducts(res,req.params.id,null,null);
+        renderEditProducts(res,req.params.id,null,null);
     },
     update: (req,res,next) =>{
 
@@ -165,9 +165,9 @@ const productsController = {
                 "category_id": req.body.categoryTypeCar,
                 "province_id": req.body.provinceCar
             };
-            rederEditProducts(res,null,oldProductPkId,resultValidation.mapped());
+            renderEditProducts(res,null,oldProductPkId,resultValidation.mapped());
             */
-            rederEditProducts(res,idCar,null,resultValidation.mapped());
+            renderEditProducts(res,idCar,null,resultValidation.mapped());
         } else {
             let Car;
             let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
