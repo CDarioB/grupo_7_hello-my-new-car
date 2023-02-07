@@ -27,20 +27,30 @@ app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views')); // Define la ubicación de la carpeta de las Vistas
 
 // Creando rutas
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/usersRouter');
-var productsRouter = require('./routes/productsRouter');
+let indexRouter = require('./routes/index');
+let usersRouter = require('./routes/usersRouter');
+let productsRouter = require('./routes/productsRouter');
 
 // Manejo de vistas con rutas
 app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/products', productsRouter);
 
+//sprint 8 - APIS
+let apiUsersRouter = require('./routes/apiUsersRouter');
+let apiProductsRouter = require('./routes/apiProductsRouter');
+
+app.use('/api/users', apiUsersRouter);
+app.use('/api/products', apiProductsRouter);
+
 
 // Levantando el servidor
-const PORT = process.env.PORT || 3001;
-app.listen(PORT, () => {
-    console.log(`Servidor corriendo en http://localhost:${PORT}`);
+
+process.env.PORT = process.env.PORT || 3000;
+
+
+app.listen(process.env.PORT, () => {
+    console.log(`Servidor corriendo en http://localhost:${process.env.PORT}`);
 });
 
 
