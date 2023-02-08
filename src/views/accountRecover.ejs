@@ -14,11 +14,13 @@
       </p>
     </div>
       <form action="/" method="GET" class="formBody">
+        <ul id="ulErrors"> </ul>
         <div class="FormItem">
           <label for="AccountRecover">Escribe tu e-mail:</label>
           <input
             type="email"
             name="AccountRecover"
+            id="accountRecover"
             placeholder="Tú correo electrónico"
             class="InputControl"
           />
@@ -29,6 +31,8 @@
           </button>
         </div>
       </form>
+      <script src="/js/accountRecoverValidations.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </main>
 
     <%-include('./partials/footer.ejs') ;%>
