@@ -13,21 +13,21 @@ const productValidations = [
         .notEmpty().withMessage('Tienes que escribir la marca del vehículo.')
         .isLength({ min: 3}).withMessage('La marca debe tener por lo menos 3 caracteres.'),
     check('provinceCar')
-	    .notEmpty().withMessage('Seleciona provincia en que se encuentra ubicado el vehículo.'),
+	    .notEmpty().withMessage('Selecciona la provincia en que se encuentra ubicado el vehículo.'),
 	check('categoryTypeCar')
-        .notEmpty().withMessage('Seleciona un categoría del vehículo.'),
+        .notEmpty().withMessage('Selecciona una categoría para el vehículo.'),
 	check('modelYearCar')
-        .notEmpty().withMessage('Seleciona el modelo del vehículo.'),
+        .notEmpty().withMessage('Selecciona el modelo del vehículo.'),
     check('mileageCar')
-        .notEmpty().withMessage('Introdusca los km recorrido por el vehículo.')
-        .isNumeric().withMessage('Solo numeros.')
-        .isInt().withMessage('Solo numeros Enteros.'),
+        .notEmpty().withMessage('Introduce los kms recorridos por el vehículo.')
+        .isNumeric().withMessage('Solo números.')
+        .isInt().withMessage('Solo números Enteros.'),
     check('priceCar')
-        .notEmpty().withMessage('Introdusca el pecio de venta sin descuento')
-        .isNumeric().withMessage('Solo numeros.'),
+        .notEmpty().withMessage('Introduce el precio de venta sin descuento')
+        .isNumeric().withMessage('Solo números.'),
     check('discountCar')
-        .notEmpty().withMessage('Introdusca el % de descuento, en caso de no tener descuento introdusca 0 (cero).')
-        .isNumeric().withMessage('Solo numeros.'),    
+        .notEmpty().withMessage('Introduce el % de descuento, en caso de no tener descuento Introduce 0 (cero).')
+        .isNumeric().withMessage('Solo números.'),    
 	check('imagesCar')
         .custom((value, { req }) => {
             let file = req.file;

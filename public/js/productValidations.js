@@ -37,7 +37,7 @@ window.onload = function(){
 
 
         if (provinceCar.value == "") {
-            errors.push("Seleciona provincia en que se encuentra ubicado el vehículo.");
+            errors.push("Seleciona la provincia en que se encuentra ubicado el vehículo.");
             provinceCar.classList.add('is-invalid');
         } else provinceCar.classList.remove('is-invalid');
 
@@ -55,19 +55,19 @@ window.onload = function(){
         
 
         if (mileageCar.value == "") {
-            errors.push("Introduzca los km recorrido por el vehículo.");
+            errors.push("Introduce los km recorridos por el vehículo.");
             mileageCar.classList.add('is-invalid');
         } else if (isNaN(mileageCar.value)) {
-            errors.push("Solo se permiten valores numericos en los Km.");
+            errors.push("Solo se permiten valores numéricos en los Km.");
             mileageCar.classList.add('is-invalid');
         } else if (Number.isInteger(mileageCar.value)) { 
-            errors.push("Solo se permiten valores numericos enteros en los Km.");
+            errors.push("Solo se permiten valores numéricos enteros en los Km.");
             mileageCar.classList.add('is-invalid');
         } else mileageCar.classList.remove('is-invalid');
 
 
         if (priceCar.value == "") {
-            errors.push("Introduzca el pecio de venta del vehículo sin descuento.");
+            errors.push("Introduce el pecio de venta del vehículo sin descuento.");
             priceCar.classList.add('is-invalid');
         } else if (isNaN(priceCar.value)) {
             errors.push("Solo se permiten valores numéricos para los precios.");
@@ -76,10 +76,10 @@ window.onload = function(){
         
 
         if (discountCar.value == "") {
-            errors.push("Introdusca el % de descuento, en caso de no tener descuento introdusca 0 (cero).");
+            errors.push("Introduce el % de descuento, en caso de no tener descuento introduce 0 (cero).");
             discountCar.classList.add('is-invalid');
         } else if (isNaN(discountCar.value)) {
-            errors.push("Solo se permiten valores numericos (sin %).");
+            errors.push("Solo se permiten valores numéricos (sin %).");
             discountCar.classList.add('is-invalid');
         } else discountCar.classList.remove('is-invalid');
 

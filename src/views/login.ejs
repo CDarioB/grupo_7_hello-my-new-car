@@ -21,15 +21,16 @@
     <% } %>
     <form action="/users/login" method="POST" class="formBody">
       <div class="TopContainer">
+        <ul id="ulErrors"> </ul>
         <h3>¡Bienvenido!</h3>
       </div>
       <div class="FormItem">
         <label for="nombre-usuario">Usuario / E-mail:</label>
-        <input type="text" name="nombreUsuario" placeholder="Nombre de usuario" class="InputControl" value ="<%= locals.old && old.nombreUsuario ? old.nombreUsuario :""%>">
+        <input type="text" name="nombreUsuario" id="nombreUsuario" placeholder="Nombre de usuario" class="InputControl" value ="<%= locals.old && old.nombreUsuario ? old.nombreUsuario :""%>">
       </div>
       <div class="FormItem">
         <label for="password">Contraseña:</label>
-        <input type="password" name="password" placeholder="Contraseña" class="InputControl"  value ="<%= locals.old && old.password ? old.password :""%>">
+        <input type="password" name="password" id="password" placeholder="Contraseña" class="InputControl"  value ="<%= locals.old && old.password ? old.password :""%>">
       </div>
       <div class="checkbox-container">
         <input type="checkbox" name="rememberUser" id="rememberUser" >
@@ -44,7 +45,8 @@
         <a href="/register">Creá tu cuenta</a>
       </div>
     </form>
-    
+    <script src="/js/loginValidations.js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </main>
     <%-include('./partials/footer.ejs') %>
 </body>

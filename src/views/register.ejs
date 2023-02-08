@@ -28,6 +28,7 @@
           <% } %>
       </div>
       <form class="formBody" method="POST" action="/users/new"  enctype="multipart/form-data" >
+        <ul id="ulErrors"> </ul>
         <h4>Completa tus datos:</h4>
         <div class="FormItem">
           <label for="nombre">Nombre*</label>
@@ -52,11 +53,11 @@
 
         <div class="FormItem">
           <label>Adjunte una foto de perfil </label>
-          <input class="boton-adj-file" type="file" name="avatarUser" accept=".jpg, .png, .jpeg" >
+          <input class="boton-adj-file" type="file" name="avatarUser" id="avatarUser" accept=".jpg, .png, .jpeg" >
         </div>
         <p class="RequiredData">(*)Datos obligatorios.</p>
         <div class="CheckboxContainer">
-          <input type="checkbox" name="accept-terms" class="CheckControl" />
+          <input type="checkbox" name="accept-terms" id="accept-terms" class="CheckControl" />
           <label for="accept-terms">Acepto los<a target="_blank" href="#"> términos y condiciones</a></label>
         </div>
         </label>
@@ -64,6 +65,8 @@
           <button type="submit" class="SubmitBotton">Crear cuenta</button>
         </div>
       </form>
+      <script src="/js/userValidations.js"></script>
+      <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
     </main>
 
     <%-include('./partials/footer.ejs') %>
