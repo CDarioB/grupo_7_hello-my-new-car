@@ -7,21 +7,15 @@ window.onload = function(){
 
         let errors = []
 
-        let nombreUsuario = document.getElementById('nombreUsuario');
-        let password = document.getElementById('password');
-        
-        if(nombreUsuario.value == ""){
-            errors.push('Debes completar el campo email')
-            nombreUsuario.classList.add('is-invalid')
-        }else if(!nombreUsuario.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)){
-            errors.push('Debes ingresar un formato de email válido')
-            nombreUsuario.classList.add('is-invalid')
-        }else nombreUsuario.classList.remove('is-invalid')
+        let accountRecover = document.getElementById('accountRecover');
 
-        if(password.value == ""){
-            errors.push('Debes ingresar una contraseña')
-            password.classList.add('is-invalid')
-        }else password.classList.remove('is-invalid')
+        if(accountRecover.value == ""){
+            errors.push('Debes completar el campo email')
+            accountRecover.classList.add('is-invalid')
+        }else if(!accountRecover.value.match(/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/)){
+            errors.push('Debes ingresar un formato de email válido')
+            accountRecover.classList.add('is-invalid')
+        }else accountRecover.classList.remove('is-invalid')
 
         if (errors.length > 0) {
             let ulErrors = document.getElementById('ulErrors')
