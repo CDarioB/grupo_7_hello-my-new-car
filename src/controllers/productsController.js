@@ -159,7 +159,7 @@ const productsController = {
                 "mileage": req.body.mileageCar,
                 "price": req.body.priceCar,
                 "discount_percentage": req.body.discountCar,
-                "img": req.body.flagImg.split(","), 
+                "img": req.body.images.split(","), 
                 "category_id": req.body.categoryTypeCar,
                 "province_id": req.body.provinceCar
             };
@@ -174,7 +174,7 @@ const productsController = {
             let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
             let price = parseInt(req.body.priceCar);
             
-            let images = req.body.flagImg.split(",")
+            let images = req.body.images.split(",")
             for (let i=0; i < req.files.length; i++)
                 images.push(req.files[i].filename);
             
@@ -225,26 +225,6 @@ const productsController = {
             }
         })
         res.redirect("/products/edit")
-    },
-    deleteImg: function(req,res){
-        let products = db.Product.findAll({
-            include: ['province','category']})
-        .then(function(products){
-        let idProduct = req.params.idProduct;
-        let idImage = req.params.idImage;
-        const Product = products[idProduct-1];
-        Product.img = Product.img.split(",");
-        Product.img = Product.img.filter((imagen) => imagen !== Product.img[idImage]);
-        console.log(Product.img[idImage])
-        Product.img = Product.img.join();
-        db.Product.update({
-            img : Product.img,
-        },{
-            where: {
-                id: idProduct,
-            }
-        })
-        res.redirect("/products/edit/"+ idProduct + "#containerEditing")})
     }
 }
 

@@ -144,10 +144,11 @@
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
                         <img id="<%=product.img[i]%>" class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
-                        <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
+                        <button id="<%=product.img[i]%>_btn" class="deleteBtn" type="button" value="<%=product.img[i]%>" onclick="deleteBtn(value)">X</button> 
+                        
                 </div>
             <% } %>
-            <input id="flagImg" name="flagImg" type="hidden" value=<%=product.img%>>
+            <input id="images" name="images" type="hidden" value=<%=product.img%>>
         </div>
         <div class="FormItem">
             <input class="SubmitBotton" type="submit" value="Guardar" >
@@ -155,6 +156,7 @@
     </form>
     <br>
     <script src="/js/productValidations.js"></script>
+    <script src="/js/editProducts.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

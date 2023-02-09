@@ -30,7 +30,7 @@ const productValidations = [
         .isNumeric().withMessage('Solo números.'),    
 	check('imagesCar')
         .custom((value, { req }) => {
-            if(req.body.flagImg)
+            if(req.body.images)
                 return true;
                 
             let file = req.file;
@@ -69,6 +69,6 @@ router.put('/edit/:id', uploadFile.array('imagesCar',maxFiles), productValidatio
 
 // Delete Products
 router.post('/delete/:id', productsController.delete);
-router.post('/deleteImg/:idProduct/:idImage',productsController.deleteImg)
+
 
 module.exports = router;
