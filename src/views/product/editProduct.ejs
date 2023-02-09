@@ -145,10 +145,11 @@
         <div id="containerEditing">
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
-                        <img class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
+                        <img id="<%=product.img[i]%>" class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
                         <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
                 </div>
             <% } %>
+            <input id="flagImg" name="flagImg" type="hidden" value=<%=product.img%>>
         </div>
         <div class="FormItem">
             <input class="SubmitBotton" type="submit" value="Guardar" >

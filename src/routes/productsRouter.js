@@ -30,6 +30,9 @@ const productValidations = [
         .isNumeric().withMessage('Solo números.'),    
 	check('imagesCar')
         .custom((value, { req }) => {
+            if(req.body.flagImg)
+                return true;
+                
             let file = req.file;
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
             
