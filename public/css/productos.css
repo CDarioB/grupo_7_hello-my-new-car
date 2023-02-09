@@ -148,7 +148,7 @@
     justify-content: center;
     flex-wrap: wrap;
     gap: 1rem;
-
+    position:relative;
 }
 
 .elementEditimg{
@@ -167,8 +167,8 @@
 .elementEditimg .deleteBtn{
     position: relative;
     width: 10%;
-    top: -85%;
-    left: 95%;
+    top: -40%;
+    left: 0.1%;
     background-color: #252759;
     color: white;
     font-size: 16px;
