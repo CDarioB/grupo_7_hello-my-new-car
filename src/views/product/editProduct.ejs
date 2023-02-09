@@ -134,21 +134,21 @@
             <label>Adjunte las imagenes que quiere colocar del vehículo</label>
         <br>
         <input class="boton-adj-file" type="file" id="imagesCar" name="imagesCar" multiple>
-            <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
-        <!--
-        < % if (locals.errors && errors.imagesCar) { %>
+        <% if (locals.errors && errors.imagesCar) { %>
             <div class="text-error">
-                < %= errors.imagesCar.msg %> 
+                <%= errors.imagesCar.msg %> 
             </div>
-        < % } %>
-        -->
+        <% } %>
+        
         <div id="containerEditing">
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
-                        <img class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
-                        <button class="deleteBtn" type="submit" formaction="/products/deleteImg/<%=product.id%>/<%=i%>">X</button>
+                        <img id="<%=product.img[i]%>" class="imgEditForm" src="/img/products/<%=product.img[i]%>" alt="">
+                        <button id="<%=product.img[i]%>_btn" class="deleteBtn" type="button" value="<%=product.img[i]%>" onclick="deleteBtn(value)">X</button> 
+                        
                 </div>
             <% } %>
+            <input id="images" name="images" type="hidden" value=<%=product.img%>>
         </div>
         <div class="FormItem">
             <input class="SubmitBotton" type="submit" value="Guardar" >
@@ -156,6 +156,7 @@
     </form>
     <br>
     <script src="/js/productValidations.js"></script>
+    <script src="/js/editProducts.js"></script>
     <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
 </body>
 

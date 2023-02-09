@@ -1,77 +1,16 @@
 //const fs = require('fs');
 //const path = require('path');
 const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const moment = require('moment');
-
-const Products = db.Product;
-const Categories = db.Category;
-const Provinces = db.Province;
+//const sequelize = db.sequelize;
+//const { Op } = require("sequelize");
+//const moment = require('moment');
 
 const { validationResult } = require('express-validator');
 
-function rederCreateProducts(req,res,errorMapped){
-    let allProvinces;
-    let allCategory;
-    Provinces.findAll()
-        .then(provinces => {
-            allProvinces = provinces;
-        })
-    Categories.findAll()
-        .then(categories => {
-            allCategory = categories;
-    }).then( ()=>{
-        res.render('./product/createProducts',
-            {
-                allProvinces: allProvinces,
-                allCategory: allCategory, 
-                errors: errorMapped,
-                oldData: req.body
-                //oldFiles: req.files
-            });
-    })
-}
-
-function renderEditProducts(res,id,oldProductPkId,errorMapped){
-    let allCategory;
-    let productPkId;
-    let allProvinces;
-    
-    if (id) {
-        Products.findByPk(
-                id,
-                {include: ['province']} //{include: ['province','category']}
-        ).then(prodId => { 
-            productPkId = prodId;
-            productPkId.img = productPkId.img.split(",");
-        })
-    } else {
-        productPkId = oldProductPkId;
-    }
-        
-    Provinces.findAll()
-        .then(provinces => {
-            allProvinces = provinces
-        }).then(() =>{
-            Categories.findAll()
-                .then(categories => {
-                        allCategory = categories;
-                    }).then(() => {
-                        res.render('./product/editProduct',
-                        {
-                            product: productPkId,
-                            allProvinces: allProvinces,
-                            allCategory: allCategory,
-                            errors: errorMapped,
-                        });
-                    });
-        })
-}
 
 const productsController = {
     products: function(req,res,next) {
-        Products.findAll({
+        db.Product.findAll({
             include: ['province','category']
         }).then(products => {
            for(let i = 0; i < products.length; i++){
@@ -83,19 +22,57 @@ const productsController = {
     index: function(req,res,next) {
         res.render('./product/formularioIndex');
     },
-    create: function(req,res,next) {
-        rederCreateProducts(req,res,null);
+    create: async function(req,res,next) {
+        const provincesDb = db.Province.findAll();
+        const categoriesDb = db.Category.findAll();
+            
+        const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
+            
+        const provinces = auxProvinces.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+            return result
+        });
+
+        const categories = auxCategories.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+            return result
+        });
+        
+        res.render('./product/createProducts',{
+            allProvinces: provinces,
+            allCategory: categories, 
+            errors: null,
+            oldData: req.body
+        });
     },
-    newProducts: function(req,res) {
+    newProducts: async function(req,res) {
         
         const resultValidation = validationResult(req);
         
-        // console.log('*********************************************************************');
-        // console.log('resultValidation -> '+ JSON.stringify(resultValidation.mapped()));
-        // console.log('*********************************************************************');
-
         if (resultValidation.errors.length > 0) {
-            rederCreateProducts(req,res,resultValidation.mapped());
+            const provincesDb = db.Province.findAll();
+            const categoriesDb = db.Category.findAll();
+                
+            const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
+                
+            const provinces = auxProvinces.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+                return result
+            });
+
+            
+            const categories = auxCategories.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+                return result
+            });
+            
+            res.render('./product/createProducts',{
+                allProvinces: provinces,
+                allCategory: categories, 
+                errors: resultValidation.mapped(),
+                oldData: req.body
+                //oldFiles: req.files
+            });
         } else {
 
             let images = [];
@@ -108,7 +85,7 @@ const productsController = {
             
             try { 
             
-                Products    
+                db.Product    
                     .create({
                         references: req.body.refCar,
                         brand: req.body.brandCar,
@@ -131,29 +108,65 @@ const productsController = {
         }
     },
     modify: (req,res,next) => {
-        Products.findAll({
+        db.Product.findAll({
             include: ['province']
-            //include: ['province','category']
         }).then(products => {
-           for(let i = 0; i < products.length; i++){
-            products[i].img = products[i].img.split(",");
-           }
-           res.render('./product/productListModify',{products});
+            for(let i = 0; i < products.length; i++){
+                products[i].img = products[i].img.split(",");
+            }
+            res.render('./product/productListModify',{products});
         });
     },
+    edit: async (req, res, next) => {
+        const productsDb =  db.Product.findByPk(req.params.id, {include: ['province']}); 
+        const provincesDb = db.Province.findAll();
+        const categoriesDb = db.Category.findAll();
+        
+        const [auxProducts, auxProvinces, auxCategories] = await Promise.all([productsDb, provincesDb, categoriesDb]);
+        
+        auxProducts.dataValues.img = auxProducts.dataValues.img.split(",");
 
-    edit: (req, res, next) => {
-        renderEditProducts(res,req.params.id,null,null);
+        const provinces = auxProvinces.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+            return result
+        });
+
+        const categories = auxCategories.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+            return result
+        });
+        
+                
+        res.render('./product/editProduct',
+        {
+            product: auxProducts.dataValues,
+            allProvinces: provinces,
+            allCategory: categories,
+            errors: null,
+        });
+
     },
-    update: (req,res,next) =>{
-
+    update: async (req,res,next) =>{
         let idCar = req.params.id;
-
+        
         const resultValidation = validationResult(req);
 
         if (resultValidation.errors.length > 0) {
-           /*
-            let oldProductPkId = {
+            const provincesDb = db.Province.findAll();
+            const categoriesDb = db.Category.findAll();
+            const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
+            
+            const provinces = auxProvinces.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+                return result
+            });
+    
+            const categories = auxCategories.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+                return result
+            });
+
+            let oldProductById = {
                 "id": idCar,
                 "references": req.body.refCar,
                 "brand": req.body.brandCar,
@@ -161,27 +174,26 @@ const productsController = {
                 "mileage": req.body.mileageCar,
                 "price": req.body.priceCar,
                 "discount_percentage": req.body.discountCar,
-                "img": req.body.auxImagesCar, //req.body.imagesCar,
+                "img": req.body.images.split(","), 
                 "category_id": req.body.categoryTypeCar,
                 "province_id": req.body.provinceCar
             };
-            renderEditProducts(res,null,oldProductPkId,resultValidation.mapped());
-            */
-            renderEditProducts(res,idCar,null,resultValidation.mapped());
+
+            res.render('./product/editProduct',{
+                product: oldProductById,
+                allProvinces: provinces,
+                allCategory: categories,
+                errors: resultValidation.mapped(),
+            });
         } else {
-            let Car;
             let discount = req.body.discountCar ? parseInt(req.body.discountCar) : 0;
             let price = parseInt(req.body.priceCar);
-            db.Product.findByPk(idCar)
-            .then((carro)=>{
-                Car = carro;
-                images = Car.img.split(",");
-                for (let i=0; i < req.files.length; i++)
-                    images.push(req.files[i].filename);
-                return images;
-            })
-            .then(()=>{
-                Products.update({
+            
+            let images = req.body.images.split(",")
+            for (let i=0; i < req.files.length; i++)
+                images.push(req.files[i].filename);
+            
+            db.Product.update({
                     references: req.body.refCar,
                     brand: req.body.brandCar,
                     model: req.body.modelYearCar,
@@ -191,24 +203,18 @@ const productsController = {
                     discount_price: price - ((price * discount)/100),
                     img: images.join(','),
                     category_id: req.body.categoryTypeCar,
-                    province_id: req.body.provinceCar,
-                    user_id: 1
-                },{
-                    where: {
-                        id: idCar
+                    province_id: req.body.provinceCar
+                    },{ 
+                        where: { id: idCar }
                     }
-                })
-            })
-            .then(()=>{
-                Products.findAll({
-                    include: ['province']
-                }).then(products => {
-                for(let i = 0; i < products.length; i++){
-                    products[i].img = products[i].img.split(",");
-                }
+            ).then(() => {
+                db.Product.findAll(
+                    {include: ['province']}
+                ).then(products => {
+                    for(let i = 0; i < products.length; i++)
+                        products[i].img = products[i].img.split(",");
                 res.render('product/productListModify',{products});
                 });
-            
             })
         }
     },
@@ -220,11 +226,11 @@ const productsController = {
             include: ['province','category']
         }).then(products => {
             for(let i = 0; i < products.length; i++){
-             products[i].img = products[i].img.split(",");
+                products[i].img = products[i].img.split(",");
             }
             let product = products.find(p => p.id == req.params.id )
             res.render('detalleDeCompra', {product});
-         });
+        });
      
     },
     delete: function(req,res) {
@@ -234,26 +240,6 @@ const productsController = {
             }
         })
         res.redirect("/products/edit")
-    },
-    deleteImg: function(req,res){
-        let products = db.Product.findAll({
-            include: ['province','category']})
-        .then(function(products){
-        let idProduct = req.params.idProduct;
-        let idImage = req.params.idImage;
-        const Product = products[idProduct-1];
-        Product.img = Product.img.split(",");
-        Product.img = Product.img.filter((imagen) => imagen !== Product.img[idImage]);
-        console.log(Product.img[idImage])
-        Product.img = Product.img.join();
-        db.Product.update({
-            img : Product.img,
-        },{
-            where: {
-                id: idProduct,
-            }
-        })
-        res.redirect("/products/edit/"+ idProduct + "#containerEditing")})
     }
 }
 

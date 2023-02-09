@@ -159,9 +159,4 @@ window.onload = function(){
         let info = await res.json()
         return info
     } */
-
-}
-
-function extValided() {
-
 }
