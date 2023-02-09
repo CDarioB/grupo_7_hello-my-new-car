@@ -134,14 +134,12 @@
             <label>Adjunte las imagenes que quiere colocar del vehículo</label>
         <br>
         <input class="boton-adj-file" type="file" id="imagesCar" name="imagesCar" multiple>
-            <!-- value="< %= locals.oldFiles ? oldFiles.files : null %>"> -->
-        <!--
-        < % if (locals.errors && errors.imagesCar) { %>
+        <% if (locals.errors && errors.imagesCar) { %>
             <div class="text-error">
-                < %= errors.imagesCar.msg %> 
+                <%= errors.imagesCar.msg %> 
             </div>
-        < % } %>
-        -->
+        <% } %>
+        
         <div id="containerEditing">
             <% for(var i = 0; i < product.img.length; i++) { %>
                 <div class="elementEditimg">
