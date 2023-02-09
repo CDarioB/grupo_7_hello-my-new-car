@@ -114,15 +114,13 @@ const productsController = {
     modify: (req,res,next) => {
         Products.findAll({
             include: ['province']
-            //include: ['province','category']
         }).then(products => {
-           for(let i = 0; i < products.length; i++){
-            products[i].img = products[i].img.split(",");
-           }
-           res.render('./product/productListModify',{products});
+            for(let i = 0; i < products.length; i++){
+                products[i].img = products[i].img.split(",");
+            }
+            res.render('./product/productListModify',{products});
         });
     },
-
     edit: async (req, res, next) => {
         const productsDb =  db.Product.findByPk(req.params.id, {include: ['province']}); 
         const provincesDb = db.Province.findAll();
@@ -232,11 +230,11 @@ const productsController = {
             include: ['province','category']
         }).then(products => {
             for(let i = 0; i < products.length; i++){
-             products[i].img = products[i].img.split(",");
+                products[i].img = products[i].img.split(",");
             }
             let product = products.find(p => p.id == req.params.id )
             res.render('detalleDeCompra', {product});
-         });
+        });
      
     },
     delete: function(req,res) {
