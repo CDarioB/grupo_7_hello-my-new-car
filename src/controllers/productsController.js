@@ -1,13 +1,9 @@
 //const fs = require('fs');
 //const path = require('path');
 const db = require('../database/models');
-const sequelize = db.sequelize;
-const { Op } = require("sequelize");
-const moment = require('moment');
-
-const Products = db.Product;
-const Categories = db.Category;
-const Provinces = db.Province;
+//const sequelize = db.sequelize;
+//const { Op } = require("sequelize");
+//const moment = require('moment');
 
 const { validationResult } = require('express-validator');
 
@@ -89,7 +85,7 @@ const productsController = {
             
             try { 
             
-                Products    
+                db.Product    
                     .create({
                         references: req.body.refCar,
                         brand: req.body.brandCar,
@@ -112,7 +108,7 @@ const productsController = {
         }
     },
     modify: (req,res,next) => {
-        Products.findAll({
+        db.Product.findAll({
             include: ['province']
         }).then(products => {
             for(let i = 0; i < products.length; i++){
