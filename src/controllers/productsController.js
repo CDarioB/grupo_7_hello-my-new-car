@@ -11,27 +11,6 @@ const Provinces = db.Province;
 
 const { validationResult } = require('express-validator');
 
-function rederCreateProducts(req,res,errorMapped){
-    let allProvinces;
-    let allCategory;
-    Provinces.findAll()
-        .then(provinces => {
-            allProvinces = provinces;
-        })
-    Categories.findAll()
-        .then(categories => {
-            allCategory = categories;
-    }).then( ()=>{
-        res.render('./product/createProducts',
-            {
-                allProvinces: allProvinces,
-                allCategory: allCategory, 
-                errors: errorMapped,
-                oldData: req.body
-                //oldFiles: req.files
-            });
-    })
-}
 
 const productsController = {
     products: function(req,res,next) {
@@ -47,15 +26,57 @@ const productsController = {
     index: function(req,res,next) {
         res.render('./product/formularioIndex');
     },
-    create: function(req,res,next) {
-        rederCreateProducts(req,res,null);
+    create: async function(req,res,next) {
+        const provincesDb = db.Province.findAll();
+        const categoriesDb = db.Category.findAll();
+            
+        const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
+            
+        const provinces = auxProvinces.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+            return result
+        });
+
+        const categories = auxCategories.map(elemen =>  {
+            let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+            return result
+        });
+        
+        res.render('./product/createProducts',{
+            allProvinces: provinces,
+            allCategory: categories, 
+            errors: null,
+            oldData: req.body
+        });
     },
-    newProducts: function(req,res) {
+    newProducts: async function(req,res) {
         
         const resultValidation = validationResult(req);
         
         if (resultValidation.errors.length > 0) {
-            rederCreateProducts(req,res,resultValidation.mapped());
+            const provincesDb = db.Province.findAll();
+            const categoriesDb = db.Category.findAll();
+                
+            const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
+                
+            const provinces = auxProvinces.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
+                return result
+            });
+
+            
+            const categories = auxCategories.map(elemen =>  {
+                let result= {id: elemen.dataValues.id, type: elemen.dataValues.type}
+                return result
+            });
+            
+            res.render('./product/createProducts',{
+                allProvinces: provinces,
+                allCategory: categories, 
+                errors: resultValidation.mapped(),
+                oldData: req.body
+                //oldFiles: req.files
+            });
         } else {
 
             let images = [];
@@ -112,7 +133,7 @@ const productsController = {
         auxProducts.dataValues.img = auxProducts.dataValues.img.split(",");
 
         const provinces = auxProvinces.map(elemen =>  {
-            let result= {id: elemen.dataValues.id, provinces: elemen.dataValues.province}
+            let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
             return result
         });
 
@@ -142,7 +163,7 @@ const productsController = {
             const [auxProvinces, auxCategories] = await Promise.all([provincesDb, categoriesDb]);
             
             const provinces = auxProvinces.map(elemen =>  {
-                let result= {id: elemen.dataValues.id, provinces: elemen.dataValues.province}
+                let result= {id: elemen.dataValues.id, province: elemen.dataValues.province}
                 return result
             });
     
