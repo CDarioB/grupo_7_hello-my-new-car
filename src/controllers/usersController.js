@@ -161,8 +161,9 @@ const usersController = {
                 where:
                     { email: req.body.nombreUsuario, }
             })
-
+            
             if (usuario) {
+                res.cookie('userId', usuario.dataValues.id, { maxAge: (1000 * 60) })
                 if (req.body.rememberUser == 'on') {
                     res.cookie('userEmail', req.body.nombreUsuario, { maxAge: (1000 * 60) })
                 }
@@ -196,6 +197,7 @@ const usersController = {
     },
     logout: (req, res, next) => {
         res.clearCookie('userEmail');
+        res.clearCookie('userId');
         req.session.destroy();
         return res.redirect('/')
 

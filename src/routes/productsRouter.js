@@ -4,6 +4,7 @@ const { check } = require('express-validator');
 
 const productsController = require('../controllers/productsController.js');
 const uploadFile = require('../middlewares/multerMiddlewareProducts');
+const authMiddleware = require('../middlewares/authMiddleware');
 
 const productValidations = [
 	check('refCar')
@@ -56,7 +57,7 @@ router.get('/detail/:id', productsController.detail);
 const maxFiles = 10;
 
 // Menu para Crear/Modificar Products
-router.get('/index',productsController.index);
+router.get('/index', authMiddleware, productsController.index);
 
 //Crear Products
 router.get('/create',productsController.create);

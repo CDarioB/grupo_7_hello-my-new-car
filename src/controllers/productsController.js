@@ -19,8 +19,10 @@ const productsController = {
            res.render('./product/products',{products});
         });
     },
-    index: function(req,res,next) {
-        res.render('./product/formularioIndex');
+    index: async function(req,res,next) {
+        const userDb = await db.User.findByPk(parseInt(req.cookies.userId), {include: ['rol']});
+        let userType = userDb.rol.type == 'USER' ? 'USUARIO':'ADMINISTRADOR';
+        res.render('./product/formularioIndex',{userData: {name: userDb.first_name, rol: userType}}); // aqui
     },
     create: async function(req,res,next) {
         const provincesDb = db.Province.findAll();
@@ -107,15 +109,21 @@ const productsController = {
             }
         }
     },
-    modify: (req,res,next) => {
-        db.Product.findAll({
-            include: ['province']
-        }).then(products => {
-            for(let i = 0; i < products.length; i++){
+    modify: async (req,res,next) => {
+        let products=[];
+
+        const userDb = await db.User.findByPk(parseInt(req.cookies.userId), {include: ['rol']});
+        
+        
+        products = userDb.rol.type == 'ADMIN' ? await db.Product.findAll({include: ['province']}) : 
+            await db.Product.findAll({include: ['province'], where: { user_id: parseInt(req.cookies.userId)}}); 
+            
+        
+        for(let i = 0; i < products.length; i++)
                 products[i].img = products[i].img.split(",");
-            }
-            res.render('./product/productListModify',{products});
-        });
+        //res.render('./product/productListModify',{products});
+        res.render('./product/productListModify',{products});
+        
     },
     edit: async (req, res, next) => {
         const productsDb =  db.Product.findByPk(req.params.id, {include: ['province']}); 
