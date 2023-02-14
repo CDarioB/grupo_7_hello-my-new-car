@@ -34,13 +34,12 @@ const productValidations = [
             if(req.body.images)
                 return true;
                 
-            let file = req.file;
+            let files = req.files;
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
-            
-            if (!file) {
+            if (!files) {
                 throw new Error('Tienes que subir una imagen.');
             } else {
-                let fileExtension = path.extname(file.originalname);
+                let fileExtension = path.extname(files.originalname);
                 if (!acceptedExtensions.includes(fileExtension)) {
                     throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
                 }
@@ -61,7 +60,7 @@ router.get('/index', authMiddleware, productsController.index);
 
 //Crear Products
 router.get('/create',productsController.create);
-router.post('/new', uploadFile.array("imagesCar", maxFiles), productValidations, productsController.newProducts);
+router.post('/new', uploadFile.array('imagesCar', maxFiles), productValidations, productsController.newProducts);
 
 // Modificar Products
 router.get('/edit',productsController.modify); // Vista admin listado de productos a modificar

@@ -51,6 +51,10 @@ const productsController = {
         
         const resultValidation = validationResult(req);
         
+        console.log(resultValidation.errors);
+        console.log(req.body);
+        console.log(req.files);
+
         if (resultValidation.errors.length > 0) {
             const provincesDb = db.Province.findAll();
             const categoriesDb = db.Category.findAll();
@@ -86,7 +90,6 @@ const productsController = {
                 images.push(req.files[i].filename);
             
             try { 
-            
                 db.Product    
                     .create({
                         references: req.body.refCar,
@@ -99,7 +102,7 @@ const productsController = {
                         img: images.join(','),
                         category_id: req.body.categoryTypeCar,
                         province_id: req.body.provinceCar,
-                        user_id: 1
+                        user_id: parseInt(req.cookies.userId)
                     }
                 ).then(() =>{
                     res.redirect('/products/index');
