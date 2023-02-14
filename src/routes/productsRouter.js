@@ -1,5 +1,6 @@
 const express = require ("express"); 
 const router = express.Router();
+const path = require('path');
 const { check } = require('express-validator');
 
 const productsController = require('../controllers/productsController.js');
@@ -35,13 +36,17 @@ const productValidations = [
                 return true;
                 
             let files = req.files;
+            console.log(req.files);
             let acceptedExtensions = ['.jpg', '.jpeg', '.png', '.gif'];
             if (!files) {
                 throw new Error('Tienes que subir una imagen.');
             } else {
-                let fileExtension = path.extname(files.originalname);
-                if (!acceptedExtensions.includes(fileExtension)) {
-                    throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                let fileExtension; 
+                for(let i=0; i < files.length; i++) {
+                    fileExtension = path.extname(files[i].originalname);
+                    if (!acceptedExtensions.includes(fileExtension)) {
+                        throw new Error(`Las extensiones de archivo permitidas son ${acceptedExtensions.join(', ')}`);
+                    }
                 }
             }
 
