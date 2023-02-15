@@ -1,0 +1,43 @@
+:root {
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+.login-form{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.login-form label{
+    margin-top: 10px;
+    margin-bottom: 0;
+}
+
+.login-form div{
+    width: 80%;
+    margin-bottom: 15px;
+}
+
+.login-form input{
+    width: 100%;
+    border-radius: 20px;
+    border: 1px solid var(--myBlue);
+    padding: 5px 20px;
+}
+
+.login-form img{
+    width: 100%;
+    margin-top: 15px;
+}
+
+.login-form__errors{
+    color: var(--myPink);
+    margin-bottom: 10px;
+    text-align: center;
+}

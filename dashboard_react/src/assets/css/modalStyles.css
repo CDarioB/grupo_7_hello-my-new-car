@@ -1,0 +1,63 @@
+:root {
+    --myTitles: 'Montserrat', sans-serif;
+    --myText: 'Lato', sans-serif;
+    --myYellow: #FECC4F;
+    --myPink: #F11E77;
+    --myBlue: #251854;
+    --myGreen: #94CB91;
+}
+
+.modal__overlay{
+    width: 100vw;
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: rgba(0, 0, 0, 0.5);
+    padding: 40px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    flex-direction: column;
+}
+
+.modal__container{
+    width: 500px;
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    padding: 20px;
+}
+
+.modal__img{
+    width: 400px;
+}
+
+.modal__close-button{
+    position: absolute;
+    top: 25px;
+    right: 20px;
+    width: 45px;
+    height: 45px;
+    border: none;
+    background: none;
+    cursor: pointer;
+    transform: 0.3s ease all;
+    color: var(--myBlue);
+}
+
+.modal__close-button:hover{
+    color: var(--myPink);
+}
+
+.modal__close-button:active{
+    outline: none;
+}
+
+.modal__close-button svg{
+    width: 100%;
+    height: 100%
+}
+
